@@ -92,7 +92,7 @@ os requisitos identificados no ponto anterior;
 usando o padrão *Active Record*, tal como oferecido na plataforma
 *Laravel*;
 
-* **Criar a base de dados em *SQLite***, localmente na pasta ***database***,
+* **Criar a base de dados em *SQLite*,** localmente na pasta ***database***,
 **através de migrações**, tal como oferecido na plataforma *Laravel*;
 
 * **Popular a base de dados com informação aleatória** *(mas que faça sentido)*
