@@ -67,6 +67,7 @@ após um ano de não ter registado qualquer resultado*.
 ## 2. Que devemos fazer? ##
 Desenvolver uma aplicação em PHP (*utilizando a framework Laravel*) organizada
 em três camadas:
+
 * **A camada de apresentação**
 * **A camada de negócio**
 * **A camada de acesso aos dados**
