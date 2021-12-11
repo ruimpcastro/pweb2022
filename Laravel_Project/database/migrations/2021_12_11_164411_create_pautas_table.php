@@ -21,6 +21,7 @@ class CreatePautasTable extends Migration
             $table->string("avaliacao_id");
             $table->foreign("avaliacao_id")->references("id")->on("avaliacao");
             $table->string("curso_id");
+            $table->foreign("curso_id")->references("id")->on("curso");
             $table->bigInteger("codigo");
             $table->boolean("dirty");
         });
