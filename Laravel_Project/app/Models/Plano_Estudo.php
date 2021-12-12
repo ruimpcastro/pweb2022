@@ -18,9 +18,4 @@ class Plano_Estudo extends Model
     {
         return $this->hasMany(Disciplina::class);
     }
-
-    public function aluno()
-    {
-        return $this->hasMany(Aluno::class);
-    }
 }

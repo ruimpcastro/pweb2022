@@ -9,16 +9,6 @@ class Pauta extends Model
 {
     use HasFactory;
 
-    public function cursos()
-    {
-        return $this->hasMany(Curso::class);
-    }
-
-    public function displina()
-    {
-        return $this->hasOne(Disciplina::class);
-    }
-
     public function availacao()
     {
         return $this->hasOne(Avaliacao::class);

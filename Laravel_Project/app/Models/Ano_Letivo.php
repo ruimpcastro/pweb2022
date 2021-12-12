@@ -8,9 +8,5 @@ use Illuminate\Database\Eloquent\Model;
 class Ano_Letivo extends Model
 {
     use HasFactory;
-
-    public function aluno()
-    {
-        return $this->hasOne(Aluno::class);
-    }
+    
 }

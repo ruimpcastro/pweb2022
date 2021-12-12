@@ -9,18 +9,13 @@ class Avaliacao extends Model
 {
     use HasFactory;
 
-    public function pauta()
-    {
-        return $this->hasOne(Pauta::class);
-    }
-
     public function disciplina()
     {
         return $this->hasOne(Disciplina::class);
     }
 
-    public function aluno()
+    public function alunos()
     {
-        return $this->hasOne(Aluno::class);
+        return $this->hasMany(Aluno::class);
     }
 }

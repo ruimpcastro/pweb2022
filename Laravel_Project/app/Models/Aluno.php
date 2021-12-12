@@ -30,12 +30,12 @@ class Aluno extends Model
         return $this->hasOne(Plano_Estudo::class);
     }
 
-    public function ano_letivo()
+    public function anos_letivos()
     {
         return $this->hasMany(Ano_Letivo::class);
     }
 
-    public function matricula()
+    public function matriculas()
     {
         return $this->hasMany(Matricula::class);
     }

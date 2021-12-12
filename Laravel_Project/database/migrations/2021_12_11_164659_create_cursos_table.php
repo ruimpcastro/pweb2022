@@ -23,6 +23,7 @@ class CreateCursosTable extends Migration
             $table->string("pauta_id");
             $table->foreign("pauta_id")->references("id")->on("pauta");
             $table->bigInteger("codigo");
+            $table->string("designacao");
         });
     }
 

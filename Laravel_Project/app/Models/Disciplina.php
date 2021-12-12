@@ -14,13 +14,23 @@ class Disciplina extends Model
         return $this->hasMany(Pauta::class);
     }
 
-    public function avaliacao()
+    public function avaliacoes()
     {
         return $this->hasMany(Avaliacao::class);
     }
 
-    public function plano_estudos()
+    public function planos_estudo()
     {
-        return $this->hasOne(Plano_Estudo::class);
+        return $this->hasMany(Plano_Estudo::class);
+    }
+
+    public function anos_letivos()
+    {
+        return $this->hasMany(Ano_Letivo::class);
+    }
+
+    public function matriculas()
+    {
+
     }
 }

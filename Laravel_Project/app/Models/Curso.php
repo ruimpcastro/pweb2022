@@ -16,7 +16,7 @@ class Curso extends Model
 
     public function pautas()
     {
-        return $this->hasOne(Pauta::class);
+        return $this->hasMany(Pauta::class);
     }
 
     public function plano_estudo()

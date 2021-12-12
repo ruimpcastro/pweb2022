@@ -9,8 +9,13 @@ class Matricula extends Model
 {
     use HasFactory;
 
-    public function aluno ()
+    public function aluno()
     {
         return $this->hasOne(Aluno::class);
+    }
+
+    public function disciplina()
+    {
+        return $this->hasOne(Disciplina::class);
     }
 }
