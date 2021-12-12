@@ -8,4 +8,36 @@ use Illuminate\Database\Eloquent\Model;
 class Aluno extends Model
 {
     use HasFactory;
+
+    public function pauta()
+    {
+        return $this->hasOne(Pauta::class);
+    }
+
+    public function curso()
+    {
+        return $this->hasOne(Curso::class);
+    }
+
+    public function availacoes ()
+    {
+        return $this->hasMany(Avaliacao::class);
+    }
+
+
+    public function plano_estudo()
+    {
+        return $this->hasOne(Plano_Estudo::class);
+    }
+
+    public function ano_letivo()
+    {
+        return $this->hasMany(Ano_Letivo::class);
+    }
+
+    public function matricula()
+    {
+        return $this->hasMany(Matricula::class);
+    }
+
 }

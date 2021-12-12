@@ -8,4 +8,19 @@ use Illuminate\Database\Eloquent\Model;
 class Plano_Estudo extends Model
 {
     use HasFactory;
+
+    public function curso()
+    {
+        return $this->hasMany(Curso::class);
+    }
+
+    public function disciplina()
+    {
+        return $this->hasMany(Disciplina::class);
+    }
+
+    public function aluno()
+    {
+        return $this->hasMany(Aluno::class);
+    }
 }
