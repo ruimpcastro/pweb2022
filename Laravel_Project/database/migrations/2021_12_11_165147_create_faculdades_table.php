@@ -17,7 +17,7 @@ class CreateFaculdadesTable extends Migration
             $table->id();
             $table->timestamps();
             $table->string("curso_id");
-            $table->foreign("curso_id")->references("id")->on("curso");
+            $table->foreign("curso_id")->references("id")->on("cursos");
             $table->string("designacao");
         });
     }

@@ -17,11 +17,11 @@ class CreateAlunosTable extends Migration
             $table->id();
             $table->timestamps();
             $table->string("disciplina_id");
-            $table->foreign("disciplina_id")->references("id")->on("disciplina");
+            $table->foreign("disciplina_id")->references("id")->on("disciplinas");
             $table->string("pauta_id");
-            $table->foreign("pauta_id")->references("id")->on("pauta");
+            $table->foreign("pauta_id")->references("id")->on("pautas");
             $table->string("ano_letivo_id");
-            $table->foreign("ano_letivo_id")->references("id")->on("ano_letivo");
+            $table->foreign("ano_letivo_id")->references("id")->on("ano_letivos");
             $table->bigInteger("num_aluno");
             $table->string("nome");
             $table->integer("matricula");

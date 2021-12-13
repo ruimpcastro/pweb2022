@@ -13,7 +13,7 @@ class CreatePlanoEstudosTable extends Migration
      */
     public function up()
     {
-        Schema::create('plano__estudos', function (Blueprint $table) {
+        Schema::create('plano_estudos', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
             $table->string("curso_id");

@@ -19,9 +19,9 @@ class CreateAvaliacaosTable extends Migration
             $table->string("disciplina_id");
             $table->string("pauta_id");
             $table->string("ano_letivo_id");
-            $table->foreign("pauta_id")->references("id")->on("pauta");
-            $table->foreign("disciplina_id")->references("id")->on("disciplina");
-            $table->foreign("ano_letivo_id")->references("id")->on("ano_letivo");
+            $table->foreign("pauta_id")->references("id")->on("pautas");
+            $table->foreign("disciplina_id")->references("id")->on("disciplinas");
+            $table->foreign("ano_letivo_id")->references("id")->on("ano_letivos");
             $table->string("designacao");
             $table->decimal("classificacao_aluno");
         });

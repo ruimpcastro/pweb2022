@@ -17,11 +17,11 @@ class CreatePautasTable extends Migration
             $table->id();
             $table->timestamps();
             $table->string("aluno_id");
-            $table->foreign("aluno_id")->references("id")->on("aluno");
+            $table->foreign("aluno_id")->references("id")->on("alunos");
             $table->string("avaliacao_id");
-            $table->foreign("avaliacao_id")->references("id")->on("avaliacao");
+            $table->foreign("avaliacao_id")->references("id")->on("avaliacaos");
             $table->string("curso_id");
-            $table->foreign("curso_id")->references("id")->on("curso");
+            $table->foreign("curso_id")->references("id")->on("cursos");
             $table->bigInteger("codigo");
             $table->boolean("dirty");
         });

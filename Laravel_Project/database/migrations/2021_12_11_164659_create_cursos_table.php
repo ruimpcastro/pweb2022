@@ -17,11 +17,11 @@ class CreateCursosTable extends Migration
             $table->id();
             $table->timestamps();
             $table->string("aluno_id");
-            $table->foreign("aluno_id")->references("id")->on("aluno");
+            $table->foreign("aluno_id")->references("id")->on("alunos");
             $table->string("plano_estudo_id");
-            $table->foreign("plano_estudo_id")->references("id")->on("plano_estudo");
+            $table->foreign("plano_estudo_id")->references("id")->on("plano_estudos");
             $table->string("pauta_id");
-            $table->foreign("pauta_id")->references("id")->on("pauta");
+            $table->foreign("pauta_id")->references("id")->on("pautas");
             $table->bigInteger("codigo");
             $table->string("designacao");
         });

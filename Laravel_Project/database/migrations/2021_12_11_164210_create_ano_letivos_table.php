@@ -13,7 +13,7 @@ class CreateAnoLetivosTable extends Migration
      */
     public function up()
     {
-        Schema::create('ano__letivos', function (Blueprint $table) {
+        Schema::create('ano_letivos', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
             $table->year("ano");
