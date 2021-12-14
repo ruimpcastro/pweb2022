@@ -9,23 +9,21 @@ class Curso extends Model
 {
     use HasFactory;
 
-    public function faculadade()
-    {
-        return $this->hasOne(Faculdade::class);
-    }
-
-    public function pautas()
-    {
-        return $this->hasMany(Pauta::class);
-    }
-
     public function plano_estudo()
     {
-        return $this->hasOne(Plano_Estudo::class);
+        return $this->hasOne(PlanoEstudo::class);
     }
 
-    public function alunos()
+    public function createMockData()
     {
-        return $this->hasMany(Aluno::class);
+        $c = new Curso();
+        $c->codigo = 123;
+        $c->designacao = "Informática";
+        $c->save();
+
+        $c = new Curso();
+        $c->codigo = 321;
+        $c->designacao = "Medicina";
+        $c->save();
     }
 }
