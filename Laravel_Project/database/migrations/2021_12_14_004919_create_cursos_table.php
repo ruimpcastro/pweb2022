@@ -15,15 +15,10 @@ class CreateCursosTable extends Migration
     {
         Schema::create('cursos', function (Blueprint $table) {
             $table->id();
+            $table->bigInteger('codigo')->unique();
+            $table->string('designacao')->unique();
             $table->timestamps();
-            $table->string("aluno_id");
-            $table->foreign("aluno_id")->references("id")->on("alunos");
-            $table->string("plano_estudo_id");
-            $table->foreign("plano_estudo_id")->references("id")->on("plano_estudos");
-            $table->string("pauta_id");
-            $table->foreign("pauta_id")->references("id")->on("pautas");
-            $table->bigInteger("codigo");
-            $table->string("designacao");
+
         });
     }
 

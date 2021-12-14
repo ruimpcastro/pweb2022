@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateAnoLetivosTable extends Migration
+class DisciplinaPlanoEstudo extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,7 @@ class CreateAnoLetivosTable extends Migration
      */
     public function up()
     {
-        Schema::create('ano_letivos', function (Blueprint $table) {
-            $table->id();
-            $table->timestamps();
-            $table->year("ano");
-        });
+        //
     }
 
     /**
@@ -27,6 +23,6 @@ class CreateAnoLetivosTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('ano__letivos');
+        //
     }
 }

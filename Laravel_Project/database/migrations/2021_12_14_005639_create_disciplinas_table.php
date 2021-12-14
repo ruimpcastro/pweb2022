@@ -15,15 +15,13 @@ class CreateDisciplinasTable extends Migration
     {
         Schema::create('disciplinas', function (Blueprint $table) {
             $table->id();
+            $table->bigInteger('codigo')->unique();
+            $table->string('designacao')->unique();
+            $table->integer('semestre');
+            $table->unsignedBigInteger('plano_estudo_id');
             $table->timestamps();
-            $table->string("pauta_id");
-            $table->foreign("pauta_id")->references("id")->on("pautas");
-            $table->string("ano_letivo_id");
-            $table->foreign("ano_letivo_id")->references("id")->on("ano_letivos");
-            $table->bigInteger("codigo");
-            $table->string("designacao");
-            $table->integer("semestre");
-            $table->string("plano");
+
+            $table->foreign('plano_estudo_id')->references('id')->on('plano_estudos');
         });
     }
 
