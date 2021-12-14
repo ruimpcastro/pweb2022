@@ -84,4 +84,26 @@ class Disciplina extends Model
         $dg->ano_letivo()->associate($a);
         $dg->save();
     }
+
+    public function mockAssociativeData()
+    {
+        $da = Disciplina::find(1);
+        $db = Disciplina::find(2);
+        $dc = Disciplina::find(3);
+        $dd = Disciplina::find(4);
+        $de = Disciplina::find(5);
+        $df = Disciplina::find(6);
+        $dg = Disciplina::find(7);
+        $pi = PlanoEstudo::find(1);
+        $pm = PlanoEstudo::find(2);
+
+        $da->plano_estudo()->attach($pi);
+        $db->plano_estudo()->attach($pi);
+        $dc->plano_estudo()->attach($pi);
+        $dd->plano_estudo()->attach($pm);
+        $de->plano_estudo()->attach($pm);
+        $df->plano_estudo()->attach($pm);
+        $dg->plano_estudo()->attach($pm);
+        $dg->plano_estudo()->attach($pi);
+    }
 }
