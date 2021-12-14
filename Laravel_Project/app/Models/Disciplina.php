@@ -87,23 +87,26 @@ class Disciplina extends Model
 
     public function mockAssociativeData()
     {
-        $da = Disciplina::find(1);
-        $db = Disciplina::find(2);
-        $dc = Disciplina::find(3);
-        $dd = Disciplina::find(4);
-        $de = Disciplina::find(5);
-        $df = Disciplina::find(6);
-        $dg = Disciplina::find(7);
         $pi = PlanoEstudo::find(1);
         $pm = PlanoEstudo::find(2);
 
+        $da = Disciplina::find(1);
         $da->plano_estudo()->attach($pi);
+        $db = Disciplina::find(2);
         $db->plano_estudo()->attach($pi);
+        $dc = Disciplina::find(3);
         $dc->plano_estudo()->attach($pi);
+        $dd = Disciplina::find(4);
         $dd->plano_estudo()->attach($pm);
+        $de = Disciplina::find(5);
         $de->plano_estudo()->attach($pm);
+        $df = Disciplina::find(6);
         $df->plano_estudo()->attach($pm);
+        $dg = Disciplina::find(7);
         $dg->plano_estudo()->attach($pm);
         $dg->plano_estudo()->attach($pi);
+
+
+
     }
 }
