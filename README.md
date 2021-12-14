@@ -23,7 +23,7 @@ eliminar uma disciplina (desde que não tenham pautas associadas) e listar o
 plano(contendo a informação de cada disciplina).
 
 * **O carregamento de ficheiros de pautas de alunos** (ficheiros em formato
-CSV - [ver anexo](https://moodle2122.uac.pt/course/view.php?id=18993))
+CSV - [ver anexo](https://moodle2122.uac.pt/pluginfile.php/168522/mod_resource/content/0/Progr_Web_2020_2021_1.csv))
 fornecidos pelo Serviço de Gestão Académica. Cada ficheiro tem informação sobre
 o resultado do momento de avaliação de um disciplina. Por exemplo, a disciplina
 de PW terá um ficheiro referente à avaliação por frequência, outro relativamente
