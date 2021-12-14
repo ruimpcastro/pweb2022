@@ -16,6 +16,11 @@ class Aluno extends Model
 
     public function plano_estudo()
     {
-        return $this->hasOne(PlanoEstudo::class);
+        return $this->belongsTo(PlanoEstudo::class);
+    }
+
+    public function createMockData()
+    {
+        //
     }
 }
