@@ -18,10 +18,8 @@ class CreateDisciplinasTable extends Migration
             $table->bigInteger('codigo')->unique();
             $table->string('designacao')->unique();
             $table->integer('semestre');
-            $table->unsignedBigInteger('plano_estudo_id');
             $table->timestamps();
 
-            $table->foreign('plano_estudo_id')->references('id')->on('plano_estudos');
         });
     }
 

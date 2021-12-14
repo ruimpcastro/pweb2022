@@ -13,7 +13,15 @@ class DisciplinaPlanoEstudo extends Migration
      */
     public function up()
     {
-        //
+        Schema::create('disciplina_plano_estudo', function (Blueprint $table) {
+            $table->id();
+            $table->unsignedBigInteger('plano_estudo_id');
+            $table->unsignedBigInteger('disciplina_id');
+            $table->timestamps();
+
+            $table->foreign('plano_estudo_id')->references('id')->on('plano_estudos');
+            $table->foreign('disciplina_id')->references('id')->on('disciplinas');
+        });
     }
 
     /**

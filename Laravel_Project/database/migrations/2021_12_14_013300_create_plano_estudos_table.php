@@ -17,6 +17,8 @@ class CreatePlanoEstudosTable extends Migration
             $table->id();
             $table->unsignedBigInteger('curso_id');
             $table->timestamps();
+
+            $table->foreign('curso_id')->references('id')->on('cursos');
         });
     }
 
