@@ -18,6 +18,7 @@ class CreateDisciplinasTable extends Migration
             $table->bigInteger('codigo')->unique();
             $table->string('designacao')->unique();
             $table->integer('semestre');
+            $table->longText('plano');
             $table->timestamps();
 
         });
