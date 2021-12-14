@@ -19,6 +19,8 @@ class CreateDisciplinasTable extends Migration
             $table->string('designacao')->unique();
             $table->integer('semestre');
             $table->longText('plano');
+            $table->unsignedBigInteger('ano_letivo_id');
+            $table->foreign('ano_letivo_id')->references('id')->on('ano_letivos');
             $table->timestamps();
 
         });

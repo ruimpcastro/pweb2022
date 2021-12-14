@@ -17,9 +17,6 @@ class CreateAnoLetivosTable extends Migration
             $table->id();
             $table->timestamps();
             $table->year('ano');
-            $table->unsignedBigInteger('disciplina_id');
-
-            $table->foreign('disciplina_id')->references('id')->on('disciplinas');
         });
     }
 

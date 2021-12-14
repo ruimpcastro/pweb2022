@@ -16,7 +16,7 @@ class Disciplina extends Model
 
     public function ano_letivo()
     {
-        return $this->hasMany(AnoLetivo::class);
+        return $this->belongsTo(AnoLetivo::class);
     }
 
     public function createMockData()
@@ -26,55 +26,62 @@ class Disciplina extends Model
         $da->designacao = "Programação Web";
         $da->semestre = 1;
         $da->plano = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut diam quam nulla porttitor massa id neque.";
+        $a = AnoLetivo::find(1);
+        $da->ano_letivo()->associate($a);
         $da->save();
-        $da = Disciplina::find(1);
 
         $db = new Disciplina();
         $db->codigo = 911;
         $db->designacao = "PCO";
         $db->semestre = 1;
         $db->plano = "Lorem ipsum dolor sit amet, consectetur adipiscing elit.";
+        $a = AnoLetivo::find(1);
+        $db->ano_letivo()->associate($a);
         $db->save();
-        $db = Disciplina::find(2);
 
         $dc = new Disciplina();
         $dc->codigo = 666;
         $dc->designacao = "Estruturas e Algoritmos";
         $dc->semestre = 2;
         $dc->plano = "Lorem ipsum dolor sit amet.";
+        $a = AnoLetivo::find(1);
+        $dc->ano_letivo()->associate($a);
         $dc->save();
-        $dc = Disciplina::find(3);
 
         $dd = new Disciplina();
         $dd->codigo = 123;
         $dd->designacao = "Fisiologia";
         $dd->semestre = 2;
         $dd->plano = "Lorem ipsum.";
+        $a = AnoLetivo::find(1);
+        $dd->ano_letivo()->associate($a);
         $dd->save();
-        $dd = Disciplina::find(4);
 
         $de = new Disciplina();
         $de->codigo = 400;
         $de->designacao = "Bio-Quimica";
         $de->semestre = 2;
         $de->plano = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Pretium vulputate sapien nec sagittis aliquam malesuada.";
+        $a = AnoLetivo::find(1);
+        $de->ano_letivo()->associate($a);
         $de->save();
-        $de = Disciplina::find(5);
 
         $df = new Disciplina();
         $df->codigo = 234;
         $df->designacao = "Anatomia";
         $df->semestre = 1;
         $df->plano = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.";
+        $a = AnoLetivo::find(1);
+        $df->ano_letivo()->associate($a);
         $df->save();
-        $df = Disciplina::find(6);
 
         $dg = new Disciplina();
         $dg->codigo = 333;
         $dg->designacao = "Probabilidade e Estatistica";
         $dg->semestre = 1;
         $dg->plano = "Pretium vulputate sapien nec sagittis aliquam malesuada.";
+        $a = AnoLetivo::find(1);
+        $dg->ano_letivo()->associate($a);
         $dg->save();
-        $dg = Disciplina::find(7);
     }
 }

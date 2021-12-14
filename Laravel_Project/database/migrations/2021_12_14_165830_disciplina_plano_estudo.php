@@ -31,6 +31,6 @@ class DisciplinaPlanoEstudo extends Migration
      */
     public function down()
     {
-        //
+        Schema::dropIfExists('disciplina_plano_estudo');
     }
 }
