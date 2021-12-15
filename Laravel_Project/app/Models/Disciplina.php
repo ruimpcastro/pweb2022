@@ -31,7 +31,7 @@ class Disciplina extends Model
 
     public function resultado()
     {
-        return $this->hasOne(Resultado::class);
+        return $this->hasMany(Resultado::class);
     }
 
     public function createMockData()

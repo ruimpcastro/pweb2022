@@ -11,6 +11,16 @@ class Resultado extends Model
 
     public function aluno()
     {
-        return $this->hasMany(Aluno::class);
+        return $this->belongsTo(Aluno::class);
+    }
+
+    public function pauta()
+    {
+        return $this->belongsTo(Pauta::class);
+    }
+
+    public function disciplina()
+    {
+        return $this->belongsTo(Disciplina::class);
     }
 }

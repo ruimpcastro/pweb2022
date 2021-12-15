@@ -17,10 +17,13 @@ class CreateResultadosTable extends Migration
             $table->id();
             $table->timestamps();
             $table->decimal('avaliacao');
+            $table->boolean('presenca');
             $table->unsignedBigInteger('disciplina_id');
-            $table->unsignedBigInteger('pauta_id');
+            $table->unsignedBigInteger('aluno_id')->nullable();
+            $table->unsignedBigInteger('pauta_id')->nullable();
 
             $table->foreign('disciplina_id')->references('id')->on('disciplinas');
+            $table->foreign('aluno_id')->references('id')->on('alunos');
             $table->foreign('pauta_id')->references('id')->on('pautas');
         });
     }
