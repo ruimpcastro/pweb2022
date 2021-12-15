@@ -19,6 +19,11 @@ class Disciplina extends Model
         return $this->belongsTo(AnoLetivo::class);
     }
 
+    public function alunos()
+    {
+        return $this->belongsToMany(Aluno::class);
+    }
+
     public function createMockData()
     {
         $da = new Disciplina();

@@ -9,14 +9,14 @@ class Aluno extends Model
 {
     use HasFactory;
 
-    public function ano_letivo()
-    {
-        return $this->hasMany(AnoLetivo::class);
-    }
-
     public function plano_estudo()
     {
         return $this->belongsTo(PlanoEstudo::class);
+    }
+
+    public function disciplinas()
+    {
+        return $this->belongsToMany(Disciplina::class);
     }
 
     public function createMockData()
