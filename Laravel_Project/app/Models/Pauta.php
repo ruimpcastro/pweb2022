@@ -9,6 +9,11 @@ class Pauta extends Model
 {
     use HasFactory;
 
+    public function resultado()
+    {
+        return $this->hasMany(Resultado::class);
+    }
+
     public function createMockData()
     {
         $da = Disciplina::find(1);

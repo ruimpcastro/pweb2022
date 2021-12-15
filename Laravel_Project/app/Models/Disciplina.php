@@ -29,6 +29,11 @@ class Disciplina extends Model
         return $this->belongsToMany(Aluno::class);
     }
 
+    public function resultado()
+    {
+        return $this->hasOne(Resultado::class);
+    }
+
     public function createMockData()
     {
         $da = new Disciplina();
