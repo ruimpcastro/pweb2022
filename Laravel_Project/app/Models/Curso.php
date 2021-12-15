@@ -14,6 +14,29 @@ class Curso extends Model
         return $this->hasOne(PlanoEstudo::class);
     }
 
+    public function bigBang()
+    {
+        //Generates every data for the DB
+        $c = new Curso();
+        $c->createMockData();
+
+        $p = new PlanoEstudo();
+        $p->createMockData(1);
+        $p->createMockData(2);
+
+        $a= new AnoLetivo();
+        $a->createMockData();
+
+        $d = new Disciplina();
+        $d->createMockData();
+        $d->createMockAssociativeData();
+
+        $a = new Aluno();
+        $a->createMockData();
+        $a->createMockAssociativeData();
+
+    }
+
     public function createMockData()
     {
         $c = new Curso();
