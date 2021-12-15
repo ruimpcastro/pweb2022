@@ -18,6 +18,10 @@ class CreatePautasTable extends Migration
             $table->timestamps();
             $table->bigInteger('chave')->unique();
             $table->string('designacao');
+            $table->boolean('dirty');
+            $table->unsignedBigInteger('disciplina_id');
+
+            $table->foreign('disciplina_id')->references('id')->on('disciplinas')->onDelete('restrict');
         });
     }
 

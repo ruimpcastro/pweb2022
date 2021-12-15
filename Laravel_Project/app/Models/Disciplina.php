@@ -9,6 +9,11 @@ class Disciplina extends Model
 {
     use HasFactory;
 
+    public function pauta()
+    {
+        return $this->hasMany(Pauta::class);
+    }
+
     public function plano_estudo()
     {
         return $this->belongsToMany(PlanoEstudo::class);
