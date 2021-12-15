@@ -29,6 +29,7 @@ class Aluno extends Model
         $aa->nome = "Rui";
         $aa->matricula = 3;
         $aa->desistente = 0;
+        $aa->concluiu_curso = 0;
         $aa->curso()->associate($ci);
         $aa->save();
 
@@ -37,6 +38,7 @@ class Aluno extends Model
         $ab->nome = "Lúcifer Estrela da Manhã";
         $ab->matricula = 3;
         $ab->desistente = 0;
+        $ab->concluiu_curso = 0;
         $ab->curso()->associate($ci);
         $ab->save();
 
@@ -45,6 +47,7 @@ class Aluno extends Model
         $ac->nome = "Luís";
         $ac->matricula = 1;
         $ac->desistente = 0;
+        $ac->concluiu_curso = 0;
         $ac->curso()->associate($ci);
         $ac->save();
 
@@ -53,6 +56,7 @@ class Aluno extends Model
         $ad->nome = "Mário";
         $ad->matricula = 2;
         $ad->desistente = 0;
+        $ad->concluiu_curso = 0;
         $ad->curso()->associate($cm);
         $ad->save();
 
@@ -61,6 +65,7 @@ class Aluno extends Model
         $ae->nome = "Luciano Estrela da Noite";
         $ae->matricula = 1;
         $ae->desistente = 0;
+        $ae->concluiu_curso = 0;
         $ae->curso()->associate($cm);
         $ae->save();
 
@@ -69,6 +74,7 @@ class Aluno extends Model
         $af->nome = "Gaspar";
         $af->matricula = 1;
         $af->desistente = 0;
+        $af->concluiu_curso = 0;
         $af->curso()->associate($cm);
         $af->save();
 
@@ -77,6 +83,7 @@ class Aluno extends Model
         $ag->nome = "Freud";
         $ag->matricula = 1;
         $ag->desistente = 1;
+        $ag->concluiu_curso = 0;
         $ag->curso()->associate($cm);
         $ag->save();
     }

@@ -38,6 +38,9 @@ class Curso extends Model
         $p = new Pauta();
         $p->createMockData();
 
+        $r = new Resultado();
+        $r->createMockData();
+
     }
 
     public function createMockData()

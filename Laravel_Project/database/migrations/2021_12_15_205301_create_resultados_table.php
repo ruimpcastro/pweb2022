@@ -16,8 +16,8 @@ class CreateResultadosTable extends Migration
         Schema::create('resultados', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
-            $table->decimal('avaliacao');
             $table->boolean('presenca');
+            $table->decimal('avaliacao')->nullable();
             $table->unsignedBigInteger('disciplina_id');
             $table->unsignedBigInteger('aluno_id')->nullable();
             $table->unsignedBigInteger('pauta_id')->nullable();

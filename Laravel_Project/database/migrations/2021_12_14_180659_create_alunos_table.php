@@ -20,6 +20,7 @@ class CreateAlunosTable extends Migration
             $table->string('nome');
             $table->integer('matricula');
             $table->boolean('desistente');
+            $table->boolean('concluiu_curso');
             $table->unsignedBigInteger('disciplina_id')->nullable();
             $table->unsignedBigInteger('curso_id')->nullable();
 
