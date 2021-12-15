@@ -17,6 +17,7 @@ class AlunoDisciplina extends Migration
             $table->id();
             $table->unsignedBigInteger('aluno_id');
             $table->unsignedBigInteger('disciplina_id');
+            $table->integer('matriculas')->nullable();
             $table->timestamps();
 
             $table->foreign('aluno_id')->references('id')->on('alunos');

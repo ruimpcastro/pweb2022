@@ -90,7 +90,7 @@ class Disciplina extends Model
         $dg->save();
     }
 
-    public function mockAssociativeData()
+    public function createMockAssociativeData()
     {
         $pi = PlanoEstudo::find(1);
         $pm = PlanoEstudo::find(2);
