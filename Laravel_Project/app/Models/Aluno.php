@@ -9,27 +9,27 @@ class Aluno extends Model
 {
     use HasFactory;
 
-    public function plano_estudo()
-    {
-        return $this->belongsTo(PlanoEstudo::class);
-    }
-
     public function disciplinas()
     {
         return $this->belongsToMany(Disciplina::class);
     }
 
+    public function curso()
+    {
+        return $this->belongsTo(Curso::class);
+    }
+
     public function createMockData()
     {
-        $pi = PlanoEstudo::find(1);
-        $pm = PlanoEstudo::find(2);
+        $ci = Curso::find(1);
+        $cm = Curso::find(2);
 
         $aa = new Aluno();
         $aa->numero_aluno = 20210101;
         $aa->nome = "Rui";
         $aa->matricula = 3;
         $aa->desistente = 0;
-        $aa->plano_estudo()->associate($pi);
+        $aa->curso()->associate($ci);
         $aa->save();
 
         $ab = new Aluno();
@@ -37,7 +37,7 @@ class Aluno extends Model
         $ab->nome = "Lúcifer Estrela da Manhã";
         $ab->matricula = 3;
         $ab->desistente = 0;
-        $ab->plano_estudo()->associate($pi);
+        $ab->curso()->associate($ci);
         $ab->save();
 
         $ac = new Aluno();
@@ -45,7 +45,7 @@ class Aluno extends Model
         $ac->nome = "Luís";
         $ac->matricula = 1;
         $ac->desistente = 0;
-        $ac->plano_estudo()->associate($pi);
+        $ac->curso()->associate($ci);
         $ac->save();
 
         $ad = new Aluno();
@@ -53,7 +53,7 @@ class Aluno extends Model
         $ad->nome = "Mário";
         $ad->matricula = 2;
         $ad->desistente = 0;
-        $ad->plano_estudo()->associate($pm);
+        $ad->curso()->associate($cm);
         $ad->save();
 
         $ae = new Aluno();
@@ -61,7 +61,7 @@ class Aluno extends Model
         $ae->nome = "Luciano Estrela da Noite";
         $ae->matricula = 1;
         $ae->desistente = 0;
-        $ae->plano_estudo()->associate($pm);
+        $ae->curso()->associate($cm);
         $ae->save();
 
         $af = new Aluno();
@@ -69,7 +69,7 @@ class Aluno extends Model
         $af->nome = "Gaspar";
         $af->matricula = 1;
         $af->desistente = 0;
-        $af->plano_estudo()->associate($pm);
+        $af->curso()->associate($cm);
         $af->save();
 
         $ag = new Aluno();
@@ -77,7 +77,7 @@ class Aluno extends Model
         $ag->nome = "Freud";
         $ag->matricula = 1;
         $ag->desistente = 1;
-        $ag->plano_estudo()->associate($pm);
+        $ag->curso()->associate($cm);
         $ag->save();
     }
 
