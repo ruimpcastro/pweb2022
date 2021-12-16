@@ -18,3 +18,4 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/cursos', [CursoController::class, 'index']);
 Route::get('/cursos/{id}', [CursoController::class, 'show']);
+Route::delete('/cursos/{id}', [CursoController::class, 'destroy']);
