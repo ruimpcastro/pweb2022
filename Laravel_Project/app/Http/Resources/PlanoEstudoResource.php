@@ -4,11 +4,9 @@ namespace App\Http\Resources;
 
 use Illuminate\Http\Resources\Json\JsonResource;
 
-class CursoResource extends JsonResource
+class PlanoEstudoResource extends JsonResource
 {
-
-    private $codigo;
-    private $designacao;
+    private $curso_id;
     /**
      * Transform the resource into an array.
      *
@@ -17,9 +15,8 @@ class CursoResource extends JsonResource
      */
     public function toArray($request)
     {
-         [
-            'codigo' => $codigo,
-            'designacao' => $designacao,
+        [
+            'curso_id' => $curso_id,
         ];
     }
 }
