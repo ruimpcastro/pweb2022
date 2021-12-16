@@ -47,8 +47,7 @@ class CursoController extends Controller
      */
     public function show($id)
     {
-        $c = Curso::find(1);
-        return $c;
+        return Curso::find($id);
     }
 
     /**
@@ -82,6 +81,6 @@ class CursoController extends Controller
      */
     public function destroy($id)
     {
-        //
+        return Curso::destroy($id);
     }
 }
