@@ -1,6 +1,11 @@
 <?php
 
+use App\Http\Controllers\AlunoController;
 use App\Http\Controllers\CursoController;
+use App\Http\Controllers\DisciplinaController;
+use App\Http\Controllers\PautaController;
+use App\Http\Controllers\PlanoEstudoController;
+use App\Http\Controllers\ResultadoController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -31,9 +36,9 @@ Route::get('/pautas', [PautaController::class, 'index']);
 Route::get('/pauta/{id}', [PautaController::class, 'show']);
 Route::delete('/pauta/{id}', [PautaController::class, 'destroy']);
 
-Route::get('/planos', [PlanoController::class, 'index']);
-Route::get('/plano/{id}', [PlanoController::class, 'show']);
-Route::delete('/plano/{id}', [PlanoController::class, 'destroy']);
+Route::get('/planos', [PlanoEstudoController::class, 'index']);
+Route::get('/plano/{id}', [PlanoEstudoController::class, 'show']);
+Route::delete('/plano/{id}', [PlanoEstudoController::class, 'destroy']);
 
 Route::get('/resultados', [ResultadoController::class, 'index']);
 Route::get('/resultado/{id}', [ResultadoController::class, 'show']);
