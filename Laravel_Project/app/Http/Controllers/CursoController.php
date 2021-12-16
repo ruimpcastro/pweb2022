@@ -4,7 +4,10 @@ namespace App\Http\Controllers;
 
 //use App\Models\Curso;
 use App\Models\Curso;
+use App\Models\Resultado;
 use Illuminate\Http\Request;
+
+
 
 class CursoController extends Controller
 {
