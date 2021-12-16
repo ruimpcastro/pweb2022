@@ -14,7 +14,7 @@ class Curso extends Model
         return $this->hasOne(PlanoEstudo::class);
     }
 
-    public function bigBang()
+    public static function bigBang()
     {
         //Generates every data for the DB
         $c = new Curso();

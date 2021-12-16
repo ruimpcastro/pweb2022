@@ -11,12 +11,17 @@ class Aluno extends Model
 
     public function disciplinas()
     {
-        return $this->belongsToMany(Disciplina::class);
+        return $this->belongsToMany(Disciplina::class)->using(Matricula::class);
     }
 
     public function curso()
     {
         return $this->belongsTo(Curso::class);
+    }
+
+    public function plano_estudo()
+    {
+        return $this->belongsTo(PlanoEstudo::class);
     }
 
     public function createMockData()
