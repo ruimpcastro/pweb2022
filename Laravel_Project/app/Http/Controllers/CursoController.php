@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+//use App\Models\Curso;
 use App\Models\Curso;
 use Illuminate\Http\Request;
 
@@ -14,7 +15,7 @@ class CursoController extends Controller
      */
     public function index()
     {
-        //
+        return Curso::all();
     }
 
     /**
@@ -46,7 +47,8 @@ class CursoController extends Controller
      */
     public function show($id)
     {
-        return Curso::find($id);
+        $c = Curso::find(1);
+        return $c;
     }
 
     /**
@@ -57,8 +59,7 @@ class CursoController extends Controller
      */
     public function edit($id)
     {
-       //
-
+        //
     }
 
     /**

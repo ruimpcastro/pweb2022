@@ -1,8 +1,6 @@
 <?php
 
 use App\Http\Controllers\CursoController;
-use App\Http\Resources\CursoResource;
-use App\Models\Curso;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -17,12 +15,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-    return $request->user();
 
-
-});
-
-Route::get("/cursos/{id}", [CursoController::class,"show"]);
-
-
+Route::get('/cursos', [CursoController::class, 'index']);
+Route::get('/cursos/{id}', [CursoController::class, 'show']);
