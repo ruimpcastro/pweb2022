@@ -29,6 +29,9 @@ class Aluno extends Model
         $ci = Curso::find(1);
         $cm = Curso::find(2);
 
+        $pi = PlanoEstudo::find(1);
+        $pm = Planoestudo::find(2);
+
         $aa = new Aluno();
         $aa->numero_aluno = 20210101;
         $aa->nome = "Rui";
@@ -36,6 +39,7 @@ class Aluno extends Model
         $aa->desistente = 0;
         $aa->concluiu_curso = 0;
         $aa->curso()->associate($ci);
+        $aa->plano_estudo()->associate($pi);
         $aa->save();
 
         $ab = new Aluno();
@@ -45,6 +49,7 @@ class Aluno extends Model
         $ab->desistente = 0;
         $ab->concluiu_curso = 0;
         $ab->curso()->associate($ci);
+        $aa->plano_estudo()->associate($pi);
         $ab->save();
 
         $ac = new Aluno();
@@ -54,6 +59,7 @@ class Aluno extends Model
         $ac->desistente = 0;
         $ac->concluiu_curso = 0;
         $ac->curso()->associate($ci);
+        $aa->plano_estudo()->associate($pi);
         $ac->save();
 
         $ad = new Aluno();
@@ -63,6 +69,7 @@ class Aluno extends Model
         $ad->desistente = 0;
         $ad->concluiu_curso = 0;
         $ad->curso()->associate($cm);
+        $aa->plano_estudo()->associate($pm);
         $ad->save();
 
         $ae = new Aluno();
@@ -72,6 +79,7 @@ class Aluno extends Model
         $ae->desistente = 0;
         $ae->concluiu_curso = 0;
         $ae->curso()->associate($cm);
+        $aa->plano_estudo()->associate($pm);
         $ae->save();
 
         $af = new Aluno();
@@ -81,6 +89,7 @@ class Aluno extends Model
         $af->desistente = 0;
         $af->concluiu_curso = 0;
         $af->curso()->associate($cm);
+        $aa->plano_estudo()->associate($pm);
         $af->save();
 
         $ag = new Aluno();
@@ -90,6 +99,7 @@ class Aluno extends Model
         $ag->desistente = 1;
         $ag->concluiu_curso = 0;
         $ag->curso()->associate($cm);
+        $aa->plano_estudo()->associate($pm);
         $ag->save();
     }
 
