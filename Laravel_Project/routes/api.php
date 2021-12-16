@@ -15,27 +15,27 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/alunos', [CursoController::class, 'index']);
-Route::get('/aluno/{id}', [CursoController::class, 'show']);
-Route::delete('/aluno/{id}', [CursoController::class, 'destroy']);
+Route::get('/alunos', [AlunoController::class, 'index']);
+Route::get('/aluno/{id}', [AlunoController::class, 'show']);
+Route::delete('/aluno/{id}', [AlunoController::class, 'destroy']);
 
 Route::get('/cursos', [CursoController::class, 'index']);
 Route::get('/curso/{id}', [CursoController::class, 'show']);
 Route::delete('/curso/{id}', [CursoController::class, 'destroy']);
 
-Route::get('/disciplinas', [CursoController::class, 'index']);
-Route::get('/disciplina/{id}', [CursoController::class, 'show']);
-Route::delete('/disciplina/{id}', [CursoController::class, 'destroy']);
+Route::get('/disciplinas', [DisciplinaController::class, 'index']);
+Route::get('/disciplina/{id}', [DisciplinaController::class, 'show']);
+Route::delete('/disciplina/{id}', [DisciplinaController::class, 'destroy']);
 
-Route::get('/pautas', [CursoController::class, 'index']);
-Route::get('/pauta/{id}', [CursoController::class, 'show']);
-Route::delete('/pauta/{id}', [CursoController::class, 'destroy']);
+Route::get('/pautas', [PautaController::class, 'index']);
+Route::get('/pauta/{id}', [PautaController::class, 'show']);
+Route::delete('/pauta/{id}', [PautaController::class, 'destroy']);
 
-Route::get('/planos', [CursoController::class, 'index']);
-Route::get('/plano/{id}', [CursoController::class, 'show']);
-Route::delete('/plano/{id}', [CursoController::class, 'destroy']);
+Route::get('/planos', [PlanoController::class, 'index']);
+Route::get('/plano/{id}', [PlanoController::class, 'show']);
+Route::delete('/plano/{id}', [PlanoController::class, 'destroy']);
 
-Route::get('/resultados', [CursoController::class, 'index']);
-Route::get('/resultado/{id}', [CursoController::class, 'show']);
-Route::delete('/resultado/{id}', [CursoController::class, 'destroy']);
+Route::get('/resultados', [ResultadoController::class, 'index']);
+Route::get('/resultado/{id}', [ResultadoController::class, 'show']);
+Route::delete('/resultado/{id}', [ResultadoController::class, 'destroy']);
 
