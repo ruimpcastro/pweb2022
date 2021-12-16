@@ -15,7 +15,7 @@ class PlanoEstudoResource extends JsonResource
      */
     public function toArray($request)
     {
-        [
+        return [
             'curso_id' => $curso_id,
         ];
     }

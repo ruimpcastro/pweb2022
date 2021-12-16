@@ -17,7 +17,7 @@ class ResultadoResource extends JsonResource
      */
     public function toArray($request)
     {
-        [
+        return [
             'avalicao' => $avalicao,
             'disciplina_id' => $disciplina_id,
             'pauta_id' => $pauta_id,

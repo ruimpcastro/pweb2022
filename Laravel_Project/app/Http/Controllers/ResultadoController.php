@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Resultado;
 use Illuminate\Http\Request;
 
 class ResultadoController extends Controller
@@ -13,7 +14,7 @@ class ResultadoController extends Controller
      */
     public function index()
     {
-        //
+        return Resultado::all();
     }
 
     /**
@@ -45,7 +46,7 @@ class ResultadoController extends Controller
      */
     public function show($id)
     {
-        //
+        return Resultado::find($id);
     }
 
     /**
@@ -79,6 +80,6 @@ class ResultadoController extends Controller
      */
     public function destroy($id)
     {
-        //
+        return Resultado::destroy($id);
     }
 }

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Disciplina;
 use Illuminate\Http\Request;
 
 class DisciplinaController extends Controller
@@ -13,7 +14,7 @@ class DisciplinaController extends Controller
      */
     public function index()
     {
-        //
+        return Disciplina::all();
     }
 
     /**
@@ -45,7 +46,7 @@ class DisciplinaController extends Controller
      */
     public function show($id)
     {
-        //
+        return Disciplina::find($id);
     }
 
     /**
@@ -79,6 +80,6 @@ class DisciplinaController extends Controller
      */
     public function destroy($id)
     {
-        //
+        return Disciplina::destroy($id);
     }
 }

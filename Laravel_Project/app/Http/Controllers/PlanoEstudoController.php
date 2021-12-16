@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\PlanoEstudo;
 use Illuminate\Http\Request;
 
 class PlanoEstudoController extends Controller
@@ -13,8 +14,9 @@ class PlanoEstudoController extends Controller
      */
     public function index()
     {
-        //
+        return PlanoEstudo::all();
     }
+
 
     /**
      * Show the form for creating a new resource.
@@ -45,7 +47,7 @@ class PlanoEstudoController extends Controller
      */
     public function show($id)
     {
-        //
+        return PlanoEstudo::find($id);
     }
 
     /**
@@ -79,6 +81,7 @@ class PlanoEstudoController extends Controller
      */
     public function destroy($id)
     {
-        //
+        return PlanoEstudo::destroy($id);
     }
+
 }

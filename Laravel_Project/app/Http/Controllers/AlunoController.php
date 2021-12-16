@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Aluno;
 use Illuminate\Http\Request;
 
 class AlunoController extends Controller
@@ -13,7 +14,7 @@ class AlunoController extends Controller
      */
     public function index()
     {
-        //
+        return Aluno::all();
     }
 
     /**
@@ -45,7 +46,7 @@ class AlunoController extends Controller
      */
     public function show($id)
     {
-        //
+        return Aluno::find($id);
     }
 
     /**
@@ -79,6 +80,6 @@ class AlunoController extends Controller
      */
     public function destroy($id)
     {
-        //
+        return Aluno::destroy($id);
     }
 }

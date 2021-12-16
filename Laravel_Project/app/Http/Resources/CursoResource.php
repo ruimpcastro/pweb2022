@@ -17,7 +17,7 @@ class CursoResource extends JsonResource
      */
     public function toArray($request)
     {
-         [
+         return [
             'codigo' => $codigo,
             'designacao' => $designacao,
         ];

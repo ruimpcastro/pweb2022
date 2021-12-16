@@ -19,7 +19,7 @@ class PautaResource extends JsonResource
      */
     public function toArray($request)
     {
-        [
+        return [
             'chave' => $chave,
             'designacao' => $designacao,
             'dirty' => $dirty,

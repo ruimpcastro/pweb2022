@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Pauta;
 use Illuminate\Http\Request;
 
 class PautaController extends Controller
@@ -13,7 +14,7 @@ class PautaController extends Controller
      */
     public function index()
     {
-        //
+        return Pauta::all();
     }
 
     /**
@@ -45,7 +46,7 @@ class PautaController extends Controller
      */
     public function show($id)
     {
-        //
+        return Pauta::find($id);
     }
 
     /**
@@ -79,6 +80,6 @@ class PautaController extends Controller
      */
     public function destroy($id)
     {
-        //
+        return Pauta::destroy($id);
     }
 }
