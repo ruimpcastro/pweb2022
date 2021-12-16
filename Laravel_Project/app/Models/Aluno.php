@@ -11,7 +11,7 @@ class Aluno extends Model
 
     public function disciplinas()
     {
-        return $this->belongsToMany(Disciplina::class)->using(Matricula::class);
+        return $this->belongsToMany(Disciplina::class);
     }
 
     public function curso()
