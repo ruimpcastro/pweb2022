@@ -19,14 +19,15 @@ class CreateAlunosTable extends Migration
             $table->bigInteger('numero_aluno');
             $table->string('nome');
             $table->integer('matricula');
-            $table->integer('inscricao_disciplina')->default('0');
             $table->boolean('desistente');
             $table->boolean('concluiu_curso');
             $table->unsignedBigInteger('curso_id')->nullable();
             $table->unsignedBigInteger('plano_estudo_id')->nullable();
+            $table->unsignedBigInteger('pauta_id')->nullable();
 
             $table->foreign('curso_id')->references('id')->on('cursos');
             $table->foreign('plano_estudo_id')->references('id')->on('plano_estudos');
+            $table->foreign('pauta_id')->references('id')->on('pautas');
         });
     }
 
