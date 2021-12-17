@@ -1,15 +1,31 @@
 <?php
 
-use App\Models\Curso;
-use App\Models\PlanoEstudo;
+namespace App\domain;
 
-class CursoHandler
+use App\Models\Curso;
+use Illuminate\Database\Eloquent\Collection;
+
+namespace App\Domain;
+class CursosHandler
 {
-    public static function createCurso(int $codigo, string $designacao)
+
+    public function createCurso(int $codigo, string $designacao,
+                               OfertaLetiva $ofertaLetiva): Curso
     {
-        $c = new Curso();
-        $c->codigo = $codigo;
-        $c->designacao = $designacao;
-        $c->save();
+        return $ofertaLetiva->criarCurso($codigo, $designacao);
+    }
+
+    public function getCurso(int $codigo): Curso
+    {
+        $ofertaLetiva = new OfertaLetiva();
+//        return new CursoDTO($ofertaLetiva->obterCurso($codigo));
+        return $ofertaLetiva->getCurso($codigo);
+    }
+
+    public function getCursos(): Collection
+    {
+        $ofertaLetiva = new OfertaLetiva();
+        return $ofertaLetiva->getCursos();
     }
 }
+
