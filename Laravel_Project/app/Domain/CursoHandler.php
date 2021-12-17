@@ -9,18 +9,18 @@ use Illuminate\Database\Eloquent\Collection;
 class CursoHandler
 {
 
-    public function createCurso(int $codigo, string $designacao, OfertaLetiva $ofertaLetiva): Curso
+    public static function createCurso(int $codigo, string $designacao, OfertaLetiva $ofertaLetiva): Curso
     {
         return $ofertaLetiva->createCurso($codigo, $designacao);
     }
 
-    public function getCurso(int $codigo): Curso
+    public static function getCurso(int $codigo): Curso
     {
         $ofertaLetiva = new OfertaLetiva();
         return $ofertaLetiva->getCurso($codigo);
     }
 
-    public function getCursos(): Collection
+    public static function getCursos(): Collection
     {
         $ofertaLetiva = new OfertaLetiva();
         return $ofertaLetiva->getCursos();

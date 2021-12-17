@@ -14,7 +14,7 @@ class AnoLetivo extends Model
         return $this->hasOne(Disciplina::class);
     }
 
-    public function createMockData()
+    public static function createMockData()
     {
         $y = new AnoLetivo();
         $y->ano = 2021;

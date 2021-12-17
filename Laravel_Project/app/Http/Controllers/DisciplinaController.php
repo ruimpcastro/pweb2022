@@ -18,7 +18,7 @@ class DisciplinaController extends Controller
      */
     public function index(DisciplinaHandler $dh)
     {
-        $d = $dh->getDisciplinas();
+        $d = $dh::getDisciplinas();
         return response(new DisciplinaCollection($d));
     }
 
@@ -52,7 +52,7 @@ class DisciplinaController extends Controller
     public function show($id)
     {
         $dh = new DisciplinaHandler();
-        $d = $dh->getDisciplina($id);
+        $d = $dh::getDisciplina($id);
         return new DisciplinaResource($d);
     }
 

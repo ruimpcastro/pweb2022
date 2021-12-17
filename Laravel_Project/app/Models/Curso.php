@@ -14,7 +14,7 @@ class Curso extends Model
         return $this->hasOne(PlanoEstudo::class);
     }
 
-    public function createMockData()
+    public static function createMockData()
     {
         $c = new Curso();
         $c->codigo = 123;

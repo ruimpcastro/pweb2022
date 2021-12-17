@@ -9,7 +9,7 @@ use Illuminate\Database\Eloquent\Collection;
 class Cadeira
 {
 
-    public function createDisciplina(int $codigo, string $designacao, int $semestre, string $plano): Disciplina
+    public static function createDisciplina(int $codigo, string $designacao, int $semestre, string $plano): Disciplina
     {
         $d = new Disciplina();
         $a = new AnoLetivo();
@@ -23,17 +23,17 @@ class Cadeira
 
     }
 
-    public function getDisciplina(int $codigo): Disciplina
+    public static function getDisciplina(int $codigo): Disciplina
     {
         return Disciplina::where('codigo', $codigo)->first();
     }
 
-    public function getDisciplinas(): Collection
+    public static function getDisciplinas(): Collection
     {
         return Disciplina::all();
     }
 
-    public function associarAnoLetivo(int $codigoDisciplina, int $anoLetivo): Disciplina
+    public static function associarAnoLetivo(int $codigoDisciplina, int $anoLetivo): Disciplina
     {
         $d = Disciplina::where('codigo', $codigoDisciplina)->first();
         $a = AnoLetivo::where('ano', $anoLetivo)->first();

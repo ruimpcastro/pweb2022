@@ -34,7 +34,7 @@ class Disciplina extends Model
         return $this->hasMany(Resultado::class);
     }
 
-    public function createMockData()
+    public static function createMockData()
     {
         $da = new Disciplina();
         $da->codigo = 112;
@@ -100,7 +100,7 @@ class Disciplina extends Model
         $dg->save();
     }
 
-    public function createMockAssociativeData()
+    public static function createMockAssociativeData()
     {
         $pi = PlanoEstudo::find(1);
         $pm = PlanoEstudo::find(2);

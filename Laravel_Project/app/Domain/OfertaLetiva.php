@@ -9,7 +9,7 @@ use Illuminate\Database\Eloquent\Collection;
 class OfertaLetiva
 {
 
-    public function createCurso(int $codigo, string $designacao): Curso
+    public static function createCurso(int $codigo, string $designacao): Curso
     {
         $c = new Curso();
         $c->codigo = $codigo;
@@ -21,12 +21,12 @@ class OfertaLetiva
 
     }
 
-    public function getCurso(int $codigo): Curso
+    public static function getCurso(int $codigo): Curso
     {
         return Curso::where('codigo', $codigo)->first();
     }
 
-    public function getCursos(): Collection
+    public static function getCursos(): Collection
     {
         return Curso::all();
     }

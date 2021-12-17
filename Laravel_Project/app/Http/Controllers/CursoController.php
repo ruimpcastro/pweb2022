@@ -20,7 +20,7 @@ class CursoController extends Controller
      */
     public function index(CursoHandler $ch)
     {
-        $c = $ch->getCursos();
+        $c = $ch::getCursos();
         return response(new CursoCollection($c));
     }
 
@@ -54,7 +54,7 @@ class CursoController extends Controller
     public function show($id)
     {
         $ch = new CursoHandler();
-        $c = $ch->getCurso($id);
+        $c = $ch::getCurso($id);
         return new CursoResource($c);
     }
 

@@ -14,7 +14,7 @@ class PlanoEstudo extends Model
         return $this->belongsToMany(Disciplina::class);
     }
 
-    public function createMockData(int $n)
+    public static function createMockData(int $n)
     {
         $p = new PlanoEstudo();
         $c = Curso::find($n);

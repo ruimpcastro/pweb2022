@@ -8,6 +8,7 @@ use App\Models\Curso;
 use App\Models\Disciplina;
 use App\Models\Pauta;
 use App\Models\PlanoEstudo;
+use App\Models\Resultado;
 
 class BigBang
 {
@@ -15,24 +16,27 @@ class BigBang
     {
         //Generates every data for the DB
         $c = new Curso();
-        $c->createMockData();
+        $c::createMockData();
 
         $p = new PlanoEstudo();
-        $p->createMockData(1);
-        $p->createMockData(2);
+        $p::createMockData(1);
+        $p::createMockData(2);
 
         $a= new AnoLetivo();
-        $a->createMockData();
+        $a::createMockData();
 
         $d = new Disciplina();
-        $d->createMockData();
-        $d->createMockAssociativeData();
+        $d::createMockData();
+        $d::createMockAssociativeData();
 
         $a = new Aluno();
-        $a->createMockData();
-        $a->createMockAssociativeData();
+        $a::createMockData();
+        $a::createMockAssociativeData();
 
         $p = new Pauta();
-        $p->createMockData();
+        $p::createMockData();
+
+        $r = new Resultado();
+        $r::createMockData();
     }
 }
