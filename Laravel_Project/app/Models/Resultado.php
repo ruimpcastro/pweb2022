@@ -9,37 +9,28 @@ class Resultado extends Model
 {
     use HasFactory;
 
-    public function aluno()
-    {
-        return $this->belongsTo(Aluno::class);
-    }
+
 
     public function pauta()
     {
         return $this->belongsTo(Pauta::class);
     }
-
-    public function disciplina()
+    public function aluno()
     {
-        return $this->belongsTo(Disciplina::class);
+        return $this->belongsToMany(Aluno::class);
     }
 
-    public function createMockData()
+    public static function createMockData()
     {
         $r = new Resultado();
-        $r->avaliacao = 16.5;
-        $r->presenca = 1;
-
-        $d = Disciplina::find(2);
-        $a = Aluno::find(1);
-        $p = Pauta::find(1);
-
-        $r->disciplina()->associate($d);
-        $r->aluno()->associate($a);
+        $r->resultado = "16.5";
+        $a = Aluno::find(2);
+        $p = Pauta::find(2);
         $r->pauta()->associate($p);
         $r->save();
+        $r->aluno()->attach($a);
 
-
+        /*
         $r = new Resultado();
         $r->avaliacao = 6.66;
         $r->presenca = 1;
@@ -94,5 +85,6 @@ class Resultado extends Model
         $r->aluno()->associate($a);
         $r->pauta()->associate($p);
         $r->save();
+        */
     }
 }

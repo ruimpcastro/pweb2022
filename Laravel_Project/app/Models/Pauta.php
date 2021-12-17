@@ -14,12 +14,7 @@ class Pauta extends Model
         return $this->hasMany(Resultado::class);
     }
 
-    public function aluno()
-    {
-        return $this->hasMany(Aluno::class);
-    }
-
-    public function createMockData()
+    public static function createMockData()
     {
         $da = Disciplina::find(1);
         $db = Disciplina::find(2);
@@ -78,5 +73,6 @@ class Pauta extends Model
         $db->pauta()->save($pn);
         $db->pauta()->save($pr);
         $db->pauta()->save($pe);
+
     }
 }
