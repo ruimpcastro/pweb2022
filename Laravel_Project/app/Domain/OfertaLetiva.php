@@ -1,13 +1,15 @@
 <?php
 
 namespace App\Domain;
+
 use App\Models\Curso;
 use App\Models\PlanoEstudo;
 use Illuminate\Database\Eloquent\Collection;
+
 class OfertaLetiva
 {
 
-    public function createCurso(int $codigo, string $designacao): curso
+    public static function createCurso(int $codigo, string $designacao): Curso
     {
         $c = new Curso();
         $c->codigo = $codigo;
@@ -19,7 +21,7 @@ class OfertaLetiva
 
     }
 
-    public function getCurso(int $codigo): Curso
+    public static function getCurso(int $codigo): Curso
     {
         return Curso::where('codigo', $codigo)->first();
     }

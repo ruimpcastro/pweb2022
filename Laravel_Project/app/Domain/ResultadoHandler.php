@@ -3,7 +3,6 @@
 namespace App\Domain;
 
 use App\Models\Pauta;
-use App\Models\Resultado;
 
 class ResultadoHandler
 {

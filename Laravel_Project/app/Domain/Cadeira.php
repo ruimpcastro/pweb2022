@@ -1,32 +1,32 @@
 <?php
 
 namespace App\Domain;
-use App\Models\Curso;
-use App\Models\PlanoEstudo;
+use App\Models\Disciplina;
 use Illuminate\Database\Eloquent\Collection;
+
 class Cadeira
 {
 
-    public function createDisciplina(int $codigo, string $designacao): curso
+    public static function createDisciplina(int $codigo, string $designacao, int $semestre, string $plano): Disciplina
     {
-        $c = new Curso();
-        $c->codigo = $codigo;
-        $c->designacao = $designacao;
-        $c->save();
-        $p = new PlanoEstudo();
-        $c->plano_estudo()->save($p);
-        return  $c;
+        $d = new Disciplina();
+        $d->codigo = $codigo;
+        $d->designacao = $designacao;
+        $d->semestre = $semestre;
+        $d->plano = $plano;
+        $d->save();
+        return  $d;
 
     }
 
-    public function getCurso(int $codigo): Curso
+    public static function getDisciplina(int $codigo): Disciplina
     {
-        return Curso::where('codigo', $codigo)->first();
+        return Disciplina::where('codigo', $codigo)->first();
     }
 
-    public function getCursos(): Collection
+    public static function getDisciplinas(): Collection
     {
-        return Curso::all();
+        return Disciplina::all();
     }
 
 }

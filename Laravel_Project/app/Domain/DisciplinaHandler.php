@@ -2,30 +2,26 @@
 
 namespace App\domain;
 
-use App\Models\Curso;
+use App\Models\Disciplina;
 use Illuminate\Database\Eloquent\Collection;
-
-namespace App\Domain;
 
 class DisciplinaHandler
 {
 
-    public function createDisciplina(int $codigo, string $designacao,
-                                OfertaLetiva $ofertaLetiva): Curso
+    public static function createDisciplina(int $codigo, string $designacao, int $semestre, string $plano, Cadeira $cadeira): Disciplina
     {
-        return $cadeira->criarCurso($codigo, $designacao);
+        return $cadeira->createDisciplina($codigo, $designacao, $semestre, $plano);
     }
 
-    public function getCurso(int $codigo): Curso
+    public static function getCadeira(int $codigo): Disciplina
     {
-        $ofertaLetiva = new OfertaLetiva();
-//        return new CursoDTO($ofertaLetiva->obterCurso($codigo));
-        return $ofertaLetiva->getCurso($codigo);
+        $cadeira = new Cadeira();
+        return $cadeira->getDisciplina($codigo);
     }
 
-    public function getCursos(): Collection
+    public static function getDisciplinas(): Collection
     {
-        $ofertaLetiva = new OfertaLetiva();
-        return $ofertaLetiva->getCursos();
+        $cadeira = new Cadeira();
+        return $cadeira->getDisciplina();
     }
 }
