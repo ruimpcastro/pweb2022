@@ -2,11 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Domain\CursoHandler;
 use App\Domain\DisciplinaHandler;
-use App\Http\Resources\CursoResource;
 use App\Http\Resources\DisciplinaCollection;
 use App\Http\Resources\DisciplinaResource;
+
 use App\Models\Disciplina;
 use Illuminate\Http\Request;
 
@@ -48,7 +47,7 @@ class DisciplinaController extends Controller
      * Display the specified resource.
      *
      * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * @return DisciplinaResource
      */
     public function show($id)
     {

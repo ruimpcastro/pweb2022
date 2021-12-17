@@ -14,7 +14,7 @@ class DisciplinaHandler
         return $cadeira->createDisciplina($codigo, $designacao, $semestre, $plano);
     }
 
-    public function getCadeira(int $codigo): Disciplina
+    public function getDisciplina(int $codigo): Disciplina
     {
         $cadeira = new Cadeira();
         return $cadeira->getDisciplina($codigo);
