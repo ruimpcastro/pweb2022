@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Domain;
+
 use App\Models\Disciplina;
 use Illuminate\Database\Eloquent\Collection;
 

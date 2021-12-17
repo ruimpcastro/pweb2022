@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers;
 
-//use App\Models\Curso;
+use App\Domain\CursoHandler;
+use App\Http\Resources\CursoCollection;
+use App\Http\Resources\CursoResource;
+
 use App\Models\Curso;
-use App\Models\Resultado;
 use Illuminate\Http\Request;
 
 
@@ -16,9 +18,10 @@ class CursoController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(CursoHandler $ch)
     {
-        return Curso::all();
+        $c = $ch->getCursos();
+        return response(new CursoCollection($c));
     }
 
     /**
@@ -50,7 +53,9 @@ class CursoController extends Controller
      */
     public function show($id)
     {
-        return Curso::find($id);
+        $ch = new CursoHandler();
+        $c = $ch->getCurso($id);
+        return new CursoResource($c);
     }
 
     /**
