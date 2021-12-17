@@ -4,11 +4,10 @@ namespace App\Http\Controllers;
 
 use App\Domain\CursoHandler;
 use App\Http\Resources\CursoCollection;
-use App\Http\Resources\CursoResource;
 
 use App\Models\Curso;
 use Illuminate\Http\Request;
-
+use App\Http\Resources\CursoResource;
 
 
 class CursoController extends Controller
@@ -49,7 +48,7 @@ class CursoController extends Controller
      * Display the specified resource.
      *
      * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * @return CursoResource
      */
     public function show($id)
     {

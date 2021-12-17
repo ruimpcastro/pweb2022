@@ -7,6 +7,7 @@ use Illuminate\Http\Resources\Json\JsonResource;
 class DisciplinaResource extends JsonResource
 {
 
+    public static $wrap = 'disciplina';
     /**
      * Transform the resource into an array.
      *
@@ -19,8 +20,7 @@ class DisciplinaResource extends JsonResource
             'codigo' => $this->codigo,
             'designacao' => $this->designacao,
             'semestre' => $this->semestre,
-            'plano' => $this->plano,
-            'ano_letivo_id' => $this->ano_letivo_id,
+            'ano_letivo' => $this->ano_letivo->ano,
 
         ];
     }
