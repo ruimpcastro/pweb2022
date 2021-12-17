@@ -2,6 +2,7 @@
 
 namespace App\Domain;
 
+use App\Models\AnoLetivo;
 use App\Models\Disciplina;
 use Illuminate\Database\Eloquent\Collection;
 
@@ -23,5 +24,11 @@ class DisciplinaHandler
     {
         $cadeira = new Cadeira();
         return $cadeira->getDisciplinas();
+    }
+
+    public function associarAnoLetivo(int $ano): AnoLetivo
+    {
+
+        return AnoLetivo::where('ano', $ano)->first();
     }
 }

@@ -20,7 +20,7 @@ class CreateDisciplinasTable extends Migration
             $table->integer('semestre');
             $table->longText('plano');
 
-            $table->unsignedBigInteger('ano_letivo_id');
+            $table->unsignedBigInteger('ano_letivo_id')->nullable();
 
             $table->foreign('ano_letivo_id')->references('id')->on('ano_letivos');
             $table->timestamps();

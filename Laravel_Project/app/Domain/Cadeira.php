@@ -17,7 +17,7 @@ class Cadeira
         $d->designacao = $designacao;
         $d->semestre = $semestre;
         $d->plano = $plano;
-        $d->ano_letivo()->save($a);
+        $d->ano_letivo()->associate($a);
         $d->save();
         return  $d;
 
@@ -33,5 +33,12 @@ class Cadeira
         return Disciplina::all();
     }
 
+    public function associarAnoLetivo(int $codigoDisciplina, int $anoLetivo): Disciplina
+    {
+        $d = Disciplina::where('codigo', $codigoDisciplina)->first();
+        $a = AnoLetivo::where('ano', $anoLetivo)->first();
+        $d->ano_letivo()->associate($a);
+        return $d;
+    }
 }
 
