@@ -4,7 +4,7 @@ namespace App\Domain;
 use App\Models\Curso;
 use App\Models\PlanoEstudo;
 use Illuminate\Database\Eloquent\Collection;
-class OfertaLetiva
+class Cadeira
 {
 
     public function createDisciplina(int $codigo, string $designacao): curso

@@ -6,7 +6,8 @@ use App\Models\Curso;
 use Illuminate\Database\Eloquent\Collection;
 
 namespace App\Domain;
-class CursosHandler
+
+class DisciplinaHandler
 {
 
     public function createDisciplina(int $codigo, string $designacao,
