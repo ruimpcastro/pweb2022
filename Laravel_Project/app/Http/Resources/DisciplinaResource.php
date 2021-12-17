@@ -6,11 +6,6 @@ use Illuminate\Http\Resources\Json\JsonResource;
 
 class DisciplinaResource extends JsonResource
 {
-    private $codigo;
-    private $designacao;
-    private $semestre;
-    private $plano;
-    private $ano_letivo_id;
 
     /**
      * Transform the resource into an array.
@@ -21,11 +16,11 @@ class DisciplinaResource extends JsonResource
     public function toArray($request)
     {
         return [
-            'codigo' => $codigo,
-            'designacao' => $designacao,
-            'semestre' => $semestre,
-            'plano' => $plano,
-            'ano_letivo_id' => $ano_letivo_id,
+            'codigo' => $this->codigo,
+            'designacao' => $this->designacao,
+            'semestre' => $this->semestre,
+            'plano' => $this->plano,
+            'ano_letivo_id' => $this->ano_letivo_id,
 
         ];
     }

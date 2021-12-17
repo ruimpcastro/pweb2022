@@ -1,12 +1,10 @@
 <?php
 
-namespace App\Http\Controllers;
-
-use Illuminate\Http\Resources;
+namespace App\Http\Resources;
 
 use Illuminate\Http\Resources\Json\ResourceCollection;
 
-class DisciplinaCollection extends Controller
+class DisciplinaCollection extends ResourceCollection
 {
     /**
      * Transform the resource collection into an array.

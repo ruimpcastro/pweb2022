@@ -2,6 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Domain\CursoHandler;
+use App\Domain\DisciplinaHandler;
+use App\Http\Resources\CursoResource;
+use App\Http\Resources\DisciplinaCollection;
+use App\Http\Resources\DisciplinaResource;
 use App\Models\Disciplina;
 use Illuminate\Http\Request;
 
@@ -12,9 +17,10 @@ class DisciplinaController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(DisciplinaHandler $dh)
     {
-        return Disciplina::all();
+        $d = $dh->getDisciplinas();
+        return response(new DisciplinaCollection($d));
     }
 
     /**
@@ -46,7 +52,9 @@ class DisciplinaController extends Controller
      */
     public function show($id)
     {
-        return Disciplina::find($id);
+        $dh = new DisciplinaHandler();
+        $d = $dh->getDisciplina($id);
+        return new DisciplinaResource($d);
     }
 
     /**
