@@ -36,9 +36,7 @@ Route::get('/pautas', [PautaController::class, 'index']);
 Route::get('/pauta/{id}', [PautaController::class, 'show']);
 Route::delete('/pauta/{id}', [PautaController::class, 'destroy']);
 
-Route::get('/planos', [PlanoEstudoController::class, 'index']);
-Route::get('/plano/{id}', [PlanoEstudoController::class, 'show']);
-Route::delete('/plano/{id}', [PlanoEstudoController::class, 'destroy']);
+Route::get('/curso/{id}/plano_estudo', [PlanoEstudoController::class, 'show']);
 
 Route::get('/resultados', [ResultadoController::class, 'index']);
 Route::get('/resultado/{id}', [ResultadoController::class, 'show']);

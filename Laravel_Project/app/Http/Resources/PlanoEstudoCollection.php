@@ -2,21 +2,18 @@
 
 namespace App\Http\Resources;
 
-use Illuminate\Http\Resources\Json\JsonResource;
+use Illuminate\Http\Resources\Json\ResourceCollection;
 
-class PlanoEstudoResource extends JsonResource
+class PlanoEstudoCollection extends ResourceCollection
 {
-    private $curso_id;
     /**
-     * Transform the resource into an array.
+     * Transform the resource collection into an array.
      *
      * @param  \Illuminate\Http\Request  $request
      * @return array|\Illuminate\Contracts\Support\Arrayable|\JsonSerializable
      */
     public function toArray($request)
     {
-        return [
-            'curso_id' => $curso_id,
-        ];
+        return parent::toArray($request);
     }
 }

@@ -2,6 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Domain\PlanoEstudoHandler;
+use App\Http\Resources\PlanoEstudoCollection;
+use App\Http\Resources\PlanoEstudoResource;
 use App\Models\PlanoEstudo;
 use Illuminate\Http\Request;
 
@@ -14,7 +17,7 @@ class PlanoEstudoController extends Controller
      */
     public function index()
     {
-        return PlanoEstudo::all();
+        //
     }
 
 
@@ -43,11 +46,12 @@ class PlanoEstudoController extends Controller
      * Display the specified resource.
      *
      * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * @return PlanoEstudoResource
      */
     public function show($id)
     {
-        return PlanoEstudo::find($id);
+        $peh = new PlanoEstudoHandler();
+        return $peh::getDisciplinasFromCurso($id);
     }
 
     /**
