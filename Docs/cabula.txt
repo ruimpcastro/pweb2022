@@ -1,2 +1,2 @@
-$c = new Curso()
-$c->bigBang()
+$bb = new BigBang()
+$bb->createAllThings()

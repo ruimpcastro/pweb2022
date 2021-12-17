@@ -19,7 +19,7 @@ class Pauta extends Model
         return $this->hasMany(Aluno::class);
     }
 
-    public function createMockData()$p = Pauta::find(1)
+    public function createMockData()
     {
         $da = Disciplina::find(1);
         $db = Disciplina::find(2);
