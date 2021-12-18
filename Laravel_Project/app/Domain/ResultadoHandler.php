@@ -97,6 +97,24 @@ class ResultadoHandler
         return $pauta->resultado;
     }
 
+    public static function getMedia(int $chavePauta): float
+    {
+        $pauta = Pauta::where('chave', $chavePauta)->first();
+        $res = [];
+        $resultados = $pauta->resultado;
+        foreach ($resultados->all() as $resultado) {
+            $res[] = $resultado->resultado;
+        }
+        $sum = 0;
+        foreach ($res as $k => $v){
+            $strToInt = 0;
+            $strToInt = (int)$v;
+            $sum += $strToInt;
+
+        return 'Media da pauta: ' . $sum / count($res);
+        }
+    }
+
     public static function makeDirty(int $chavePauta): int
     {
         $pauta = Pauta::where('chave', $chavePauta)->first();

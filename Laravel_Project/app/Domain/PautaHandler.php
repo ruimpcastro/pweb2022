@@ -34,4 +34,10 @@ class PautaHandler
         $resultadoHandler = new ResultadoHandler();
         return $resultadoHandler::makeDirty($chavePauta);
     }
+
+    public static function getMedia(int $chavePauta)
+    {
+        $rh = new ResultadoHandler();
+        return $rh::getMedia();
+    }
 }

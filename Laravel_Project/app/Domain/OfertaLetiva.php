@@ -31,4 +31,8 @@ class OfertaLetiva
         return Curso::all();
     }
 
+    public static function getMedia()
+    {
+
+    }
 }
