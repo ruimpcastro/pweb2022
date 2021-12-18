@@ -9,9 +9,14 @@ class AnoLetivo extends Model
 {
     use HasFactory;
 
-    public function disciplinas()
+    public function disciplina()
     {
         return $this->hasOne(Disciplina::class);
+    }
+
+    public function curso()
+    {
+        return $this->hasOne(Curso::class);
     }
 
     public static function createMockData()

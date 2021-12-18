@@ -23,6 +23,7 @@ class GerirPlanoEstudo
         $c = Curso::where('codigo', $codigoCurso)->first();
         $planoId = $c->plano_estudo->id;
         $p = PlanoEstudo::find($planoId);
+        echo $c->designacao . ': ';
         return $p->disciplinas;
     }
 }

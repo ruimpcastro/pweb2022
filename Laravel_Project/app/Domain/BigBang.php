@@ -15,15 +15,15 @@ class BigBang
     public static function createAllThings()
     {
         //Generates every data for the DB
+        $a= new AnoLetivo();
+        $a::createMockData();
+
         $c = new Curso();
         $c::createMockData();
 
         $p = new PlanoEstudo();
         $p::createMockData(1);
         $p::createMockData(2);
-
-        $a= new AnoLetivo();
-        $a::createMockData();
 
         $d = new Disciplina();
         $d::createMockData();
