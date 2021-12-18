@@ -6,11 +6,9 @@ use Illuminate\Http\Resources\Json\JsonResource;
 
 class PautaResource extends JsonResource
 {
-    private $chave;
-    private $designacao;
-    private $dirty;
-    private $resultado_id;
-    private $disciplina_id;
+
+    public static $wrap = 'pauta';
+
     /**
      * Transform the resource into an array.
      *
@@ -20,12 +18,9 @@ class PautaResource extends JsonResource
     public function toArray($request)
     {
         return [
-            'chave' => $chave,
-            'designacao' => $designacao,
-            'dirty' => $dirty,
-            'resultado_id' => $resultado_id,
-            'disciplina_id' => $disciplina_id,
-
+            'designacao' => $this->designacao,
+            'dirty' => $this->dirty,
+            'resultado' => $this->resultado,
         ];
     }
 }

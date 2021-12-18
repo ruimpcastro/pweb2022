@@ -38,7 +38,7 @@ class Disciplina extends Model
     {
         $da = new Disciplina();
         $da->codigo = 112;
-        $da->designacao = "Programação Web";
+        $da->designacao = "Programação 101";
         $da->semestre = 1;
         $da->plano = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut diam quam nulla porttitor massa id neque.";
         $a = AnoLetivo::find(1);

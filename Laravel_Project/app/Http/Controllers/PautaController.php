@@ -2,6 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Domain\PautaHandler;
+use App\Http\Resources\PautaCollection;
+use App\Http\Resources\PautaResource;
 use App\Models\Pauta;
 use Illuminate\Http\Request;
 
@@ -12,9 +15,10 @@ class PautaController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(PautaHandler $ph)
     {
-        return Pauta::all();
+        $p = $ph::getPautas();
+        return response(new PautaCollection($p));
     }
 
     /**
@@ -42,11 +46,13 @@ class PautaController extends Controller
      * Display the specified resource.
      *
      * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * @return PautaResource
      */
     public function show($id)
     {
-        return Pauta::find($id);
+        $ph = new PautaHandler();
+        $p = $ph::getPauta($id);
+        return new PautaResource($p);
     }
 
     /**

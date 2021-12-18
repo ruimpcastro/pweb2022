@@ -3,6 +3,7 @@
 namespace App\Domain;
 
 use App\Models\Pauta;
+use App\Models\Resultado;
 
 class ResultadoHandler
 {
@@ -78,5 +79,29 @@ class ResultadoHandler
         }
         fclose($fp);
         return json_encode($json);
+    }
+
+    public static function getPauta(int $chavePauta): Pauta
+    {
+        return Pauta::where('chave', $chavePauta)->first();
+    }
+
+    public static function getPautas()
+    {
+        return Pauta::all();
+    }
+
+    public static function getResultados(int $chavePauta)
+    {
+        $pauta = Pauta::where('chave', $chavePauta)->first();
+        return $pauta->resultado;
+    }
+
+    public static function makeDirty(int $chavePauta): int
+    {
+        $pauta = Pauta::where('chave', $chavePauta)->first();
+        $pauta->dirty = 1;
+        $pauta->save();
+        return $pauta->dirty;
     }
 }
