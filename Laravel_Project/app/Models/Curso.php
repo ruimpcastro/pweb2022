@@ -16,14 +16,18 @@ class Curso extends Model
 
     public static function createMockData()
     {
+        $a = AnoLetivo::find(1);
+
         $c = new Curso();
         $c->codigo = 123;
         $c->designacao = "Informática";
+        $a->curso()->save($c);
         $c->save();
 
         $c = new Curso();
         $c->codigo = 321;
         $c->designacao = "Medicina";
+        $a->curso()->save($c);
         $c->save();
     }
 }
