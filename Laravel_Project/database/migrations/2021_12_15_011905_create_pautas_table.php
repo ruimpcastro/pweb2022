@@ -19,9 +19,12 @@ class CreatePautasTable extends Migration
             $table->bigInteger('chave')->unique();
             $table->string('designacao');
             $table->boolean('dirty');
+            $table->decimal('media')->nullable();
             $table->unsignedBigInteger('disciplina_id');
+            $table->unsignedBigInteger('curso_id')->nullable();
 
             $table->foreign('disciplina_id')->references('id')->on('disciplinas')->onDelete('restrict');
+            $table->foreign('curso_id')->references('id')->on('cursos');
         });
     }
 

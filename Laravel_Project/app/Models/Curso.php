@@ -14,6 +14,11 @@ class Curso extends Model
         return $this->hasOne(PlanoEstudo::class);
     }
 
+    public function pauta()
+    {
+        return $this->hasMany(Pauta::class);
+    }
+
     public static function createMockData()
     {
         $a = AnoLetivo::find(1);

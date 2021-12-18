@@ -3,6 +3,7 @@
 namespace App\Domain;
 
 use App\Models\Curso;
+use App\Models\Pauta;
 use App\Models\PlanoEstudo;
 use Illuminate\Database\Eloquent\Collection;
 
@@ -31,8 +32,15 @@ class OfertaLetiva
         return Curso::all();
     }
 
-    public static function getMedia()
+    //NOT WORKING... YET
+    public static function getMedia(int $codigo) :float
     {
+        $curso = Curso::where('codigo', $codigo)->first();
+        $res = [];
+        $p = Pauta::where('curso_id', $curso->id)::all();
 
+        foreach ($curso->pauta) {
+
+        }
     }
 }
