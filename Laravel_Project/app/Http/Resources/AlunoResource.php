@@ -6,13 +6,8 @@ use Illuminate\Http\Resources\Json\JsonResource;
 
 class AlunoResource extends JsonResource
 {
-    private $numero_aluno;
-    private $nome;
-    private $matricula;
-    private $desistente;
-    private $disciplina_id;
-    private $curso_id;
 
+    public static $wrap = 'Aluno';
 
     /**
      * Transform the resource into an array.
@@ -23,12 +18,12 @@ class AlunoResource extends JsonResource
     public function toArray($request)
     {
         return [
-            'numero_aluno' => $numero_aluno,
-            'nome' => $nome,
-            'matricula' => $matricula,
-            'desistente' => $desistente,
-            'disciplina_id' => $disciplica_id,
-            'curso_id' => $curso_id,
+            'numero_aluno' => $this->numero_aluno,
+            'nome' => $this->nome,
+            'matricula' => $this->matricula,
+            'desistente' => $this->desistente,
+            'curso_concluido' => $this->concluiu_curso,
+            'curso' => $this->curso->designacao,
         ];
     }
 }

@@ -2,6 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Domain\AlunoHandler;
+use App\Http\Resources\AlunoCollection;
+use App\Http\Resources\AlunoResource;
+use App\Http\Resources\CursoResource;
 use App\Models\Aluno;
 use Illuminate\Http\Request;
 
@@ -12,9 +16,10 @@ class AlunoController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(AlunoHandler $ah)
     {
-        return Aluno::all();
+        $a = $ah::getAlunos();
+        return response(new AlunoCollection($a));
     }
 
     /**
@@ -46,7 +51,9 @@ class AlunoController extends Controller
      */
     public function show($id)
     {
-        return Aluno::find($id);
+        $ah = new AlunoHandler();
+        $a = $ah::getAluno($id);
+        return new AlunoResource($a);
     }
 
     /**
