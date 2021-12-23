@@ -73,6 +73,19 @@ class Estudante
         return $aluno->desistente;
     }
 
+    public static function countDesistentes(): int
+    {
+        $estudante = new Estudante();
+        $alunos = $estudante::getAlunos();
+        $desistente = 0;
+        foreach ($alunos as $aluno){
+            if($aluno->desistente == 1) {
+                $desistente += 1;
+            }
+        }
+        return $desistente;
+    }
+
     public static function marcarConcluido(int $numeroAluno)
     {
         $aluno = Aluno::where('numero_aluno', $numeroAluno)->first();
