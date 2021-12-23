@@ -57,8 +57,7 @@ class Estudante
     //NOT WORKING
     public static function numeroMatriculasDisciplina(int $numeroAluno, int $codigoDisciplina)
     {
-        //$e = new Estudante()
-        //$e::numeroMatriculasDisciplina(20210101, 421)
+        $e = new Estudante();
         $aluno = Aluno::where('numero_aluno', $numeroAluno)->first();
         $idAluno = $aluno->id;
         foreach($aluno->disciplinas as $disciplina){

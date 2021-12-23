@@ -32,15 +32,18 @@ class OfertaLetiva
         return Curso::all();
     }
 
-    //NOT WORKING... YET
-    public static function getMedia(int $codigo) :float
+    //NÃO FINALIZADO NA ENTREGA
+    public static function getMedia(int $codigo): float
     {
         $curso = Curso::where('codigo', $codigo)->first();
-        $res = [];
-        $p = Pauta::where('curso_id', $curso->id)::all();
+        $res = 0;
+        $count = 0;
 
-        foreach ($curso->pauta) {
-
+        foreach ($curso->pauta as $pauta) {
+            $res += $pauta->media;
+            $count += 1;
         }
+
+        return $res / $count;
     }
 }

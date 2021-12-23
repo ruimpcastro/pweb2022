@@ -25,5 +25,11 @@ class CursoHandler
         $ofertaLetiva = new OfertaLetiva();
         return $ofertaLetiva::getCursos();
     }
+
+    public static function getMedia(int $codigo): float
+    {
+        $ofertaLetiva = new OfertaLetiva();
+        return $ofertaLetiva::getMedia($codigo);
+    }
 }
 
