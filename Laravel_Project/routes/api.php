@@ -22,6 +22,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/alunos', [AlunoController::class, 'index']);
 Route::get('/aluno/{id}', [AlunoController::class, 'show']);
+Route::post('/alunos', [AlunoController::class, 'store']);
 Route::delete('/aluno/{id}', [AlunoController::class, 'destroy']);
 
 Route::get('/cursos', [CursoController::class, 'index']);

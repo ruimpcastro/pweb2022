@@ -6,9 +6,6 @@ use Illuminate\Http\Resources\Json\JsonResource;
 
 class ResultadoResource extends JsonResource
 {
-    private $avaliacao;
-    private $disciplina_id;
-    private $pauta_id;
     /**
      * Transform the resource into an array.
      *
@@ -18,9 +15,9 @@ class ResultadoResource extends JsonResource
     public function toArray($request)
     {
         return [
-            'avalicao' => $avalicao,
-            'disciplina_id' => $disciplina_id,
-            'pauta_id' => $pauta_id,
+            'Avaliação' => $this->resultado
+            //'disciplina_id' => $this->disciplina_id,
+            //'pauta_id' => $this->pauta_id,
 
         ];
     }

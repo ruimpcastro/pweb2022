@@ -14,6 +14,12 @@ class Curso extends Model
         return $this->hasOne(PlanoEstudo::class);
     }
 
+    public function anoLetivo()
+    {
+        //CHANGE TO BELONGS TO MANY
+        return $this->hasOne(AnoLetivo::class);
+    }
+
     public function pauta()
     {
         return $this->hasMany(Pauta::class);

@@ -20,7 +20,7 @@ class PautaResource extends JsonResource
         return [
             'designacao' => $this->designacao,
             'dirty' => $this->dirty,
-            'resultado' => $this->resultado,
+            'resultados' => ResultadoResource::collection($this->resultado),
         ];
     }
 }

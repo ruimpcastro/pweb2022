@@ -11,11 +11,13 @@ class AnoLetivo extends Model
 
     public function disciplina()
     {
+        //CHANGE TO BELONGS TO MANY
         return $this->hasOne(Disciplina::class);
     }
 
     public function curso()
     {
+        //CHANGE TO BELONGS TO MANY
         return $this->hasOne(Curso::class);
     }
 

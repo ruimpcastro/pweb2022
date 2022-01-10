@@ -21,6 +21,7 @@ class Disciplina extends Model
 
     public function ano_letivo()
     {
+        //CHANGE TO BELONGS TO MANY
         return $this->belongsTo(AnoLetivo::class);
     }
 

@@ -40,7 +40,7 @@ class AlunoController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        Aluno::createAluno($request->numero_aluno, $request->nome, $request->curso);
     }
 
     /**
