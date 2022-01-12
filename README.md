@@ -1,135 +1,64 @@
-# Software de gestão de cursos #
+<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
 
-### Objetivo ###
+<p align="center">
+<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
+<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
+<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
+<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
+</p>
 
-Analisar o percurso escolar dos estudantes de um dado curso.
+## About Laravel
 
-## 1. O projeto ##
+Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
 
-### Funcionalidades que o projeto deve ter: ###
+- [Simple, fast routing engine](https://laravel.com/docs/routing).
+- [Powerful dependency injection container](https://laravel.com/docs/container).
+- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
+- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
+- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
+- [Robust background job processing](https://laravel.com/docs/queues).
+- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
 
-* **A gestão de cursos**. Esta funcionalidade  é 
-composta por um conjunto de operações que permitem a adição,
-a visualização, a edição e a remoção de cursos. Além disso,
-deve permitir a lista dos cursos criados. 
-Para cada curso pode listar-se também as disciplinas que o
-compõem (o plano de estudos) e os alunos inscritos no curso.
+Laravel is accessible, powerful, and provides tools required for large, robust applications.
 
-* **A definição do plano de estudos**. É composta por várias operações
-que permitem adicionar disciplinas ao plano de estudos de um curso através
-do código da disciplina, designação e do semestre(ou ano letivo) em que é
-ministrada. Além da adição de disciplinas ao plano, deve também ser possível
-eliminar uma disciplina (desde que não tenham pautas associadas) e listar o
-plano(contendo a informação de cada disciplina).
+## Learning Laravel
 
-* **O carregamento de ficheiros de pautas de alunos** (ficheiros em formato
-CSV - [ver anexo](https://moodle2122.uac.pt/pluginfile.php/168522/mod_resource/content/0/Progr_Web_2020_2021_1.csv))
-fornecidos pelo Serviço de Gestão Académica. Cada ficheiro tem informação sobre
-o resultado do momento de avaliação de um disciplina. Por exemplo, a disciplina
-de PW terá um ficheiro referente à avaliação por frequência, outro relativamente
-à época normal de exame, outro com a avaliação de época de recurso e, por
-último, um referente à época especial, para cada semestre em que é lecionada.
-As disciplinas podem ter outros esquemas de avaliação, mas não compete
-à aplicação controlar esta parte. O importante é registar
-a informação de cada pauta para depois se poder traçar e analisar
-os percursos dos estudantes. Cada pauta tem um identificador único.
-O sistema não deve permitir integrar mais do que uma vez a mesma pauta.
-Estes ficheiros contêm informação sobre o código da disciplina,
-a sua designação, o semestre ao qual a pauta se refere, um descritivo
-do tipo de pauta e o nome, número e classificação do aluno na disciplina.
-O código do curso e o ano letivo a que se referem a pauta serão indicados
-na altura em que se integra o ficheiro.
-O sistema deve registar a partir desta informação, e de forma automática,
-as edições das disciplinas, a sua associação ao ano letivo e curso e
-e inscrever os alunos na disciplina. Assim, com a integração das pautas o
-sistema aprende toda a informação relevante ao processo de análise pretendido.
+Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
 
-* **Disciplinas realizadas por aluno**. Esta funcionalidade deve permitir
-o acesso às disciplinas em que o aluno foi avaliado, listando as
-disciplinas (código, descrição e classificação obtida, número de avaliações
-efetuadas, número de matrículas na disciplina).
+If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 1500 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
 
-* **O percurso do aluno**. Uma primeira operação deve listar,
-por semestre de inscrição do aluno, as disciplinas que o aluno completou,
-indicando o código e a designação da disciplina, a classificação obtida e se
-a disciplina não foi realizada no semestre certo. *Para este último
-indicador deve ser comparado a ordem com as disciplinas se realizam
-em relação ao plano de estudos definido*.
+## Laravel Sponsors
 
-* **Desempenho do curso**. Esta operação deve fornecer alguns dados estatísticos
-sobre o curso. Indico alguns exemplos do que se pretende:
-  * Por cada ano, indicar o número de alunos que terminaram, a média (das médias)
-dos estudantes;
-  * O número de anos que se leva (em média) para concluir o curso;
-  * O número de alunos que desistem. *Um aluno é considerado desistente 
-após um ano de não ter registado qualquer resultado*.
+We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
 
-## 2. Que devemos fazer? ##
-Desenvolver uma aplicação em PHP (*utilizando a framework Laravel*) organizada
-em três camadas:
+### Premium Partners
 
-* **A camada de apresentação**
-* **A camada de negócio**
-* **A camada de acesso aos dados**
+- **[Vehikl](https://vehikl.com/)**
+- **[Tighten Co.](https://tighten.co)**
+- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
+- **[64 Robots](https://64robots.com)**
+- **[Cubet Techno Labs](https://cubettech.com)**
+- **[Cyber-Duck](https://cyber-duck.co.uk)**
+- **[Many](https://www.many.co.uk)**
+- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
+- **[DevSquad](https://devsquad.com)**
+- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
+- **[OP.GG](https://op.gg)**
+- **[CMS Max](https://www.cmsmax.com/)**
+- **[WebReinvent](https://webreinvent.com/?utm_source=laravel&utm_medium=github&utm_campaign=patreon-sponsors)**
 
-A app tem que satisfazer os requisitos descritos no ponto anterior.
-A camada de aprentação deve disponibilizar uma API *RESTful* que permita
-o acesso às funcionalidades da aplicação implementadas na camada de negócio.
-A camada de negócio deve ser organizada de acordo como padrão
-**[Domain Model](https://martinfowler.com/eaaCatalog/domainModel.html)**
-e, por último, a camada de acesso aos dados deve ser implementada
-recorrendo ao padrão *Active Record* implementado pelo pacote
-*Eloquent* da plataforma *Laravel*.
+## Contributing
 
-### Branch: iteração1 ###
-Temos que fazer o seguinte:
-* **Levantamento de requisitos** das funcionalidades descritas
-bevemente no ponto 1 deste documento; **(?)**
+Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
 
-* **Proceder ao desenho e à implementação do modelo de domínio** que inclua
-os requisitos identificados no ponto anterior;
+## Code of Conduct
 
-* **Identificar as classes que serão alvo de persistência** e programá-las
-usando o padrão *Active Record*, tal como oferecido na plataforma
-*Laravel*;
+In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
 
-* **Criar a base de dados em *SQLite*,** localmente na pasta ***database***,
-**através de migrações**, tal como oferecido na plataforma *Laravel*;
+## Security Vulnerabilities
 
-* **Popular a base de dados com informação aleatória** *(mas que faça sentido)*
-de forma a conseguir interagir com a aplicação;
+If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
 
-* **Desenhar e desenvolver uma API *RESTful*** que permita aceder às funcionalidades
-oferecidas pela camada de negócio. A representação a utilizar para a
-transferência do estado dos recursos será *JSON*.
+## License
 
-### Branch: iteração2 ###
-
-Temos que fazer o seguinte:
-
-* **Desenvolver a camada de apresentação via Web**, recorrendo à plataforma
-*Laravel*, que contenha um menu que permite selecionar as operações,
-introduzir a informação necessária à sua execução e mostrar os resultados
-das execuções das operações. *Não têm de desenvolver a interface de utilizador para
-os casos de uso não especificando neste enunciado, como, por exemplo,
-Adicionar Utilizadores ou Efetuar a autenticação*;
-
-* Para dar um aspeto profissional à vossa aplicação podem
-recorrer ao *[Bootstrap](https://getbootstrap.com)* e torná-lo responsivo
-ao tamanho do ecrã;
-
-* **Adicionar uma camada de segurança** que permita fazer autenticação
-de utilizadores e autorização de operações quer na API *RESTful* quer na
-interface Web;
-
-* **Colocar o projeto a correr numa PaaS**. O plano será utilizarmos a plataforma *Heroku*.
-
-## 3. Entregas! ##
-### Primeira entrega: 17 de dezembro de 2021 ###
-### Segunda entrega: 21 de janeiro de 2022 ###
-
-**O repositório deve conter:**
-
-1. O código fonte do nosso projeto (Não é necesário a pasta vendor);
-2. Um documento PDF com o diagrama de classes da aplicação;
-3. Um documento com os pontos da API *RESTful* desenvolvida.
+The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
