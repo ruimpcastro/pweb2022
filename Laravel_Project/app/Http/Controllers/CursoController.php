@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Domain\CursoHandler;
+use App\Domain\OfertaLetiva;
 use App\Http\Resources\CursoCollection;
 
 use App\Models\Curso;
@@ -15,7 +16,6 @@ class CursoController extends Controller
     /**
      * Display a listing of the resource.
      *
-     * @return \Illuminate\Http\Response
      */
     public function index(CursoHandler $ch)
     {
@@ -29,35 +29,45 @@ class CursoController extends Controller
     /**
      * Show the form for creating a new resource.
      *
-     * @return \Illuminate\Http\Response
      */
     public function create()
     {
-        //
+        return view('criarCurso');
     }
 
     /**
      * Store a newly created resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Request $request, CursoHandler $ch)
     {
-        //
+        $codCurso = $request->codigo;
+        $desCurso = $request->designacao;
+
+        $request->validate(
+            [
+                'codigo' => 'required',
+                'designacao' => 'required',
+            ]
+        );
+
+        $ch->createCurso($codCurso, $desCurso, new OfertaLetiva());
+
+        return redirect('cursos/create');
     }
 
     /**
      * Display the specified resource.
      *
      * @param  int  $id
-     * @return CursoResource
      */
     public function show($id)
     {
         $ch = new CursoHandler();
         $c = $ch::getCurso($id);
-        return new CursoResource($c);
+        //return new CursoResource($c);
+        return view('/curso', ['curso' => $c]);
     }
 
     /**

@@ -5,6 +5,8 @@
 @endsection
 
 @section('conteudo')
+    <!--ADD BOTÃO PARA ADICIONAR CURSO-->
+    <!--NO FINAL DE CADA LINHA DA TABELA ADICIONAR UM BOTÃO X PARA ELIMINAR CURSO-->
     <!--ROTA-->
     @foreach($cursos as $curso)
             <ul class="d-flex flex-row">
