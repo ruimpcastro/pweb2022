@@ -20,7 +20,10 @@ class CursoController extends Controller
     public function index(CursoHandler $ch)
     {
         $c = $ch::getCursos();
-        return response(new CursoCollection($c));
+        //return response(new CursoCollection($c));
+
+        //RETURN
+        return view('cursos', ['cursos' => $c]);
     }
 
     /**
