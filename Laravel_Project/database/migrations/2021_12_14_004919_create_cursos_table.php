@@ -17,7 +17,7 @@ class CreateCursosTable extends Migration
             $table->id();
             $table->bigInteger('codigo')->unique();
             $table->string('designacao')->unique();
-            $table->unsignedBigInteger('ano_letivo_id');
+            $table->unsignedBigInteger('ano_letivo_id')->nullable();
             $table->timestamps();
 
             $table->foreign('ano_letivo_id')->references('id')->on('ano_letivos');
