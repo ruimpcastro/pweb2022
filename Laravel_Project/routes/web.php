@@ -32,3 +32,5 @@ Route::get('/pautas', function () {
 Route::get('/avaliacoes', function () {
     return view('avaliacoes');
 });
+
+
