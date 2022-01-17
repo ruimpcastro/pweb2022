@@ -29,6 +29,11 @@ class Aluno extends Model
         return $this->belongsToMany(Resultado::class);
     }
 
+    public function anoLetivo()
+    {
+        return $this->belongsToMany(AnoLetivo::class);
+    }
+
     public static function createAluno(int $numero_aluno, string $nome, string $curso)
     {
         $a = new Aluno();
