@@ -40,11 +40,13 @@
         </div>
     </nav>
 
-    <h1 class="d-flex w-75 pt-3"><b>@yield('titulo')</b></h1>
+    <!--- tinha antes w- 75, depois mudou-se para justify-content-center --->
+
+    <h1 class="d-flex justify-content-center pt-3"><b>@yield('titulo')</b></h1>
 
     <div class="w-75  m-auto">
         <div class="border-bottom w-100" ></div>
-        <div class="d-flex mt-3">
+        <div class="mt-1">
             @yield('conteudo')
         </div>
     </div>

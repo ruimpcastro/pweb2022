@@ -1,7 +1,7 @@
 @extends('master')
 
 @section('titulo')
-    Home
+    Alunos
 @endsection
 
 @section('conteudo')

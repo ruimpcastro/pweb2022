@@ -1,7 +1,7 @@
 @extends('master')
 
 @section('titulo')
-    Home
+    Avaliações
 @endsection
 
 @section('conteudo')

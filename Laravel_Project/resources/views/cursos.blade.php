@@ -9,9 +9,10 @@
     <!--NO FINAL DE CADA LINHA DA TABELA ADICIONAR UM BOTÃO X PARA ELIMINAR CURSO-->
     <!--ROTA-->
     @foreach($cursos as $curso)
-            <ul class="d-flex flex-row">
-                <li >{{ $curso->codigo }}</li>
-                <a href="/curso/{{$curso->codigo}}"><li>{{ $curso->designacao }}</li></a>
+            <ul class="d-flex justify-content-around flex-row">
+                <li style="list-style: none">{{ $curso->codigo }}</li>
+                <a href="/curso/{{$curso->codigo}}"><li style="list-style: none">{{ $curso->designacao }}</li></a>
+                <button type="button" class="btn btn-outline-dark btn-sm">x</button>
             </ul>
     @endforeach
 @endsection
