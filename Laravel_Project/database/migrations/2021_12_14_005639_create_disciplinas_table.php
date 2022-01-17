@@ -19,6 +19,7 @@ class CreateDisciplinasTable extends Migration
             $table->string('designacao')->unique();
             $table->integer('semestre');
             $table->longText('plano');
+            $table->integer('ano');
 
             $table->unsignedBigInteger('ano_letivo_id')->nullable();
 
