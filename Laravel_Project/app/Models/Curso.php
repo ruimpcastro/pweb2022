@@ -17,7 +17,7 @@ class Curso extends Model
     public function anoLetivo()
     {
         //CHANGE TO BELONGS TO MANY
-        return $this->hasOne(AnoLetivo::class);
+        return $this->belongsToMany(AnoLetivo::class);
     }
 
     public function pauta()

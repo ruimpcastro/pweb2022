@@ -12,13 +12,18 @@ class AnoLetivo extends Model
     public function disciplina()
     {
         //CHANGE TO BELONGS TO MANY
-        return $this->hasOne(Disciplina::class);
+        return $this->belongsToMany(Disciplina::class);
     }
 
     public function curso()
     {
         //CHANGE TO BELONGS TO MANY
-        return $this->hasOne(Curso::class);
+        return $this->belongsToMany(Curso::class);
+    }
+
+    public function aluno()
+    {
+        return $this->belongsToMany(Aluno::class);
     }
 
     public static function createMockData()
