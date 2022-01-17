@@ -34,7 +34,7 @@ class Aluno extends Model
         $a = new Aluno();
         $a->numero_aluno = $numero_aluno;
         $a->nome = $nome;
-        $a->matricula = 0;
+        $a->matricula = 1;
         $a->desistente = 0;
         $a->concluiu_curso = 0;
         $c = Curso::where('designacao', $curso)->firstOrFail();

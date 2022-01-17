@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CursoController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,5 +15,28 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('home');
 });
+
+//CURSO
+Route::get('/cursos', [CursoController::class, 'index']);
+Route::get('/cursos/create', [CursoController::class, 'create']);
+Route::post('/cursos/create', [CursoController::class, 'store']);
+
+Route::get('/curso/{id}', [CursoController::class, 'show']);
+Route::post('/curso/{id}', [CursoController::class, 'store']);
+Route::delete('/curso/{id}', [CursoController::class, 'destroy']);
+
+Route::get('/alunos', function () {
+    return view('alunos');
+});
+
+Route::get('/pautas', function () {
+    return view('pautas');
+});
+
+Route::get('/avaliacoes', function () {
+    return view('avaliacoes');
+});
+
+

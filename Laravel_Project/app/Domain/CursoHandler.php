@@ -9,8 +9,9 @@ use Illuminate\Database\Eloquent\Collection;
 class CursoHandler
 {
 
-    public static function createCurso(int $codigo, string $designacao, OfertaLetiva $ofertaLetiva): Curso
+    public static function createCurso(int $codigo, string $designacao): Curso
     {
+        $ofertaLetiva = new OfertaLetiva();
         return $ofertaLetiva::createCurso($codigo, $designacao);
     }
 

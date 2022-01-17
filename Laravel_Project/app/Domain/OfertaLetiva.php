@@ -2,6 +2,7 @@
 
 namespace App\Domain;
 
+use App\Models\AnoLetivo;
 use App\Models\Curso;
 use App\Models\Pauta;
 use App\Models\PlanoEstudo;
@@ -15,10 +16,11 @@ class OfertaLetiva
         $c = new Curso();
         $c->codigo = $codigo;
         $c->designacao = $designacao;
-        $c->save();
+        //$a = AnoLetivo::find(1);
+        //$a->curso()->save($c);
         $p = new PlanoEstudo();
         $c->plano_estudo()->save($p);
-        return  $c;
+        return $c;
 
     }
 
