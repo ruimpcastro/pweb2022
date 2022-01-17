@@ -42,17 +42,17 @@ class CursoController extends Controller
      */
     public function store(Request $request, CursoHandler $ch)
     {
-        $codCurso = $request->codigo;
-        $desCurso = $request->designacao;
+        $codCurso = $request->cod;
+        $designacaoCurso = $request->des;
 
         $request->validate(
             [
-                'codigo' => 'required',
-                'designacao' => 'required',
+                'cod' => 'required',
+                'des' => 'required',
             ]
         );
 
-        $ch->createCurso($codCurso, $desCurso, new OfertaLetiva());
+        $ch->createCurso($codCurso, $designacaoCurso);
 
         return redirect('cursos/create');
     }

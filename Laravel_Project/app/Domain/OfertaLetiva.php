@@ -16,8 +16,8 @@ class OfertaLetiva
         $c = new Curso();
         $c->codigo = $codigo;
         $c->designacao = $designacao;
-        $a = AnoLetivo::find(1);
-        $a->curso()->save($c);
+        //$a = AnoLetivo::find(1);
+        //$a->curso()->save($c);
         $p = new PlanoEstudo();
         $c->plano_estudo()->save($p);
         return $c;

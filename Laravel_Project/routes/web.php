@@ -18,9 +18,14 @@ Route::get('/', function () {
     return view('home');
 });
 
-//ROTA
+//CURSO
 Route::get('/cursos', [CursoController::class, 'index']);
+Route::get('/cursos/create', [CursoController::class, 'create']);
+Route::post('/cursos/create', [CursoController::class, 'store']);
+
 Route::get('/curso/{id}', [CursoController::class, 'show']);
+Route::post('/curso/{id}', [CursoController::class, 'store']);
+Route::delete('/curso/{id}', [CursoController::class, 'destroy']);
 
 Route::get('/alunos', function () {
     return view('alunos');
