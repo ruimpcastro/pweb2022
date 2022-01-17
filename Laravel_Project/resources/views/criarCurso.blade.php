@@ -12,12 +12,12 @@
 
         <div>
             <label for="cod">Código do curso: </label>
-            <input id="cod" type="number" value={{ old('cod')}}>
+            <input id="cod" type="number" name="cod" value={{ old('cod')}}>
         </div>
 
         <div>
             <label for="des">Designação do curso: </label>
-            <input id="des" value={{ old('des') }}>
+            <input id="des" name="des"  value={{ old('des') }}>
         </div>
 
         <div>

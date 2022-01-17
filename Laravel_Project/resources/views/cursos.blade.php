@@ -12,7 +12,13 @@
             <ul class="d-flex justify-content-around flex-row">
                 <li style="list-style: none">{{ $curso->codigo }}</li>
                 <a href="/curso/{{$curso->codigo}}"><li style="list-style: none">{{ $curso->designacao }}</li></a>
-                <button type="button" class="btn btn-outline-dark btn-sm">x</button>
-            </ul>
+
+                <!--DELETE-->
+                <form id="delete-form" method="POST" action="/curso/delete/{{$curso->id}}">
+                    @csrf
+                    {{ method_field('DELETE') }}
+                        <input type="submit" class="btn btn-danger" value="X">
+                </form>
+                </ul>
     @endforeach
 @endsection
