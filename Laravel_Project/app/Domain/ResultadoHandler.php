@@ -2,36 +2,55 @@
 
 namespace App\Domain;
 
+use App\Models\Disciplina;
 use App\Models\Pauta;
 use App\Models\Resultado;
+use Illuminate\Support\Facades\DB;
 
 class ResultadoHandler
 {
     public static function gerarPauta()
     {
+
         $json_csv_linhas = self::csvLinhasToJson("Docs/resultados.csv",5);
+        $d = DB::table('disciplinas')->where('codigo',$json_csv_linhas["Código"] )->first();
         print_r($json_csv_linhas);
+        $p = DB::table('pautas')->where('chave',$json_csv_linhas["Chave"] )->first();
+        if ( $p == null) {
+            $pauta = self::createPauta($json_csv_linhas["Chave"], $json_csv_linhas["Pauta"], 0, $d->id);
+        }
+        $p = DB::table('pautas')->where('chave',$json_csv_linhas["Chave"] )->first();
+        //Criar Resultados
         $json_csv_colunas = self::csvColunasToJson("Docs/resultados.csv",8,5);
-        print_r($json_csv_colunas);
+        foreach ($json_csv_colunas as $col) {
+            print_r($col);
+            $a = DB::table('alunos')->where('numero_aluno',$col["Número"] )->first();
+            self::createResultado($col["Resultado"],  $p->id, $d->id, $a->id);
+        }
 
-        self::createPauta($json_csv_linhas["Chave"],$json_csv_linhas["Pauta"],0,$json_csv_linhas["Código"]);
-
-        return $json_csv_colunas;
-
-        //Criar pauta
-        //Associar valores do novo json para os valores da pauta
-        //guardar pauta
     }
 
-    public static function createPauta(int $chave, string $designacao, int $dirty, array $resultados, int $disciplina_id)
+    public static function createPauta(string $chave, string $designacao, int $dirty, int $disciplina_id)
     {
+
         $p = new Pauta();
         $p->chave = $chave;
         $p->designacao =$designacao;
         $p->dirty = $dirty;
         $p->disciplina_id = $disciplina_id;
         $p->save();
+        return $p;
+    }
 
+    public static function createResultado(string $avaliacao, int $pauta_id, int $disciplina_id,int $aluno_id)
+    {
+        $r= new Resultado();
+        $r->avaliacao = $avaliacao;
+        $r->disciplina_id = $disciplina_id;
+        $r->pauta_id = $pauta_id;
+        $r->aluno_id = $aluno_id;
+        $r->presenca = 0;
+        $r->save();
     }
 
     public static function csvLinhasToJson($fname, $numero_linhas) {
@@ -43,15 +62,15 @@ class ResultadoHandler
         $values = array();
         $json = array();
         $row_number = 0;
-        while ($row = fgetcsv($fp,$numero_linhas,";")) {
-            array_push($key,$row[0]);
+        while ($row_number< $numero_linhas && $row = fgetcsv($fp,$numero_linhas,";")) {
+            array_push($key,str_replace(":","",$row[0]));
             array_push($values,$row[1]);
             $row_number++;
         }
         $json[] = array_combine($key, $values);
         $json = array_slice($json[0], 0, $numero_linhas);
         fclose($fp);
-        return json_encode($json);
+        return $json;
     }
 
     public static function csvColunasToJson($fname, $numero_linha, $length) {
@@ -78,7 +97,7 @@ class ResultadoHandler
             $json[] = array_combine($key, $v);
         }
         fclose($fp);
-        return json_encode($json);
+        return $json;
     }
 
     public static function getPauta(int $chavePauta): Pauta
