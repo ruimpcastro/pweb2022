@@ -17,7 +17,7 @@ class ResultadoHandler
         print_r($json_csv_linhas);
         $p = DB::table('pautas')->where('chave',$json_csv_linhas["Chave"] )->first();
         if ( $p == null) {
-            $pauta = self::createPauta($json_csv_linhas["Chave"], $json_csv_linhas["Pauta"], 0, $d->id);
+            $pauta = self::createPauta($json_csv_linhas["Chave"], $json_csv_linhas["Pauta"], 1, $d->id);
         }
         $p = DB::table('pautas')->where('chave',$json_csv_linhas["Chave"] )->first();
         //Criar Resultados
@@ -45,11 +45,8 @@ class ResultadoHandler
     public static function createResultado(string $avaliacao, int $pauta_id, int $disciplina_id,int $aluno_id)
     {
         $r= new Resultado();
-        $r->avaliacao = $avaliacao;
-        $r->disciplina_id = $disciplina_id;
+        $r->resultado = $avaliacao;
         $r->pauta_id = $pauta_id;
-        $r->aluno_id = $aluno_id;
-        $r->presenca = 0;
         $r->save();
     }
 
