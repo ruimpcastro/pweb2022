@@ -23,11 +23,9 @@ class CreateAlunosTable extends Migration
             $table->boolean('concluiu_curso');
             $table->unsignedBigInteger('curso_id')->nullable();
             $table->unsignedBigInteger('plano_estudo_id')->nullable();
-            $table->unsignedBigInteger('ano_letivo_id')->nullable();
 
             $table->foreign('curso_id')->references('id')->on('cursos');
             $table->foreign('plano_estudo_id')->references('id')->on('plano_estudos');
-            $table->foreign('ano_letivo_id')->references('id')->on('ano_letivos');
         });
     }
 

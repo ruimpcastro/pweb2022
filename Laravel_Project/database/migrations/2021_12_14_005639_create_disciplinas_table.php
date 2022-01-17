@@ -21,9 +21,6 @@ class CreateDisciplinasTable extends Migration
             $table->longText('plano');
             $table->integer('ano');
 
-            $table->unsignedBigInteger('ano_letivo_id')->nullable();
-
-            $table->foreign('ano_letivo_id')->references('id')->on('ano_letivos');
             $table->timestamps();
 
         });
