@@ -34,6 +34,6 @@ class DisciplinaAnoLetivo extends Migration
      */
     public function down()
     {
-        //
+        Schema::drop('disciplina_ano_letivo');
     }
 }
