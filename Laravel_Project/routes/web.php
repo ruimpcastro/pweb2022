@@ -27,16 +27,46 @@ Route::get('/curso/{id}', [CursoController::class, 'show']);
 Route::post('/curso/{id}', [CursoController::class, 'store']);
 Route::delete('/curso/{id}', [CursoController::class, 'destroy']);
 
+/*
 Route::get('/alunos', function () {
     return view('alunos');
 });
+*/
 
+Route::get('/alunos', [CursoController::class, 'index']);
+Route::get('/alunos/create', [CursoController::class, 'create']);
+Route::post('/alunos/create', [CursoController::class, 'store']);
+
+Route::get('/aluno/{id}', [CursoController::class, 'show']);
+Route::post('/aluno/{id}', [CursoController::class, 'store']);
+Route::delete('/aluno/{id}', [CursoController::class, 'destroy']);
+
+/*
 Route::get('/pautas', function () {
     return view('pautas');
 });
+*/
 
+Route::get('/pautas', [CursoController::class, 'index']);
+Route::get('/pautas/create', [CursoController::class, 'create']);
+Route::post('/pautas/create', [CursoController::class, 'store']);
+
+Route::get('/pauta/{id}', [CursoController::class, 'show']);
+Route::post('/pauta/{id}', [CursoController::class, 'store']);
+Route::delete('/pauta/{id}', [CursoController::class, 'destroy']);
+
+/*
 Route::get('/avaliacoes', function () {
     return view('avaliacoes');
 });
+*/
+
+Route::get('/avaliacoes', [CursoController::class, 'index']);
+Route::get('/avaliacoes/create', [CursoController::class, 'create']);
+Route::post('/avaliacoes/create', [CursoController::class, 'store']);
+
+Route::get('/avaliacao/{id}', [CursoController::class, 'show']);
+Route::post('/avaliacao/{id}', [CursoController::class, 'store']);
+Route::delete('/avaliacao/{id}', [CursoController::class, 'destroy']);
 
 
