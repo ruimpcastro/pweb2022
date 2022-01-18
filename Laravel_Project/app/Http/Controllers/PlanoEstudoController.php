@@ -21,7 +21,7 @@ class PlanoEstudoController extends Controller
         //return response(new CursoCollection($c));
 
 
-        return view('planoestudos', ['planoestudos' => $p]);
+        return view('disciplinas', ['disciplinas' => $p]);
     }
 
 
