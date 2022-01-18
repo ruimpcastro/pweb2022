@@ -18,7 +18,9 @@ class PautaController extends Controller
     public function index(PautaHandler $ph)
     {
         $p = $ph::getPautas();
-        return response(new PautaCollection($p));
+        //return response(new PautaCollection($p));
+
+        return view('pautas', ['pautas' => $p]);
     }
 
     /**
@@ -52,7 +54,9 @@ class PautaController extends Controller
     {
         $ph = new PautaHandler();
         $p = $ph::getPauta($id);
-        return new PautaResource($p);
+        //return new PautaResource($p);
+
+        return view('pautas', ['pautas' => $p]);
     }
 
     /**

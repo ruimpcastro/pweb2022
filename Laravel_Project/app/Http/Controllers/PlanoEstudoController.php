@@ -15,9 +15,13 @@ class PlanoEstudoController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(PlanoEstudoHandler $pe)
     {
-        //
+        $p = $pe::getDisciplinasFromCurso();
+        //return response(new CursoCollection($c));
+
+
+        return view('planoestudos', ['planoestudos' => $p]);
     }
 
 

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Domain\ResultadoHandler;
 use App\Models\Resultado;
 use Illuminate\Http\Request;
 
@@ -12,9 +13,12 @@ class ResultadoController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(ResultadoHandler $r)
     {
-        return Resultado::all();
+        $re = $r::getResultados();
+        //return response(new CursoCollection($c));
+
+        return view('resultados', ['resultados' => $r]);
     }
 
     /**

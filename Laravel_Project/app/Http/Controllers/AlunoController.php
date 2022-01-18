@@ -19,7 +19,9 @@ class AlunoController extends Controller
     public function index(AlunoHandler $ah)
     {
         $a = $ah::getAlunos();
-        return response(new AlunoCollection($a));
+        //return response(new AlunoCollection($a));
+
+        return view('alunos', ['alunos' => $a]);
     }
 
     /**
@@ -53,7 +55,8 @@ class AlunoController extends Controller
     {
         $ah = new AlunoHandler();
         $a = $ah::getAluno($id);
-        return new AlunoResource($a);
+        //return new AlunoResource($a);
+        return view('alunos', ['alunos' => $a]);
     }
 
     /**
