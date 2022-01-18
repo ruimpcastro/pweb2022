@@ -13,7 +13,7 @@ class CursoAnoLetivo extends Migration
      */
     public function up()
     {
-        Schema::create('curso_ano_letivo', function (Blueprint $table) {
+        Schema::create('ano_letivo_curso', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('curso_id');
             $table->unsignedBigInteger('ano_letivo_id');
@@ -32,6 +32,6 @@ class CursoAnoLetivo extends Migration
      */
     public function down()
     {
-        Schema::drop('curso_ano_letivo');
+        Schema::drop('ano_letivo_curso');
     }
 }

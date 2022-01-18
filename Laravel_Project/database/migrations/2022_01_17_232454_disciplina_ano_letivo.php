@@ -14,7 +14,7 @@ class DisciplinaAnoLetivo extends Migration
     public function up()
     {
         {
-            Schema::create('disciplina_ano_letivo', function (Blueprint $table) {
+            Schema::create('ano_letivo_disciplina', function (Blueprint $table) {
                 $table->id();
                 $table->unsignedBigInteger('disciplina_id');
                 $table->unsignedBigInteger('ano_letivo_id');
@@ -34,6 +34,6 @@ class DisciplinaAnoLetivo extends Migration
      */
     public function down()
     {
-        Schema::drop('disciplina_ano_letivo');
+        Schema::drop('ano_letivo_disciplina');
     }
 }
