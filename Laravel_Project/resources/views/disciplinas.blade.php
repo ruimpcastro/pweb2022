@@ -10,7 +10,7 @@
      @foreach($disciplinas as $disciplina)
         <ul class="d-flex justify-content-around flex-row">
             <li style="list-style: none">{{ $disciplina->codigo }}</li>
-            <a href="/curso/{{$disciplina->codigo}}"><li style="list-style: none">{{ $disciplina->designacao }}</li></a>
+            <a href="/disciplina/{{$disciplina->codigo}}"><li style="list-style: none">{{ $disciplina->designacao }}</li></a>
             <li>{{$disciplina->semestre}}º Semestre do {{$disciplina->ano}}º Ano </li>
 
             <!--DELETE-->
