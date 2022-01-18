@@ -9,11 +9,11 @@
     <!--ROTA-->
     <!--ADD BOTÃO DE EDITAR CURSO-->
 
-        <h3>Disciplinas</h3>
+    <h3>Disciplinas</h3>
     <<!--ADD BOTÃO PARA ADICIONAR CURSO-->
     <!--NO FINAL DE CADA LINHA DA TABELA ADICIONAR UM BOTÃO X PARA ELIMINAR CURSO-->
     <!--ROTA-->
-    @foreach($curso as $disciplinas)
+    @foreach($planoestudos as $disciplinas)
         <ul class="d-flex justify-content-around flex-row">
             <li style="list-style: none">{{ $disciplinas->codigo }}</li>
             <a href="/curso/{{$disciplinas->codigo}}"><li style="list-style: none">{{ $disciplinas->designacao }}</li></a>
@@ -26,4 +26,3 @@
             </form>
         </ul>
     @endforeach
-@endsection
