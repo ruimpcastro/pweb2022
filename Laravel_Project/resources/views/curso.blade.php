@@ -14,6 +14,8 @@
     <!--NO FINAL DE CADA LINHA DA TABELA ADICIONAR UM BOTÃO X PARA ELIMINAR CURSO-->
     <!--ROTA-->
 
+    <!--Adicionar botao de editar curso-->
+
     @foreach($curso as $disciplinas)
         <ul class="d-flex justify-content-around flex-row">
             <li style="list-style: none">{{ $disciplinas->codigo }}</li>
