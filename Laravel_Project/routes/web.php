@@ -27,6 +27,8 @@ Route::get('/curso/{id}', [CursoController::class, 'show']);
 Route::post('/curso/{id}', [CursoController::class, 'store']);
 Route::delete('/curso/{id}', [CursoController::class, 'destroy']);
 
+//ALUNO------------------------------------------------------------
+
 /*
 Route::get('/alunos', function () {
     return view('alunos');
@@ -41,6 +43,8 @@ Route::get('/aluno/{id}', [CursoController::class, 'show']);
 Route::post('/aluno/{id}', [CursoController::class, 'store']);
 Route::delete('/aluno/{id}', [CursoController::class, 'destroy']);
 
+//PAUTA------------------------------------------------------------
+
 /*
 Route::get('/pautas', function () {
     return view('pautas');
@@ -54,6 +58,8 @@ Route::post('/pautas/create', [CursoController::class, 'store']);
 Route::get('/pauta/{id}', [CursoController::class, 'show']);
 Route::post('/pauta/{id}', [CursoController::class, 'store']);
 Route::delete('/pauta/{id}', [CursoController::class, 'destroy']);
+
+//AVALIAÇÂO------------------------------------------------------------
 
 /*
 Route::get('/avaliacoes', function () {
