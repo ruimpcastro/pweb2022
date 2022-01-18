@@ -21,9 +21,9 @@ class GerirPlanoEstudo
     public static function getDisciplinasFromCurso(int $codigoCurso)
     {
         $c = Curso::where('codigo', $codigoCurso)->first();
-        $planoId = $c->plano_estudo->id;
-        $p = PlanoEstudo::find($planoId);
+        $planoEstudos = $c->plano_estudo;
+
         echo $c->designacao . ': ';
-        return $p->disciplinas;
+        return $planoEstudos->disciplinas;
     }
 }
