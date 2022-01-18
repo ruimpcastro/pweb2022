@@ -41,4 +41,14 @@ class Curso extends Model
         $a->curso()->save($c);
         $c->save();
     }
+
+    public static function createMockAssociativeData()
+    {
+        $a = AnoLetivo::find(1);
+
+        $ca = Curso::find(1);
+        $ca->anoLetivo()->attach($a);
+        $cb = Curso::find(2);
+        $cb->anoLetivo()->attach($a);
+    }
 }

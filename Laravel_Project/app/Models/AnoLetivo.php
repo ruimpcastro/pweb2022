@@ -31,5 +31,21 @@ class AnoLetivo extends Model
         $y = new AnoLetivo();
         $y->ano = 2021;
         $y->save();
+
+        $y = new AnoLetivo();
+        $y->ano = 2020;
+        $y->save();
+
+        $y = new AnoLetivo();
+        $y->ano = 2019;
+        $y->save();
+
+        $y = new AnoLetivo();
+        $y->ano = 2018;
+        $y->save();
+
+        $y = new AnoLetivo();
+        $y->ano = 2017;
+        $y->save();
     }
 }
