@@ -1,7 +1,9 @@
 <?php
 
+use App\Http\Controllers\AlunoController;
 use App\Http\Controllers\CursoController;
-use App\Http\Controllers\UserController;
+use App\Http\Controllers\DisciplinaController;
+use App\Http\Controllers\PautaController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -40,13 +42,29 @@ Route::get('/alunos', function () {
 });
 */
 
-Route::get('/alunos', [CursoController::class, 'index']);
-Route::get('/alunos/create', [CursoController::class, 'create']);
-Route::post('/alunos/create', [CursoController::class, 'store']);
+Route::get('/alunos', [AlunoController::class, 'index']);
+Route::get('/alunos/create', [AlunoController::class, 'create']);
+Route::post('/alunos/create', [AlunoController::class, 'store']);
 
-Route::get('/aluno/{id}', [CursoController::class, 'show']);
-Route::post('/aluno/{id}', [CursoController::class, 'store']);
-Route::delete('/aluno/{id}', [CursoController::class, 'destroy']);
+Route::get('/aluno/{id}', [AlunoController::class, 'show']);
+Route::post('/aluno/{id}', [AlunoController::class, 'store']);
+Route::delete('/aluno/{id}', [AlunoController::class, 'destroy']);
+
+//DISCIPLINAS------------------------------------------------------------
+
+/*
+Route::get('/disciplinas', function () {
+    return view('disciplinas');
+});
+*/
+
+Route::get('/disciplinas', [DisciplinaController::class, 'index']);
+Route::get('/disciplinas/create', [DisciplinaController::class, 'create']);
+Route::post('/disciplinas/create', [DisciplinaController::class, 'store']);
+
+Route::get('/disciplina/{id}', [DisciplinaController::class, 'show']);
+Route::post('/disciplina/{id}', [DisciplinaController::class, 'store']);
+Route::delete('/disciplina/{id}', [DisciplinaController::class, 'destroy']);
 
 //PAUTA------------------------------------------------------------
 
@@ -56,13 +74,13 @@ Route::get('/pautas', function () {
 });
 */
 
-Route::get('/pautas', [CursoController::class, 'index']);
-Route::get('/pautas/create', [CursoController::class, 'create']);
-Route::post('/pautas/create', [CursoController::class, 'store']);
+Route::get('/pautas', [PautaController::class, 'index']);
+Route::get('/pautas/create', [PautaController::class, 'create']);
+Route::post('/pautas/create', [PautaController::class, 'store']);
 
-Route::get('/pauta/{id}', [CursoController::class, 'show']);
-Route::post('/pauta/{id}', [CursoController::class, 'store']);
-Route::delete('/pauta/{id}', [CursoController::class, 'destroy']);
+Route::get('/pauta/{id}', [PautaController::class, 'show']);
+Route::post('/pauta/{id}', [PautaController::class, 'store']);
+Route::delete('/pauta/{id}', [PautaController::class, 'destroy']);
 
 //AVALIAÇÂO------------------------------------------------------------
 
