@@ -43,6 +43,22 @@ Route::get('/aluno/{id}', [CursoController::class, 'show']);
 Route::post('/aluno/{id}', [CursoController::class, 'store']);
 Route::delete('/aluno/{id}', [CursoController::class, 'destroy']);
 
+//DISCIPLINAS------------------------------------------------------------
+
+/*
+Route::get('/alunos', function () {
+    return view('alunos');
+});
+*/
+
+Route::get('/disciplinas', [CursoController::class, 'index']);
+Route::get('/disciplinas/create', [CursoController::class, 'create']);
+Route::post('/disciplinas/create', [CursoController::class, 'store']);
+
+Route::get('/disciplina/{id}', [CursoController::class, 'show']);
+Route::post('/disciplina/{id}', [CursoController::class, 'store']);
+Route::delete('/disciplina/{id}', [CursoController::class, 'destroy']);
+
 //PAUTA------------------------------------------------------------
 
 /*
