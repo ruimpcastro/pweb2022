@@ -56,7 +56,7 @@ class PautaController extends Controller
         $p = $ph::getPauta($id);
         //return new PautaResource($p);
 
-        return view('pautas', ['pautas' => $p]);
+        return view('pauta', ['pauta' => $p]);
     }
 
     /**

@@ -13,9 +13,9 @@ class ResultadoController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index(ResultadoHandler $r)
+    public function index(ResultadoHandler $rh)
     {
-        $re = $r::getResultados();
+        $r = $rh::getResultados();
         //return response(new CursoCollection($c));
 
         return view('resultados', ['resultados' => $r]);

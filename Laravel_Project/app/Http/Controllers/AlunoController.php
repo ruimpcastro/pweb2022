@@ -56,7 +56,7 @@ class AlunoController extends Controller
         $ah = new AlunoHandler();
         $a = $ah::getAluno($id);
         //return new AlunoResource($a);
-        return view('alunos', ['alunos' => $a]);
+        return view('aluno', ['aluno' => $a]);
     }
 
     /**

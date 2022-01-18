@@ -56,7 +56,7 @@ class DisciplinaController extends Controller
         $dh = new DisciplinaHandler();
         $d = $dh::getDisciplina($id);
         //return new DisciplinaResource($d);
-        return view('disciplinas', ['disciplinas' => $d]);
+        return view('disciplina', ['disciplina' => $d]);
     }
 
     /**
