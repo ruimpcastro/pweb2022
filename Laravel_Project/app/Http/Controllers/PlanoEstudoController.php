@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Domain\CursoHandler;
 use App\Domain\PlanoEstudoHandler;
 use App\Http\Resources\PlanoEstudoCollection;
 use App\Http\Resources\PlanoEstudoResource;
+use App\Models\Curso;
 use App\Models\PlanoEstudo;
 use Illuminate\Http\Request;
 
@@ -21,7 +23,7 @@ class PlanoEstudoController extends Controller
         //return response(new CursoCollection($c));
 
 
-        return view('disciplinas', ['disciplinas' => $p]);
+        //return view('planoestudo', ['plano' => $p]);
     }
 
 
@@ -55,7 +57,11 @@ class PlanoEstudoController extends Controller
     public function show($id)
     {
         $peh = new PlanoEstudoHandler();
-        return $peh::getDisciplinasFromCurso($id);
+        $p = $peh::getDisciplinasFromCurso($id);
+        $ch = new CursoHandler();
+        $curso = Curso::where('id', $id)->first();
+        $c = $ch::getCurso($curso->codigo);
+        return view('planoestudo', ['plano' => $p, 'curso' => $c]);
     }
 
     /**

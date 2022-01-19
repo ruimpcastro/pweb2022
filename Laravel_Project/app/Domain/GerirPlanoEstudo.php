@@ -18,12 +18,10 @@ class GerirPlanoEstudo
         return $p->disciplinas()->attach($d);
     }
 
-    public static function getDisciplinasFromCurso(int $codigoCurso)
+    public static function getDisciplinasFromCurso(int $id)
     {
-        $c = Curso::where('id', $codigoCurso)->first();
+        $c = Curso::where('id', $id)->first();
         $planoEstudos = $c->plano_estudo;
-
-        echo $c->designacao . ': ';
         return $planoEstudos->disciplinas;
     }
 }

@@ -4,6 +4,8 @@ use App\Http\Controllers\AlunoController;
 use App\Http\Controllers\CursoController;
 use App\Http\Controllers\DisciplinaController;
 use App\Http\Controllers\PautaController;
+use App\Http\Controllers\PlanoEstudoController;
+use App\Http\Controllers\ResultadoController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -37,6 +39,13 @@ Route::post('/cursos/create', [CursoController::class, 'store']);
 Route::get('/curso/{id}', [CursoController::class, 'show']);
 Route::post('/curso/{id}', [CursoController::class, 'store']);
 Route::delete('/curso/{id}', [CursoController::class, 'destroy']);
+
+//PLANO ESTUDO
+//Route::post('/cursos/create', [PlanoEstudoController::class, 'store']);
+Route::get('/planoestudo/{id}', [CursoController::class, 'show']);
+Route::get('/planoestudo/{id}', [PlanoEstudoController::class, 'show']);
+//Route::post('/curso/{id}', [PlanoEstudoController::class, 'store']);
+//Route::delete('/curso/{id}', [PlanoEstudoController::class, 'destroy']);
 
 //ALUNO------------------------------------------------------------
 
@@ -94,12 +103,12 @@ Route::get('/avaliacoes', function () {
 });
 */
 
-Route::get('/avaliacoes', [CursoController::class, 'index']);
-Route::get('/avaliacoes/create', [CursoController::class, 'create']);
-Route::post('/avaliacoes/create', [CursoController::class, 'store']);
+Route::get('/avaliacoes', [ResultadoController::class, 'index']);
+Route::get('/avaliacoes/create', [ResultadoController::class, 'create']);
+Route::post('/avaliacoes/create', [ResultadoController::class, 'store']);
 
-Route::get('/avaliacao/{id}', [CursoController::class, 'show']);
-Route::post('/avaliacao/{id}', [CursoController::class, 'store']);
-Route::delete('/avaliacao/{id}', [CursoController::class, 'destroy']);
+Route::get('/avaliacao/{id}', [ResultadoController::class, 'show']);
+Route::post('/avaliacao/{id}', [ResultadoController::class, 'store']);
+Route::delete('/avaliacao/{id}', [ResultadoController::class, 'destroy']);
 
 
