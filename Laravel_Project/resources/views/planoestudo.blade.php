@@ -6,7 +6,7 @@
 
 @section('conteudo')
     <div class="w-100 mb-3">
-        <input type="submit" class="btn btn-danger w-100" value="Criar curso">
+        <input type="submit" class="btn btn-primary w-100" value="Editar Plano de estudos">
     </div>
 
     @foreach($plano as $p)
