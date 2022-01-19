@@ -5,6 +5,8 @@
 @endsection
 
 @section('conteudo')
+
+    <!--Adicionar curso-->
     <form id="edit-form" method="GET" action="/cursos/create">
     <div class="w-100 mb-3">
         <input type="submit" class="btn btn-primary w-100" value="Adicionar novo curso">
@@ -24,10 +26,12 @@
                     </div>
                 </div>
                 <div class="d-flex flex-row justify-content-center align-items-center">
+
                     <!--EDIT-->
                     <form id="edit-form" method="GET" action="/curso/{{$curso->codigo}}" class="me-3 mb-1">
                         <input type="submit" class="btn btn-secondary w-100" value="Editar curso">
                     </form>
+
                     <!--DELETE-->
                     <form id="delete-form" method="POST" action="/curso/{{$curso->id}}" class="mb-1">
                         @csrf

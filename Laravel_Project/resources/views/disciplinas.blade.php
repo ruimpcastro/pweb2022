@@ -4,6 +4,8 @@
 @endsection
 
 @section('conteudo')
+
+    <!--Adicionar Disciplina-->
     <form id="edit-form" method="GET" action="/disciplinas/create">
         <div class="w-100 mb-3">
             <input type="submit" class="btn btn-primary w-100" value="Adicionar nova disciplina">
