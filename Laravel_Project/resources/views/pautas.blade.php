@@ -17,10 +17,10 @@
         <ul style="list-style: none" class="d-flex justify-content-between align-items-center flex-row ps-0 border-bottom mb-3">
             <div class="d-flex flex-row justify-content-center align-items-center">
                 <div class="me-5">
-                    <li >{{ $pauta->codigo }}</li>
+                    <li >{{ $pauta->chave }}</li>
                 </div>
                 <div class="ms-5">
-                    <a href="/pauta/{{$pauta->codigo}}">
+                    <a href="/pauta/{{$pauta->chave}}">
                         <li>{{ $pauta->designacao }}</li>
                     </a>
                 </div>
@@ -30,7 +30,7 @@
 
                 <!--EDIT-->
             <!--
-            <form id="edit-form" method="GET" action="/pauta/{{$pauta->codigo}}" class="me-3 mb-1">
+            <form id="edit-form" method="GET" action="/pauta/{{$pauta->chave}}" class="me-3 mb-1">
                     <input type="submit" class="btn btn-secondary w-100" value="Editar pauta">
                 </form>
                 -->
