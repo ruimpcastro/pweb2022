@@ -124,6 +124,46 @@ class Aluno extends Model
         $ag->curso()->associate($cm);
         $ag->plano_estudo()->associate($pm);
         $ag->save();
+
+        $aa = new Aluno();
+        $aa->numero_aluno = 20083114;
+        $aa->nome = "Amenadiel";
+        $aa->matricula = 3;
+        $aa->desistente = 0;
+        $aa->concluiu_curso = 0;
+        $aa->curso()->associate($ci);
+        $aa->plano_estudo()->associate($pi);
+        $aa->save();
+
+        $aa = new Aluno();
+        $aa->numero_aluno = 20212242;
+        $aa->nome = "Mazikeen";
+        $aa->matricula = 3;
+        $aa->desistente = 0;
+        $aa->concluiu_curso = 0;
+        $aa->curso()->associate($ci);
+        $aa->plano_estudo()->associate($pi);
+        $aa->save();
+
+        $aa = new Aluno();
+        $aa->numero_aluno = 20156661;
+        $aa->nome = "Lucifer Morninstart";
+        $aa->matricula = 3;
+        $aa->desistente = 0;
+        $aa->concluiu_curso = 0;
+        $aa->curso()->associate($ci);
+        $aa->plano_estudo()->associate($pi);
+        $aa->save();
+
+        $aa = new Aluno();
+        $aa->numero_aluno = 20185551;
+        $aa->nome = "Adam";
+        $aa->matricula = 3;
+        $aa->desistente = 0;
+        $aa->concluiu_curso = 0;
+        $aa->curso()->associate($ci);
+        $aa->plano_estudo()->associate($pi);
+        $aa->save();
     }
 
     public static function createMockAssociativeData()

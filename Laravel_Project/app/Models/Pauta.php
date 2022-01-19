@@ -23,6 +23,7 @@ class Pauta extends Model
         $de = Disciplina::find(5);
         $df = Disciplina::find(6);
         $dg = Disciplina::find(7);
+        $dh = Disciplina::find(8);
 
         $pf = new Pauta();
         $pf->chave = 1111;
@@ -74,5 +75,11 @@ class Pauta extends Model
         $db->pauta()->save($pr);
         $db->pauta()->save($pe);
 
+        $pf = new Pauta();
+        $pf->chave = 1125;
+        $pf->designacao = "Pauta de Época Especial";
+        $pf->dirty = 0;
+
+        $dg->pauta()->save($pe);
     }
 }
