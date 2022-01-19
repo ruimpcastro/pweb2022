@@ -20,7 +20,7 @@
                     <li >{{ $pauta->codigo }}</li>
                 </div>
                 <div class="ms-5">
-                    <a href="/curso/{{$pauta->codigo}}">
+                    <a href="/pauta/{{$pauta->codigo}}">
                         <li>{{ $pauta->designacao }}</li>
                     </a>
                 </div>
