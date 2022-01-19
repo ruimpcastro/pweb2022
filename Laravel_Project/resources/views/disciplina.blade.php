@@ -1,14 +1,18 @@
 @extends('master')
 
 @section('titulo')
-    {{ $disciplina->codigo }} {{ $disciplina->designacao }}
-
+    Disciplina de {{ $disciplina->designacao }}
 @endsection
-
 @section('conteudo')
-    <!--ROTA-->
-    <!--ADD BOTÃO DE EDITAR CURSO-->
-
-    <h3>Conteúdo</h3>
-
+    @foreach($disciplina->pauta as $pauta)
+        <p>
+            {{$pauta->chave}}
+        </p>
+        <p>
+        {{$pauta->designacao}}
+        </p>
+        <p>
+            {{$pauta->media}}
+        </p>
+    @endforeach
 @endsection

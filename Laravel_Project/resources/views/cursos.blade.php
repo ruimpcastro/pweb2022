@@ -5,13 +5,11 @@
 @endsection
 
 @section('conteudo')
-    <!--ADD BOTÃO PARA ADICIONAR CURSO-->
-    <!--NO FINAL DE CADA LINHA DA TABELA ADICIONAR UM BOTÃO X PARA ELIMINAR CURSO-->
-    <!--ROTA-->
+    <form id="edit-form" method="GET" action="/cursos/create">
     <div class="w-100 mb-3">
-        <input type="submit" class="btn btn-danger w-100" value="Adicionar curso">
+        <input type="submit" class="btn btn-primary w-100" value="Adicionar novo curso">
     </div>
-
+    </form>
 
     @foreach($cursos as $curso)
             <ul class="d-flex justify-content-between flex-row ps-0">
@@ -23,14 +21,16 @@
                 </div>
                 <div class="d-flex flex-row">
 
-                    <input type="submit" class="btn btn-danger w-100 me-1" value="Editar curso">
-
-                <!--DELETE-->
-                <form id="delete-form" method="POST" action="/curso/{{$curso->id}}">
-                    @csrf
-                    {{ method_field('DELETE') }}
-                        <input type="submit" class="btn btn-danger" value="X">
-                </form>
+                    <!--EDIT-->
+                    <form id="edit-form" method="GET" action="/curso/{{$curso->codigo}}" class="me-1">
+                        <input type="submit" class="btn btn-secondary w-100" value="Editar curso">
+                    </form>
+                    <!--DELETE-->
+                    <form id="delete-form" method="POST" action="/curso/{{$curso->id}}">
+                        @csrf
+                        {{ method_field('DELETE') }}
+                            <input type="submit" class="btn btn-danger" value="X">
+                    </form>
                 </div>
 
 

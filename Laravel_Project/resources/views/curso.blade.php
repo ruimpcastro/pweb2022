@@ -1,32 +1,12 @@
 @extends('master')
 
 @section('titulo')
-    {{ $curso->codigo }} {{ $curso->designacao }}
-
+    Curso de {{ $curso->designacao }}
 @endsection
 
 @section('conteudo')
-    <!--ROTA-->
-    <!--ADD BOTÃO DE EDITAR CURSO-->
-
-        <h3>Disciplinas</h3>
-    <<!--ADD BOTÃO PARA ADICIONAR CURSO-->
-    <!--NO FINAL DE CADA LINHA DA TABELA ADICIONAR UM BOTÃO X PARA ELIMINAR CURSO-->
-    <!--ROTA-->
-
-    <!--Adicionar botao de editar curso-->
-
-    @foreach($curso as $disciplinas)
-        <ul class="d-flex justify-content-around flex-row">
-            <li style="list-style: none">{{ $disciplinas->codigo }}</li>
-            <a href="/curso/{{$disciplinas->codigo}}"><li style="list-style: none">{{ $disciplinas->designacao }}</li></a>
-
-            <!--DELETE-->
-            <form id="delete-form" method="POST" action="/disciplinas/{{$disciplinas->id}}">
-                @csrf
-                {{ method_field('DELETE') }}
-                <input type="submit" class="btn btn-danger" value="X">
-            </form>
-        </ul>
-    @endforeach
+    <!--Aceder ao plano de estudos-->
+    <form id="edit-form" method="GET" action="/planoestudo/{{$curso->id}}" class="me-1">
+        <input type="submit" class="btn btn-danger w-100" value="Aceder ao plano de estudos">
+    </form>
 @endsection
