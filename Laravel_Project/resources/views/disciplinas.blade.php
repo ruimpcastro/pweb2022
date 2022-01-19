@@ -27,6 +27,7 @@
                  <div class="me-5">
                     <li>{{$disciplina->semestre}}º Semestre do {{$disciplina->ano}}º Ano </li>
                  </div>
+
                  <!--DELETE-->
                 <form
                 id="delete-form"
