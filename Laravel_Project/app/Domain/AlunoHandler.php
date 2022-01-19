@@ -7,10 +7,10 @@ use Illuminate\Database\Eloquent\Collection;
 
 class AlunoHandler
 {
-    public static function getAluno(int $numeroAluno): Aluno
+    public static function getAluno(int $id)
     {
         $estudante = new Estudante();
-        return $estudante::getAluno($numeroAluno);
+        return $estudante::getAluno($id);
     }
     public static function getAlunos(): Collection
     {

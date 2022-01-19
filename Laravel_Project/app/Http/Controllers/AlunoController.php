@@ -3,10 +3,12 @@
 namespace App\Http\Controllers;
 
 use App\Domain\AlunoHandler;
+use App\Domain\CursoHandler;
 use App\Http\Resources\AlunoCollection;
 use App\Http\Resources\AlunoResource;
 use App\Http\Resources\CursoResource;
 use App\Models\Aluno;
+use App\Models\Curso;
 use Illuminate\Http\Request;
 
 class AlunoController extends Controller
@@ -55,8 +57,12 @@ class AlunoController extends Controller
     {
         $ah = new AlunoHandler();
         $a = $ah::getAluno($id);
+        $i = $a->curso_id;
+        $c = Curso::where('id', $i)->first();
+        $ch = new CursoHandler();
+        $curso = $ch::getCurso($c);
         //return new AlunoResource($a);
-        return view('aluno', ['aluno' => $a]);
+        return view('aluno', ['aluno' => $a, 'curso' => $curso]);
     }
 
     /**

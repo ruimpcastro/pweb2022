@@ -30,9 +30,9 @@ class Estudante
 
     }
 
-    public static function getAluno(int $numeroAluno): Aluno
+    public static function getAluno(int $id)
     {
-        return Aluno::where('numero_aluno', $numeroAluno)->first();
+        return Aluno::where('id', $id)->first();
     }
 
     public static function getAlunos(): Collection
