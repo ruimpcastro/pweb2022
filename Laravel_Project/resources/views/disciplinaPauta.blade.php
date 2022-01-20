@@ -15,7 +15,10 @@
             @if($pauta->dirty == 1)
                 <button type="button" class="btn btn-secondary" disabled>Pauta publicada</button>
             @else
-                <button type="button" class="btn btn-primary">Inserir pauta</button>
+                <div class="input-group mb-3">
+                    <label class="input-group-text" for="inputGroupFile01">Upload</label>
+                    <input type="file" class="form-control" id="inputGroupFile01">
+                </div>
             @endif
         </p>
     @endforeach
