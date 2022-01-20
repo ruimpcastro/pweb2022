@@ -23,9 +23,9 @@ class OfertaLetiva
 
     }
 
-    public static function getCurso(int $id)
+    public static function getCurso(int $codigo)
     {
-        return Curso::where('id', $id)->first();
+        return Curso::where('codigo', $codigo)->first();
     }
 
     public static function getCursos(): Collection

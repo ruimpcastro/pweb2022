@@ -2,6 +2,7 @@
 
 namespace App\Domain;
 
+use App\Models\Aluno;
 use App\Models\Disciplina;
 use App\Models\Pauta;
 use App\Models\Resultado;
@@ -11,13 +12,14 @@ class ResultadoHandler
 {
     public static function gerarPauta()
     {
-
         $json_csv_linhas = self::csvLinhasToJson("Docs/resultados.csv",5);
         $d = DB::table('disciplinas')->where('codigo',$json_csv_linhas["Código"] )->first();
         print_r($json_csv_linhas);
         $p = DB::table('pautas')->where('chave',$json_csv_linhas["Chave"] )->first();
-        if ( $p == null) {
+        if ( $p == null or $p->dirty == 0) {
             $pauta = self::createPauta($json_csv_linhas["Chave"], $json_csv_linhas["Pauta"], 1, $d->id);
+        } else {
+            return "isDirty";
         }
         $p = DB::table('pautas')->where('chave',$json_csv_linhas["Chave"] )->first();
         //Criar Resultados
@@ -44,10 +46,15 @@ class ResultadoHandler
 
     public static function createResultado(string $avaliacao, int $pauta_id, int $disciplina_id,int $aluno_id)
     {
-        $r= new Resultado();
+        $r = new Resultado();
         $r->resultado = $avaliacao;
         $r->pauta_id = $pauta_id;
         $r->save();
+        $r->aluno()->attach($aluno_id);
+        //$a = Aluno::where('aluno_id', $aluno_id);
+        //$a->resultado()->attach($avaliacao);
+        $rh = new ResultadoHandler();
+        $rh::getMedia($pauta_id);
     }
 
     public static function csvLinhasToJson($fname, $numero_linhas) {
@@ -113,9 +120,9 @@ class ResultadoHandler
         return $pauta->resultado;
     }
 
-    public static function getMedia(int $chavePauta): string
+    public static function getMedia(int $id): string
     {
-        $pauta = Pauta::where('chave', $chavePauta)->first();
+        $pauta = Pauta::where('id', $id)->first();
         $res = [];
         $resultados = $pauta->resultado;
         foreach ($resultados->all() as $resultado) {

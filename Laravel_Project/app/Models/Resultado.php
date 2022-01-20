@@ -163,9 +163,9 @@ class Resultado extends Model
 
 
         $r = new ResultadoHandler();
-        $r::getMedia(1111);
-        $r::getMedia(1112);
-        $r::getMedia(1113);
-        $r::getMedia(1114);
+        $r::getMedia(1);
+        $r::getMedia(2);
+        $r::getMedia(3);
+        $r::getMedia(4);
     }
 }

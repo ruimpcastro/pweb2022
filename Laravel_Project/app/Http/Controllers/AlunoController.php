@@ -57,10 +57,9 @@ class AlunoController extends Controller
     {
         $ah = new AlunoHandler();
         $a = $ah::getAluno($id);
-        $i = $a->curso_id;
-        $c = Curso::where('id', $i)->first();
+        $c = $ah::getCursoFromAluno($id);
         $ch = new CursoHandler();
-        $curso = $ch::getCurso($c);
+        $curso = $ch::getCurso($c->codigo);
         //return new AlunoResource($a);
         return view('aluno', ['aluno' => $a, 'curso' => $curso]);
     }

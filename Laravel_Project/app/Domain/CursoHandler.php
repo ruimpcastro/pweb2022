@@ -15,10 +15,10 @@ class CursoHandler
         return $ofertaLetiva::createCurso($codigo, $designacao);
     }
 
-    public static function getCurso(int $id)
+    public static function getCurso(int $codigo)
     {
         $ofertaLetiva = new OfertaLetiva();
-        return $ofertaLetiva::getCurso($id);
+        return $ofertaLetiva::getCurso($codigo);
     }
 
     public static function getCursos(): Collection

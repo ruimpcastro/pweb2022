@@ -2,15 +2,20 @@
 
 namespace App\Domain;
 
-use App\Models\Aluno;
 use Illuminate\Database\Eloquent\Collection;
 
 class AlunoHandler
 {
-    public static function getAluno(int $id)
+    public static function getCursoFromAluno(int $numeroAluno)
     {
         $estudante = new Estudante();
-        return $estudante::getAluno($id);
+        return $estudante::getCursoFromAluno($numeroAluno);
+    }
+
+    public static function getAluno(int $numeroAluno)
+    {
+        $estudante = new Estudante();
+        return $estudante::getAluno($numeroAluno);
     }
     public static function getAlunos(): Collection
     {
