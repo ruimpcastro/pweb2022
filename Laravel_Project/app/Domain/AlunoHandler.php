@@ -2,10 +2,16 @@
 
 namespace App\Domain;
 
+use App\Models\Aluno;
 use Illuminate\Database\Eloquent\Collection;
 
 class AlunoHandler
 {
+    public static function createAluno(int $numeroAluno, string $nome, int $codigoCurso): Aluno
+    {
+        $estudante = new Estudante();
+        return $estudante::createAluno($numeroAluno, $nome, $codigoCurso);
+    }
     public static function getCursoFromAluno(int $numeroAluno)
     {
         $estudante = new Estudante();

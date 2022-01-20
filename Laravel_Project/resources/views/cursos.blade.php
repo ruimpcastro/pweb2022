@@ -3,14 +3,11 @@
 @section('titulo')
     Cursos
 @endsection
-
 @section('conteudo')
-
-    <!--Adicionar curso-->
     <form id="edit-form" method="GET" action="/cursos/create">
-    <div class="w-100 mb-3">
-        <input type="submit" class="btn btn-primary w-100" value="Adicionar novo curso">
-    </div>
+        <div class="w-100 mb-3">
+            <input type="submit" class="btn btn-primary w-100" value="Adicionar novo curso">
+        </div>
     </form>
 
     @foreach($cursos as $curso)
@@ -39,8 +36,6 @@
                             <input type="submit" class="btn btn-danger" value="X">
                     </form>
                 </div>
-
-
             </ul>
     @endforeach
 @endsection
