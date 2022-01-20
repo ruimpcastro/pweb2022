@@ -19,7 +19,7 @@ class Resultado extends Migration
             $table->string('resultado');
             $table->unsignedBigInteger('pauta_id')->nullable();
 
-            $table->foreign('pauta_id')->references('id')->on('pautas');
+            $table->foreign('pauta_id')->references('id')->on('pautas')->onDelete('cascade');
         });
     }
 

@@ -24,7 +24,7 @@ class CreatePautasTable extends Migration
             $table->unsignedBigInteger('curso_id')->nullable();
 
             $table->foreign('disciplina_id')->references('id')->on('disciplinas')->onDelete('restrict');
-            $table->foreign('curso_id')->references('id')->on('cursos');
+            $table->foreign('curso_id')->references('id')->on('cursos')->onDelete('cascade');
         });
     }
 

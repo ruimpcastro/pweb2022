@@ -20,8 +20,8 @@ class AlunoResultado extends Migration
                 $table->unsignedBigInteger('resultado_id')->nullable();
                 $table->timestamps();
 
-                $table->foreign('aluno_id')->references('id')->on('alunos');
-                $table->foreign('resultado_id')->references('id')->on('resultados');
+                $table->foreign('aluno_id')->references('id')->on('alunos')->onDelete('cascade');
+                $table->foreign('resultado_id')->references('id')->on('resultados')->onDelete('cascade');
 
             });
         }

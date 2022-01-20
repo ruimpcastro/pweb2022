@@ -20,8 +20,8 @@ class DisciplinaAnoLetivo extends Migration
                 $table->unsignedBigInteger('ano_letivo_id');
                 $table->timestamps();
 
-                $table->foreign('disciplina_id')->references('id')->on('disciplinas');
-                $table->foreign('ano_letivo_id')->references('id')->on('ano_letivos');
+                $table->foreign('disciplina_id')->references('id')->on('disciplinas')->onDelete('cascade');
+                $table->foreign('ano_letivo_id')->references('id')->on('ano_letivos')->onDelete('cascade');
 
             });
         }

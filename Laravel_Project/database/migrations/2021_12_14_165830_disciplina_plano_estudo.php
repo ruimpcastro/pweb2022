@@ -19,8 +19,8 @@ class DisciplinaPlanoEstudo extends Migration
             $table->unsignedBigInteger('disciplina_id');
             $table->timestamps();
 
-            $table->foreign('plano_estudo_id')->references('id')->on('plano_estudos');
-            $table->foreign('disciplina_id')->references('id')->on('disciplinas');
+            $table->foreign('plano_estudo_id')->references('id')->on('plano_estudos')->onDelete('cascade');
+            $table->foreign('disciplina_id')->references('id')->on('disciplinas')->onDelete('cascade');
         });
     }
 

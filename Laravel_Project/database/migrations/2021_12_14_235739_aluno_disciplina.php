@@ -19,8 +19,8 @@ class AlunoDisciplina extends Migration
             $table->unsignedBigInteger('disciplina_id');
             $table->timestamps();
 
-            $table->foreign('aluno_id')->references('id')->on('alunos');
-            $table->foreign('disciplina_id')->references('id')->on('disciplinas');
+            $table->foreign('aluno_id')->references('id')->on('alunos')->onDelete('cascade');
+            $table->foreign('disciplina_id')->references('id')->on('disciplinas')->onDelete('cascade');
 
         });
     }

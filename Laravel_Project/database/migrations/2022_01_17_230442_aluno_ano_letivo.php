@@ -19,8 +19,8 @@ class AlunoAnoLetivo extends Migration
             $table->unsignedBigInteger('ano_letivo_id');
             $table->timestamps();
 
-            $table->foreign('aluno_id')->references('id')->on('alunos');
-            $table->foreign('ano_letivo_id')->references('id')->on('ano_letivos');
+            $table->foreign('aluno_id')->references('id')->on('alunos')->onDelete('cascade');
+            $table->foreign('ano_letivo_id')->references('id')->on('ano_letivos')->onDelete('cascade');
 
         });
     }

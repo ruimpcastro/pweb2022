@@ -19,8 +19,8 @@ class CursoAnoLetivo extends Migration
             $table->unsignedBigInteger('ano_letivo_id');
             $table->timestamps();
 
-            $table->foreign('curso_id')->references('id')->on('cursos');
-            $table->foreign('ano_letivo_id')->references('id')->on('ano_letivos');
+            $table->foreign('curso_id')->references('id')->on('cursos')->onDelete('cascade');
+            $table->foreign('ano_letivo_id')->references('id')->on('ano_letivos')->onDelete('cascade');
 
         });
     }
