@@ -37,8 +37,8 @@
             placeholder="Nome curso"
             aria-label="Username"
             aria-describedby="nome-curso"
-            name="des"
-            value={{ old('des')}}
+            name="designacaoCurso"
+            value={{ old('designacaoCurso')}}
         >
 
         <div class="w-100pt-3 d-flex justify-content-center align-items-center mt-2">

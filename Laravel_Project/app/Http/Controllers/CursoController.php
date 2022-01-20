@@ -52,7 +52,7 @@ class CursoController extends Controller
             ]
         );
 
-        $ch->createCurso($codCurso, $designacaoCurso);
+        $ch::createCurso($codCurso, $designacaoCurso);
 
         return redirect('cursos/create');
     }

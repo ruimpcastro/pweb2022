@@ -55,7 +55,7 @@ class AlunoController extends Controller
             ]
         );
 
-        $ah->createAluno($numero_aluno, $nome, $designacaoCurso);
+        $ah::createAluno($numero_aluno, $nome, $designacaoCurso);
 
         return redirect('alunos/create');
     }
