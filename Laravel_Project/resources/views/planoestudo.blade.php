@@ -5,6 +5,7 @@
 @endsection
 
 @section('conteudo')
+    <a href="/curso/{{ $curso->codigo }}" class="d-flex justify-content-center mb-2">Voltar à página anterior</a>
     <form id="edit-form" method="GET" action="/planoestudo/{{ $curso->id }}/edit">
         <div class="w-100 mb-3">
             <input type="submit" class="btn btn-primary w-100" value="Editar Plano de estudos">

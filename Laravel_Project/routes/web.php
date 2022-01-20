@@ -35,6 +35,9 @@ Route::get('/register', function () {
 Route::get('/cursos', [CursoController::class, 'index']);
 Route::get('/cursos/create', [CursoController::class, 'create']);
 Route::post('/cursos/create', [CursoController::class, 'store']);
+Route::get('/curso/{id}/edit', [CursoController::class, 'edit']);
+Route::put('/curso/{id}/edit', [CursoController::class, 'update']);
+
 
 Route::get('/curso/{id}/alunos', [AlunoController::class, 'indexWithCurso']);
 Route::get('/curso/{id}', [CursoController::class, 'show']);
@@ -42,12 +45,9 @@ Route::post('/curso/{id}', [CursoController::class, 'store']);
 Route::delete('/curso/{id}', [CursoController::class, 'destroy']);
 
 //PLANO ESTUDO
-//Route::post('/cursos/create', [PlanoEstudoController::class, 'store']);
 Route::get('/planoestudo/{id}/edit', [PlanoEstudoController::class, 'showEdit']);
 Route::get('/planoestudo/{id}', [CursoController::class, 'show']);
 Route::get('/planoestudo/{id}', [PlanoEstudoController::class, 'show']);
-//Route::post('/curso/{id}', [PlanoEstudoController::class, 'store']);
-//Route::delete('/curso/{id}', [PlanoEstudoController::class, 'destroy']);
 
 //ALUNO------------------------------------------------------------
 
