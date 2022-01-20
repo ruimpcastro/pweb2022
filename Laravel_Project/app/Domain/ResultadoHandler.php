@@ -2,24 +2,23 @@
 
 namespace App\Domain;
 
-use App\Models\Aluno;
-use App\Models\Disciplina;
 use App\Models\Pauta;
 use App\Models\Resultado;
 use Illuminate\Support\Facades\DB;
 
 class ResultadoHandler
 {
+    //TODO Criar página para pegar na pauta e gerar valores da pauta
     public static function gerarPauta()
     {
         $json_csv_linhas = self::csvLinhasToJson("Docs/resultados.csv",5);
         $d = DB::table('disciplinas')->where('codigo',$json_csv_linhas["Código"] )->first();
         print_r($json_csv_linhas);
         $p = DB::table('pautas')->where('chave',$json_csv_linhas["Chave"] )->first();
-        if ( $p == null or $p->dirty == 0) {
-            $pauta = self::createPauta($json_csv_linhas["Chave"], $json_csv_linhas["Pauta"], 1, $d->id);
+        if ( $p != null or $p->dirty != 0) {
+            return "Não consegue efetuar alterações, porque já submeteu o ficheiro no sistema";
         } else {
-            return "isDirty";
+            $pauta = self::createPauta($json_csv_linhas["Chave"], $json_csv_linhas["Pauta"], 1, $d->id);
         }
         $p = DB::table('pautas')->where('chave',$json_csv_linhas["Chave"] )->first();
         //Criar Resultados
@@ -51,8 +50,6 @@ class ResultadoHandler
         $r->pauta_id = $pauta_id;
         $r->save();
         $r->aluno()->attach($aluno_id);
-        //$a = Aluno::where('aluno_id', $aluno_id);
-        //$a->resultado()->attach($avaliacao);
         $rh = new ResultadoHandler();
         $rh::getMedia($pauta_id);
     }
