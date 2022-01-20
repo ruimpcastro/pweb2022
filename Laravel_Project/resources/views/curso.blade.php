@@ -5,6 +5,7 @@
 @endsection
 
 @section('conteudo')
+    <a href="/cursos" class="d-flex justify-content-center mb-2">Voltar à página anterior</a>
     <!--Aceder ao plano de estudos-->
     <form id="get-plano-estudo" method="GET" action="/planoestudo/{{$curso->id}}" class="me-1">
         <input type="submit" class="btn btn-primary w-100" value="Aceder ao plano de estudos">

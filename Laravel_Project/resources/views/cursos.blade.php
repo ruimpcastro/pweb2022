@@ -25,7 +25,7 @@
                 <div class="d-flex flex-row justify-content-center align-items-center">
 
                     <!--EDIT-->
-                    <form id="edit-form" method="GET" action="/curso/{{$curso->codigo}}" class="me-3 mb-1">
+                    <form id="edit-form" method="GET" action="/curso/{{$curso->codigo}}/edit" class="me-3 mb-1">
                         <input type="submit" class="btn btn-secondary w-100" value="Editar curso">
                     </form>
 

@@ -82,11 +82,13 @@ class CursoController extends Controller
      * Show the form for editing the specified resource.
      *
      * @param  int  $id
-     * @return \Illuminate\Http\Response
      */
     public function edit($id)
     {
-        //
+        $ch = new CursoHandler();
+        $c = $ch::getCurso($id);
+
+        return view('editarCurso', ['curso' => $c]);
     }
 
     /**
@@ -96,9 +98,21 @@ class CursoController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, $id, CursoHandler $ch)
     {
-        //
+        $codCurso = $request->cod;
+        $designacaoCurso = $request->des;
+
+        $request->validate(
+            [
+                'cod' => 'required',
+                'des' => 'required',
+            ]
+        );
+
+        $ch::createCurso($codCurso, $designacaoCurso);
+
+        return redirect('cursos/create');
     }
 
     /**
@@ -108,6 +122,7 @@ class CursoController extends Controller
      */
     public function destroy($id)
     {
-        return Curso::destroy($id);
+        Curso::destroy($id);
+        return redirect('/cursos');
     }
 }
