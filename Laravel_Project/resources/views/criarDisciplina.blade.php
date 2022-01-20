@@ -13,19 +13,19 @@
             type="number"
             class="form-control"
             placeholder="000"
-            aria-label="Username"
-            aria-describedby="codigo-curso"
+            aria-label="codigo-disciplina"
+            aria-describedby="codigo-disciplina"
             name="cod"
             value={{ old('cod')}}
         >
 
-        <p class="mt-4 mb-0"><b>Designação da desciplina</b></p>
+        <p class="mt-4 mb-0"><b>Designação da disciplina</b></p>
         <input
             type="text"
             class="form-control"
-            placeholder="«Programação, Matemática"
-            aria-label="Username"
-            aria-describedby="basic-addon1"
+            placeholder="Programação, Matemática"
+            aria-label="des"
+            aria-describedby="des-disciplina"
             name="des"
             value={{ old('des')}}
         >
@@ -41,7 +41,7 @@
             value={{ old('sem')}}
         >
 
-        <p class="mt-4 mb-0"><b>Ano da Disciplina</b></p>
+        <p class="mt-4 mb-0"><b>Ano da disciplina</b></p>
         <input
             type="number"
             class="form-control"
@@ -52,11 +52,11 @@
             value={{ old('an')}}
         >
 
-        <p class="mt-4 mb-0"><b>Plano da Disciplina</b></p>
+        <p class="mt-4 mb-0"><b>Plano da disciplina</b></p>
         <input
             type="text"
             class="form-control"
-            placeholder="Descricao sobre o que é dado na disciplina"
+            placeholder="O que é dado na disciplina"
             aria-label="Username"
             aria-describedby="basic-addon1"
             name="pln"
