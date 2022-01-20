@@ -30,7 +30,7 @@ class DisciplinaController extends Controller
      */
     public function create()
     {
-        //
+        return view('criarDisciplina');
     }
 
     /**
@@ -39,9 +39,28 @@ class DisciplinaController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Request $request, DisciplinaHandler $dh)
     {
-        //
+        $codDisciplina = $request->cod;
+        $designacaoDesciplina = $request->des;
+        $semestre = $request->sem;
+        $ano = $request->an;
+        $plano = $request ->pln;
+
+        $request->validate(
+            [
+                'cod' => 'required',
+                'des' => 'required',
+                'sem' => 'required',
+                'an' => 'required',
+                'pln' => 'required',
+            ]
+        );
+
+        $dh::createDisciplina($codDisciplina, $designacaoDesciplina, $semestre, $ano, $plano);
+
+        return redirect('disciplinas/create');
+
     }
 
     /**

@@ -9,16 +9,17 @@ use Illuminate\Database\Eloquent\Collection;
 class Cadeira
 {
 
-    public static function createDisciplina(int $codigo, string $designacao, int $semestre, string $plano): Disciplina
+    public static function createDisciplina(int $codigo, string $designacao, int $semestre, int $ano, string $plano): Disciplina
     {
         $d = new Disciplina();
-        $a = new AnoLetivo();
+        $a = AnoLetivo::find(1);
         $d->codigo = $codigo;
         $d->designacao = $designacao;
         $d->semestre = $semestre;
         $d->plano = $plano;
-        $d->ano_letivo()->associate($a);
+        $d->ano = $ano;
         $d->save();
+        $d->ano_letivo()->attach($a);
         return  $d;
 
     }

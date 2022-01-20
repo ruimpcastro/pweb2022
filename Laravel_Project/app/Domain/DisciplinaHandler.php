@@ -9,9 +9,11 @@ use Illuminate\Database\Eloquent\Collection;
 class DisciplinaHandler
 {
 
-    public static function createDisciplina(int $codigo, string $designacao, int $semestre, string $plano, Cadeira $cadeira): Disciplina
+    public static function createDisciplina(int $codigo, string $designacao, int $semestre, int $ano, string $plano): Disciplina
     {
-        return $cadeira->createDisciplina($codigo, $designacao, $semestre, $plano);
+        $cadeira = new Cadeira();
+
+        return $cadeira::createDisciplina($codigo, $designacao, $semestre, $ano, $plano);
     }
 
     public static function getDisciplina(int $codigo): Disciplina

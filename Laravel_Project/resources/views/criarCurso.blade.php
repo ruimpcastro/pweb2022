@@ -31,7 +31,7 @@
         >
 
         <div class="w-100pt-3 d-flex justify-content-center align-items-center mt-2">
-            <input type="submit" class="btn btn-primary w-100" value="Criar curso">
+            <input type="submit" class="btn btn-primary w-100" value="Criar Curso ">
         </div>
     </form>
 @endsection
