@@ -12,33 +12,33 @@
         <input
             type="number"
             class="form-control"
-            placeholder="000000000"
+            placeholder="000"
             aria-label="Username"
             aria-describedby="numero-aluno"
-            name="cod"
+            name="num"
             value={{ old('num')}}
         >
 
-        <p class="mt-4 mb-0"><b>Nome aluno</b></p>
+        <p class="mt-4 mb-0"><b>Nome do aluno</b></p>
         <input
             type="text"
             class="form-control"
             placeholder="Nome"
             aria-label="Username"
-            aria-describedby="name"
-            name="des"
+            aria-describedby="nome aluno"
+            name="nom"
             value={{ old('nom')}}
         >
 
-        <p class="mt-4 mb-0"><b>Nome curso</b></p>
+        <p class="mt-4 mb-0"><b>Código do curso</b></p>
         <input
-            type="text"
+            type="number"
             class="form-control"
-            placeholder="Nome curso"
+            placeholder="Código curso"
             aria-label="Username"
-            aria-describedby="nome-curso"
-            name="designacaoCurso"
-            value={{ old('designacaoCurso')}}
+            aria-describedby="codigo-curso"
+            name="codigo_curso"
+            value={{ old('codigo_curso')}}
         >
 
         <div class="w-100pt-3 d-flex justify-content-center align-items-center mt-2">

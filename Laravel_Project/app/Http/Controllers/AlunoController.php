@@ -45,17 +45,17 @@ class AlunoController extends Controller
 
         $numero_aluno = $request->num;
         $nome = $request->nom;
-        $designacaoCurso = $request->des;
+        $codigo_curso = $request->codigo_curso;
 
         $request->validate(
             [
                 'num' => 'required',
                 'nom' => 'required',
-                'designacaoCurso' => 'required',
+                'codigo_curso' => 'required',
             ]
         );
 
-        $ah::createAluno($numero_aluno, $nome, $designacaoCurso);
+        $ah::createAluno($numero_aluno, $nome, $codigo_curso);
 
         return redirect('alunos/create');
     }
