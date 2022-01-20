@@ -3,11 +3,14 @@
 namespace App\Domain;
 
 
+use App\Models\PlanoEstudo;
+
 class PlanoEstudoHandler
 {
 
-    public static function getPlanoEstudo(int $id, gerirPlanoEstudo $gerir)
+    public static function getPlanoEstudo(int $id): PlanoEstudo
     {
+        $gerir = new GerirPlanoEstudo();
         return $gerir::getPlanoEstudo($id);
     }
     public static function associarPlanoEstudoDisciplina(int $codigoCurso, int $codigoDisciplina, gerirPlanoEstudo $gerirPlanoEstudo)

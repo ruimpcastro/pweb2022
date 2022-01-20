@@ -1,13 +1,15 @@
 @extends('master')
 
 @section('titulo')
-    Plano do curso de {{ $curso->designacao }}
+    Editar Plano de {{ $curso->designacao }}
 @endsection
 
 @section('conteudo')
-    <form id="edit-form" method="GET" action="/planoestudo/{{ $curso->id }}/edit">
+    <a href="/planoestudo/{{ $curso->id }}" class="d-flex justify-content-center mb-2">Voltar à página anterior</a>
+
+    <form id="add-disciplina-form" method="GET" action="/planoestudo/{{ $curso->id }}/edit">
         <div class="w-100 mb-3">
-            <input type="submit" class="btn btn-primary w-100" value="Editar Plano de estudos">
+            <input type="submit" class="btn btn-primary w-100" value="Adicionar disciplina ao plano">
         </div>
     </form>
 
@@ -25,8 +27,14 @@
                             <li>{{ $p->designacao }}</li>
                         </div>
                     </div>
-                    <div class="ms-5 me-5 text-nowrap text-truncate" style="max-width: 60%; display: inline-block">
-                        <p>{{ $p->plano }}</p>
+                    <div class="d-flex flex-row justify-content-center align-items-center"r>
+                        <div class="ms-5 me-5 text-nowrap text-truncate" style="max-width: 300px; display: inline-block">
+                            <p>{{ $p->plano }}</p>
+                        </div>
+                        <form id="remove-form" method="POST" action="/planoestudo/disciplina/{{$p->id}}" class="mb-1">
+                            @csrf
+                            <input type="submit" class="btn btn-danger" value="Remover do plano">
+                        </form>
                     </div>
                 </ul>
             @endif
@@ -45,10 +53,15 @@
                             <li>{{ $p->designacao }}</li>
                         </div>
                     </div>
-                    <div class="ms-5 me-5 text-nowrap text-truncate" style="max-width: 60%; display: inline-block">
-                        <p>{{ $p->plano }}</p>
+                    <div class="d-flex flex-row justify-content-center align-items-center"r>
+                        <div class="ms-5 me-5 text-nowrap text-truncate" style="max-width: 300px; display: inline-block">
+                            <p>{{ $p->plano }}</p>
+                        </div>
+                        <form id="remove-form" method="POST" action="/planoestudo/disciplina/{{$p->id}}" class="mb-1">
+                            @csrf
+                            <input type="submit" class="btn btn-danger" value="Remover do plano">
+                        </form>
                     </div>
-
                 </ul>
             @endif
         @endif
@@ -68,10 +81,15 @@
                             <li>{{ $p->designacao }}</li>
                         </div>
                     </div>
-                    <div class="ms-5 me-5 text-nowrap text-truncate" style="max-width: 60%; display: inline-block">
-                        <p>{{ $p->plano }}</p>
+                    <div class="d-flex flex-row justify-content-center align-items-center"r>
+                        <div class="ms-5 me-5 text-nowrap text-truncate" style="max-width: 300px; display: inline-block">
+                            <p>{{ $p->plano }}</p>
+                        </div>
+                        <form id="remove-form" method="POST" action="/planoestudo/disciplina/{{$p->id}}" class="mb-1">
+                            @csrf
+                            <input type="submit" class="btn btn-danger" value="Remover do plano">
+                        </form>
                     </div>
-
                 </ul>
             @endif
         @endif
@@ -89,10 +107,15 @@
                             <li>{{ $p->designacao }}</li>
                         </div>
                     </div>
-                    <div class="ms-5 me-5 text-nowrap text-truncate" style="max-width: 60%; display: inline-block">
-                        <p>{{ $p->plano }}</p>
+                    <div class="d-flex flex-row justify-content-center align-items-center"r>
+                        <div class="ms-5 me-5 text-nowrap text-truncate" style="max-width: 300px; display: inline-block">
+                            <p>{{ $p->plano }}</p>
+                        </div>
+                        <form id="remove-form" method="POST" action="/planoestudo/disciplina/{{$p->id}}" class="mb-1">
+                            @csrf
+                            <input type="submit" class="btn btn-danger" value="Remover do plano">
+                        </form>
                     </div>
-
                 </ul>
             @endif
         @endif
@@ -111,10 +134,15 @@
                             <li>{{ $p->designacao }}</li>
                         </div>
                     </div>
-                    <div class="ms-5 me-5 text-nowrap text-truncate" style="max-width: 60%; display: inline-block">
-                        <p>{{ $p->plano }}</p>
+                    <div class="d-flex flex-row justify-content-center align-items-center"r>
+                        <div class="ms-5 me-5 text-nowrap text-truncate" style="max-width: 300px; display: inline-block">
+                            <p>{{ $p->plano }}</p>
+                        </div>
+                        <form id="remove-form" method="POST" action="/planoestudo/disciplina/{{$p->id}}" class="mb-1">
+                            @csrf
+                            <input type="submit" class="btn btn-danger" value="Remover do plano">
+                        </form>
                     </div>
-
                 </ul>
             @endif
         @endif
@@ -132,10 +160,15 @@
                             <li>{{ $p->designacao }}</li>
                         </div>
                     </div>
-                    <div class="ms-5 me-5 text-nowrap text-truncate" style="max-width: 60%; display: inline-block">
-                        <p>{{ $p->plano }}</p>
+                    <div class="d-flex flex-row justify-content-center align-items-center"r>
+                        <div class="ms-5 me-5 text-nowrap text-truncate" style="max-width: 300px; display: inline-block">
+                            <p>{{ $p->plano }}</p>
+                        </div>
+                        <form id="remove-form" method="POST" action="/planoestudo/disciplina/{{$p->id}}" class="mb-1">
+                            @csrf
+                            <input type="submit" class="btn btn-danger" value="Remover do plano">
+                        </form>
                     </div>
-
                 </ul>
             @endif
         @endif
