@@ -101,4 +101,17 @@ class Estudante
         $aluno->save();
         return $aluno->concluiu_curso;
     }
+
+    public static function countFinalistas(): int
+    {
+        $estudante = new Estudante();
+        $alunos = $estudante::getAlunos();
+        $finalistas = 0;
+        foreach ($alunos as $aluno){
+            if($aluno->concluiu_curso == 1) {
+                $finalistas += 1;
+            }
+        }
+        return $finalistas;
+    }
 }
