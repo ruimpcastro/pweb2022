@@ -10,35 +10,35 @@
         @csrf
         <p class="mb-0"><b>Número do aluno</b></p>
         <input
-            type="int"
+            type="number"
             class="form-control"
-            placeholder="000"
+            placeholder="000000000"
             aria-label="Username"
             aria-describedby="numero-aluno"
             name="cod"
-            value={{ old('cod')}}
+            value={{ old('num')}}
         >
 
         <p class="mt-4 mb-0"><b>Nome aluno</b></p>
         <input
             type="text"
             class="form-control"
-            placeholder="Informática"
+            placeholder="Nome"
             aria-label="Username"
             aria-describedby="name"
             name="des"
-            value={{ old('des')}}
+            value={{ old('nom')}}
         >
 
         <p class="mt-4 mb-0"><b>Nome curso</b></p>
         <input
-            type="name"
+            type="text"
             class="form-control"
-            placeholder="000"
+            placeholder="Nome curso"
             aria-label="Username"
             aria-describedby="nome-curso"
             name="des"
-            value={{ old('cod')}}
+            value={{ old('des')}}
         >
 
         <div class="w-100pt-3 d-flex justify-content-center align-items-center mt-2">

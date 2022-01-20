@@ -16,7 +16,6 @@ class AlunoController extends Controller
     /**
      * Display a listing of the resource.
      *
-     * @return \Illuminate\Http\Response
      */
     public function index(AlunoHandler $ah)
     {
@@ -29,7 +28,6 @@ class AlunoController extends Controller
     /**
      * Show the form for creating a new resource.
      *
-     * @return \Illuminate\Http\Response
      */
     public function create()
     {
@@ -40,11 +38,25 @@ class AlunoController extends Controller
      * Store a newly created resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Request $request, AlunoHandler $ah)
     {
-        Aluno::createAluno($request->numero_aluno, $request->nome, $request->curso);
+        //Aluno::createAluno($request->numero_aluno, $request->nome, $request->curso);
+
+        $numero_aluno = $request->num;
+        $nome = $request->nom;
+        $designacaoCurso = $request->des;
+
+        $request->validate(
+            [
+                'num' => 'required',
+                'nom' => 'required',
+                'designacaoCurso' => 'required',
+            ]
+        );
+
+        $ah->createAluno($numero_aluno, $nome, $designacaoCurso);
+
         return redirect('alunos/create');
     }
 
@@ -52,7 +64,6 @@ class AlunoController extends Controller
      * Display the specified resource.
      *
      * @param  int  $id
-     * @return \Illuminate\Http\Response
      */
     public function show($id)
     {
@@ -92,7 +103,6 @@ class AlunoController extends Controller
      * Remove the specified resource from storage.
      *
      * @param  int  $id
-     * @return \Illuminate\Http\Response
      */
     public function destroy($id)
     {
