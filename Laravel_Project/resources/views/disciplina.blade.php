@@ -19,6 +19,13 @@
             </form>
         </div>
 
+        <!--gerar avaliações-->
+        <div class="w-100 me-1">
+            <form id="gerar-avaliacoes" method="GET" action="/disciplina/{{$disciplina->codigo}}/avaliacoes" class="me-1">
+                <input type="submit" class="btn btn-primary w-100" value="Gerar avaliações">
+            </form>
+        </div>
+
         <!--Ver Alunos inscritos-->
         <div class="w-100 ms-1">
             <form id="showAlunos" method="GET" action="/disciplina/{{$disciplina->codigo}}/alunos" class="ms-1">
