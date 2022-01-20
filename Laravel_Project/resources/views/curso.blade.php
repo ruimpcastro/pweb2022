@@ -5,7 +5,7 @@
 @endsection
 
 @section('conteudo')
-    <div class="w-100pt-3 d-flex justify-content-center align-items-center mt-2">
+    <div class="w-100 d-flex justify-content-center align-items-center mt-2">
     <!--Aceder ao plano de estudos-->
         <div class="w-100 me-1">
     <form id="get-plano-estudo" method="GET" action="/planoestudo/{{$curso->id}}" class="me-1">
