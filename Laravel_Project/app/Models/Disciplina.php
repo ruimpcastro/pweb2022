@@ -173,7 +173,7 @@ class Disciplina extends Model
         /*2 Semestre*/
         /*2º ANO*/
         $dn = new Disciplina();
-        $dn->codigo = 333;
+        $dn->codigo = 334;
         $dn->designacao = "Computação Gráfica";
         $dn->semestre = 2;
         $dn->ano = 2;
@@ -194,7 +194,7 @@ class Disciplina extends Model
 
         $dp = new Disciplina();
         $dp->codigo = 331;
-        $dp->designacao = "tecnologias Web";
+        $dp->designacao = "Tecnologias Web";
         $dp->semestre = 2;
         $dp->ano = 2;
         $dp->plano = "Lorem ipsum dolor sit amet.";
@@ -207,7 +207,7 @@ class Disciplina extends Model
         /*3º ANO*/
         $dq = new Disciplina();
         $dq->codigo = 002;
-        $dq->designacao = "Programação Web";
+        $dq->designacao = "DAI";
         $dq->semestre = 2;
         $dq->ano = 3;
         $dq->plano = "Lorem ipsum dolor sit amet.";
@@ -275,7 +275,7 @@ class Disciplina extends Model
         /*2º SEMESTRE*/
         /*2º ANO*/
         $d = new Disciplina();
-        $d->codigo = 123;
+        $d->codigo = 120;
         $d->designacao = "Fisiologia";
         $d->semestre = 2;
         $d->ano = 2;
@@ -307,6 +307,8 @@ class Disciplina extends Model
         $df = Disciplina::find(5);
         $df->plano_estudo()->attach($pi);
 
+
+        /*ATENÇÂO DISCIPLINAS EM COMUM*/
         $dg = Disciplina::find(6);
         $dg->plano_estudo()->attach($pm);
         $dg->plano_estudo()->attach($pi);
