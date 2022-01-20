@@ -12,7 +12,7 @@
         <input
             type="number"
             class="form-control"
-            placeholder="000"
+            placeholder="0000"
             aria-label="Username"
             aria-describedby="numero-aluno"
             name="num"

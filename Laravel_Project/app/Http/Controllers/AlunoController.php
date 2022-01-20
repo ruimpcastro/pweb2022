@@ -25,7 +25,7 @@ class AlunoController extends Controller
         return view('alunos', ['alunos' => $a]);
     }
 
-    public function indexWithCurso(int $id,AlunoHandler $ah, CursoHandler $ch)
+    public function indexWithCurso(int $id, AlunoHandler $ah, CursoHandler $ch)
     {
         $a = $ah::getAlunos();
         //TODO Corrigir isto
@@ -79,11 +79,9 @@ class AlunoController extends Controller
     {
         $ah = new AlunoHandler();
         $a = $ah::getAluno($id);
-        $c = $ah::getCursoFromAluno($id);
-        $ch = new CursoHandler();
-        $curso = $ch::getCurso($c->codigo);
+
         //return new AlunoResource($a);
-        return view('aluno', ['aluno' => $a, 'curso' => $curso]);
+        return view('aluno', ['aluno' => $a]);
     }
 
     /**

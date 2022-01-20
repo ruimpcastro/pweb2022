@@ -12,11 +12,6 @@ class AlunoHandler
         $estudante = new Estudante();
         return $estudante::createAluno($numeroAluno, $nome, $codigoCurso);
     }
-    public static function getCursoFromAluno(int $numeroAluno)
-    {
-        $estudante = new Estudante();
-        return $estudante::getCursoFromAluno($numeroAluno);
-    }
 
     public static function getAluno(int $numeroAluno)
     {
