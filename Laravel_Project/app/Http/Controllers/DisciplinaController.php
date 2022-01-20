@@ -67,7 +67,6 @@ class DisciplinaController extends Controller
      * Display the specified resource.
      *
      * @param  int  $id
-     * @return DisciplinaResource
      */
     public function show($id)
     {
@@ -75,6 +74,20 @@ class DisciplinaController extends Controller
         $d = $dh::getDisciplina($id);
         //return new DisciplinaResource($d);
         return view('disciplina', ['disciplina' => $d]);
+    }
+
+    public function showPautas($id)
+    {
+        $dh = new DisciplinaHandler();
+        $d = $dh::getDisciplina($id);
+        return view('disciplinaPauta', ['disciplina' => $d]);
+    }
+
+    public function showAlunos($id)
+    {
+        $dh = new DisciplinaHandler();
+        $d = $dh::getDisciplina($id);
+        return view('disciplinaAluno', ['disciplina' => $d]);
     }
 
     /**
