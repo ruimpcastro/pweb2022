@@ -66,8 +66,16 @@ class CursoController extends Controller
     {
         $ch = new CursoHandler();
         $c = $ch::getCurso($id);
+        $m = $ch::getMedia($id);
+        $alunosD = $ch::getAlunosDesistentes();
+        $alunosF = $ch::getAlunosFinalistas();
         //return new CursoResource($c);
-        return view('/curso', ['curso' => $c]);
+        return view('/curso', [
+            'curso' => $c,
+            'media' => $m,
+            'desistente' => $alunosD,
+            'finalista' => $alunosF,
+        ]);
     }
 
     /**

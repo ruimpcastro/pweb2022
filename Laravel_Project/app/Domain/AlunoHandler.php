@@ -53,9 +53,21 @@ class AlunoHandler
         return $estudante::marcarDesistente($numeroAluno);
     }
 
+    public static function countDesistentes(): int
+    {
+        $e = new Estudante();
+        return $e::countDesistentes();
+    }
+
     public static function marcarConcluido(int $numeroAluno)
     {
         $estudante = new Estudante();
         return $estudante::marcarConcluido($numeroAluno);
+    }
+
+    public static function countFinalistas(): int
+    {
+        $e = new Estudante();
+        return $e::countFinalistas();
     }
 }

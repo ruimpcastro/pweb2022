@@ -9,12 +9,16 @@ use Illuminate\Database\Eloquent\Collection;
 
 class GerirPlanoEstudo
 {
-    public static function associarPlanoEstudoDisciplina(int $codigoCurso, int $codigoDisciplina)
+    public static function getPlanoEstudo(int $id): PlanoEstudo
     {
-        $c = Curso::where('codigo', $codigoCurso)->first();
-        $planoId = $c->plano_estudo->id;
+        return PlanoEstudo::where('id', $id)->first();
+    }
+    //TODO Criar página para associar Plano de estudo à Disciplina
+    public static function associarPlanoEstudoDisciplina(int $id, int $codigoDisciplina)
+    {
+        $c = Curso::where('id', $id)->first();
+        $p = $c->plano_estudo;
         $d = Disciplina::where('codigo', $codigoDisciplina)->first();
-        $p = PlanoEstudo::find($planoId);
         return $p->disciplinas()->attach($d);
     }
 

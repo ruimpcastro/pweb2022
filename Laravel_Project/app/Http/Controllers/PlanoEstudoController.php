@@ -65,6 +65,20 @@ class PlanoEstudoController extends Controller
     }
 
     /**
+     * @param int $id
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
+     */
+    public function showEdit($id)
+    {
+        $peh = new PlanoEstudoHandler();
+        $p = $peh::getDisciplinasFromCurso($id);
+        $ch = new CursoHandler();
+        $curso = Curso::where('id', $id)->first();
+        $c = $ch::getCurso($curso->codigo);
+        return view('editarPlanoestudo', ['plano' => $p, 'curso' => $c]);
+    }
+
+    /**
      * Show the form for editing the specified resource.
      *
      * @param  int  $id
