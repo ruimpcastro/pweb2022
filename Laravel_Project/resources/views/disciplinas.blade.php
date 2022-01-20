@@ -11,6 +11,22 @@
             <input type="submit" class="btn btn-primary w-100" value="Adicionar nova disciplina">
         </div>
     </form>
+
+    <!-- PROCURAR DISCIPLINAS POU PLANO DE ESTUDO
+    <form method="get" action="/disciplinas/view">
+        <p class="mt-4 mb-0"><b>Plano da disciplina</b></p>
+        <input
+            type="text"
+            class="form-control"
+            placeholder="O que é dado na disciplina"
+            aria-label="Username"
+            aria-describedby="basic-addon1"
+            name="pln"
+            value={{ old('pln')}}
+        >
+    </form>
+    -->
+
      @foreach($disciplinas as $disciplina)
          <ul style="list-style: none" class="d-flex justify-content-between align-items-center flex-row ps-0 border-bottom mb-3">
              <div class="d-flex flex-row justify-content-center align-items-center">
