@@ -33,7 +33,7 @@ class AlunoController extends Controller
      */
     public function create()
     {
-        //
+        return view('criarAluno');
     }
 
     /**
@@ -45,6 +45,7 @@ class AlunoController extends Controller
     public function store(Request $request)
     {
         Aluno::createAluno($request->numero_aluno, $request->nome, $request->curso);
+        return redirect('alunos/create');
     }
 
     /**

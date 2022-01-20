@@ -10,7 +10,7 @@
         @csrf
         <p class="mb-0"><b>Número do aluno</b></p>
         <input
-            type="number"
+            type="int"
             class="form-control"
             placeholder="000"
             aria-label="Username"
@@ -30,13 +30,13 @@
             value={{ old('des')}}
         >
 
-        <p class="mt-4 mb-0"><b>Código curso</b></p>
+        <p class="mt-4 mb-0"><b>Nome curso</b></p>
         <input
-            type="number"
+            type="name"
             class="form-control"
             placeholder="000"
             aria-label="Username"
-            aria-describedby="codigo-curso"
+            aria-describedby="nome-curso"
             name="des"
             value={{ old('cod')}}
         >
