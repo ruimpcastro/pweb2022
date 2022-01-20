@@ -13,9 +13,9 @@
         </p>
         <p>
             @if($pauta->dirty == 1)
-                Pauta publicada
+                <button type="button" class="btn btn-secondary" disabled>Pauta publicada</button>
             @else
-                Falta publicar pauta
+                <button type="button" class="btn btn-primary">Inserir pauta</button>
             @endif
         </p>
     @endforeach
