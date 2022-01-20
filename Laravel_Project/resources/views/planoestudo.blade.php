@@ -54,7 +54,7 @@
         @endif
     @endforeach
 
-    <h3><b>2º ano</b></h3>
+    <h3 class="mt-5"><b>2º ano</b></h3>
     <h5><i>1º semestre</i></h5>
     @foreach($plano as $p)
         @if($p->ano == 2)
@@ -97,7 +97,7 @@
             @endif
         @endif
     @endforeach
-    <h3><b>3º ano</b></h3>
+    <h3 class="mt-5"><b>3º ano</b></h3>
     <h5><i>1º semestre</i></h5>
     @foreach($plano as $p)
         @if($p->ano == 3)
