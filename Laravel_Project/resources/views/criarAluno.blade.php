@@ -30,16 +30,13 @@
             value={{ old('nom')}}
         >
 
-        <p class="mt-4 mb-0"><b>Código do curso</b></p>
-        <input
-            type="number"
-            class="form-control"
-            placeholder="Código curso"
-            aria-label="Username"
-            aria-describedby="codigo-curso"
-            name="codigo_curso"
-            value={{ old('codigo_curso')}}
-        >
+        <label for="exampleDataList" class="form-label">Curso</label>
+        <input class="form-control" name="codigo_curso" list="datalistOptions" id="curso" placeholder="Insira um curso">
+        <datalist id="datalistOptions">
+            @foreach($curso as $c)
+                <option value="{{$c->codigo}}">{{$c->codigo}} - {{$c->designacao}}</option>
+            @endforeach
+        </datalist>
 
         <div class="w-100pt-3 d-flex justify-content-center align-items-center mt-2">
             <div class="w-100 me-1">

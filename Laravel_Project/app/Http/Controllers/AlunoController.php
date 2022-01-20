@@ -28,7 +28,6 @@ class AlunoController extends Controller
     public function indexWithCurso(int $id, AlunoHandler $ah, CursoHandler $ch)
     {
         $a = $ah::getAlunos();
-        //TODO Corrigir isto
         $c = $ch::getCurso($id);
         //return response(new AlunoCollection($a));
 
@@ -41,7 +40,9 @@ class AlunoController extends Controller
      */
     public function create()
     {
-        return view('criarAluno');
+        $ch = new CursoHandler();
+        $c = $ch::getCursos();
+        return view('criarAluno', ['curso' => $c]);
     }
 
     /**
