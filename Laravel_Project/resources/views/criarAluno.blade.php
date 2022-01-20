@@ -42,7 +42,12 @@
         >
 
         <div class="w-100pt-3 d-flex justify-content-center align-items-center mt-2">
-            <input type="submit" class="btn btn-primary w-100" value="Criar aluno">
+            <div class="w-100 me-1">
+                <input type="submit" class="btn btn-primary w-100" value="Criar aluno">
+            </div>
+            <div class="w-100 ms-1">
+                <a class="btn btn-secondary w-100" href="/alunos">Voltar para a página de alunos</a>
+            </div>
         </div>
     </form>
 @endsection
