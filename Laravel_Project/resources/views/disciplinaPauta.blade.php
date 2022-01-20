@@ -15,7 +15,7 @@
             @if($pauta->dirty == 1)
                 <button type="button" class="btn btn-secondary" disabled>Pauta publicada</button>
             @else
-                <button type="button" class="btn btn-primary">Inserir pauta</button>
+                <button type="button" action="/pautas/{{$disciplina->codigo}}/create" class="btn btn-primary">Inserir pauta</button>
             @endif
         </p>
     @endforeach
