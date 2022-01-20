@@ -32,5 +32,17 @@ class CursoHandler
         $ofertaLetiva = new OfertaLetiva();
         return $ofertaLetiva::getMedia($codigo);
     }
+
+    public static function getAlunosDesistentes()
+    {
+        $ol = new OfertaLetiva();
+        return $ol::getAlunosDesistentes();
+    }
+
+    public static function getAlunosFinalistas()
+    {
+        $ol = new OfertaLetiva();
+        return $ol::getAlunosFinalistas();
+    }
 }
 
