@@ -6,6 +6,13 @@
 
 @section('conteudo')
     <h3>Objetivos:</h3>
-    <li>Gestão de cursos/alunos/disciplinas/pautas.</li>
-    <li>A análise do percurso escolar dos estudantes de um dado curso.</li>
+    <a>(1) Gestão de:
+        <ul>
+        <li>Cursos;</li>
+        <li>Alunos;</li>
+        <li>Disciplinas;</li>
+        <li>Pautas;</li>
+        </ul>
+    </a>
+    <a>(2) A análise do percurso escolar dos estudantes de um dado curso.</a>
 @endsection
