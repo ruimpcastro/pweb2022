@@ -96,10 +96,6 @@ Route::get('/pautas', [PautaController::class, 'index']);
 Route::get('/pautas/create', [PautaController::class, 'create']);
 Route::post('/pautas/create', [PautaController::class, 'store']);
 
-Route::get('/pautas/{id}/create', [PautaController::class, 'create']);
-Route::post('/pautas/{id}/create', [PautaController::class, 'store']);
-Route::post('/pautas/{id}/create', [PautaController::class, 'destroy']);
-
 Route::get('/pauta/{id}', [PautaController::class, 'show']);
 Route::post('/pauta/{id}', [PautaController::class, 'store']);
 Route::delete('/pauta/{id}', [PautaController::class, 'destroy']);
