@@ -21,6 +21,16 @@
             <!--Falta criar lógica para o Heroku da barra de navegações-->
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav">
+                    @if(\Illuminate\Support\Facades\URL::current() == "http://127.0.0.1:8000")
+                        <li class="nav-item">
+                            <a class="nav-link active" href="http://127.0.0.1:8000/">Home</a>
+                        </li>
+                    @else
+                        <li class="nav-item">
+                            <a class="nav-link" href="http://127.0.0.1:8000/">Home</a>
+                        </li>
+                    @endif
+
                     @if(\Illuminate\Support\Facades\URL::current() == "http://127.0.0.1:8000/cursos")
                         <li class="nav-item">
                                 <a class="nav-link active" href="/cursos">Cursos</a>
