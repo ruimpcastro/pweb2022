@@ -96,23 +96,21 @@ class CursoController extends Controller
      *
      * @param  \Illuminate\Http\Request  $request
      * @param  int  $id
-     * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id, CursoHandler $ch)
     {
-        $codCurso = $request->cod;
+        $c = $ch::getCurso($id);
         $designacaoCurso = $request->des;
 
         $request->validate(
             [
-                'cod' => 'required',
                 'des' => 'required',
             ]
         );
 
-        $ch::createCurso($codCurso, $designacaoCurso);
+        $ch::editCurso($c->codigo, $designacaoCurso);
 
-        return redirect('cursos/create');
+        return redirect("curso/$c->codigo/edit");
     }
 
     /**

@@ -23,6 +23,15 @@ class OfertaLetiva
 
     }
 
+    public static function editCurso(int $codigo, string $newDesignacao)
+    {
+        $c = Curso::where('codigo', $codigo)->first();
+        $c->designacao = $newDesignacao;
+        $c->save();
+        return $c;
+
+    }
+
     public static function getCurso(int $codigo)
     {
         return Curso::where('codigo', $codigo)->first();

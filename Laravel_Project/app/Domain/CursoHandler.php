@@ -15,6 +15,12 @@ class CursoHandler
         return $ofertaLetiva::createCurso($codigo, $designacao);
     }
 
+    public static function editCurso(int $codigo, string $newDesignacao)
+    {
+        $ofertaLetiva = new OfertaLetiva();
+        return $ofertaLetiva::editCurso($codigo, $newDesignacao);
+    }
+
     public static function getCurso(int $codigo)
     {
         $ofertaLetiva = new OfertaLetiva();
