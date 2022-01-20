@@ -33,7 +33,6 @@ class OfertaLetiva
         return Curso::all();
     }
 
-    //NÃO FINALIZADO NA ENTREGA
     public static function getMedia(int $codigo): float
     {
         $curso = Curso::where('codigo', $codigo)->first();
@@ -46,5 +45,17 @@ class OfertaLetiva
         }
 
         return $res / $count;
+    }
+
+    public static function getAlunosDesistentes()
+    {
+        $ah = new AlunoHandler();
+        return $ah::countDesistentes();
+    }
+
+    public static function getAlunosFinalistas()
+    {
+        $ah = new AlunoHandler();
+        return $ah::countFinalistas();
     }
 }
