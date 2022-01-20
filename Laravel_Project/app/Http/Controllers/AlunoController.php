@@ -25,6 +25,16 @@ class AlunoController extends Controller
         return view('alunos', ['alunos' => $a]);
     }
 
+    public function indexWithCurso(int $id,AlunoHandler $ah, CursoHandler $ch)
+    {
+        $a = $ah::getAlunos();
+        //TODO Corrigir isto
+        $c = $ch::getCurso($id);
+        //return response(new AlunoCollection($a));
+
+        return view('cursoAluno', ['alunos' => $a, 'curso' => $c]);
+    }
+
     /**
      * Show the form for creating a new resource.
      *

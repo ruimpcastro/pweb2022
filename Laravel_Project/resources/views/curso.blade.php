@@ -6,8 +6,13 @@
 
 @section('conteudo')
     <!--Aceder ao plano de estudos-->
-    <form id="edit-form" method="GET" action="/planoestudo/{{$curso->id}}" class="me-1">
+    <form id="get-plano-estudo" method="GET" action="/planoestudo/{{$curso->id}}" class="me-1">
         <input type="submit" class="btn btn-primary w-100" value="Aceder ao plano de estudos">
+    </form>
+
+    <!--Aceder à lista de alunos-->
+    <form id="get-alunos" method="GET" action="/curso/{{ $curso->codigo }}/alunos" class="me-1">
+        <input type="submit" class="btn btn-primary w-100" value="Ver alunos inscritos">
     </form>
 
     <h3 class="mt-3"><b>Dashboard</b></h3>
