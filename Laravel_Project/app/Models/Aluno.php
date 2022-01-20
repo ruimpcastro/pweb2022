@@ -49,12 +49,16 @@ class Aluno extends Model
 
     public static function createMockData()
     {
+        //TODO DANIEL
+        //Cursos
         $ci = Curso::find(1);
         $cm = Curso::find(2);
 
+        //Plano de estudo de cada curso
         $pi = PlanoEstudo::find(1);
         $pm = Planoestudo::find(2);
 
+        //Alunos
         $aa = new Aluno();
         $aa->numero_aluno = 20210101;
         $aa->nome = "Rui";
@@ -168,6 +172,7 @@ class Aluno extends Model
 
     public static function createMockAssociativeData()
     {
+        //Associar alunos à disciplina
         $aa = Aluno::find(1);
         $ab = Aluno::find(2);
         $ac = Aluno::find(3);
