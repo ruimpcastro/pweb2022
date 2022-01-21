@@ -49,7 +49,6 @@ class Aluno extends Model
 
     public static function createMockData()
     {
-        //TODO DANIEL
         //Cursos
         $ci = Curso::find(1);
         $cm = Curso::find(2);
