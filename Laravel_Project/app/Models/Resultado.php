@@ -161,6 +161,57 @@ class Resultado extends Model
         $r->save();
         $r->aluno()->attach($a);
 
+        $r = new Resultado();
+        $r->resultado = "20";
+        $a = Aluno::find(12);
+        $p = Pauta::find(1);
+        $c = Curso::find(1);
+        $r->pauta()->associate($p);
+        $c->pauta()->save($p);
+        $r->save();
+        $r->aluno()->attach($a);
+
+        $r = new Resultado();
+        $r->resultado = "F";
+        $a = Aluno::find(13);
+        $p = Pauta::find(4);
+        $c = Curso::find(1);
+        $r->pauta()->associate($p);
+        $c->pauta()->save($p);
+        $r->save();
+        $r->aluno()->attach($a);
+
+        $r = new Resultado();
+        $r->resultado = "F";
+        $a = Aluno::find(14);
+        $p = Pauta::find(4);
+        $c = Curso::find(1);
+        $r->pauta()->associate($p);
+        $c->pauta()->save($p);
+        $r->save();
+        $r->aluno()->attach($a);
+
+        $r = new Resultado();
+        $r->resultado = "9";
+        $a = Aluno::find(15);
+        $p = Pauta::find(4);
+        $c = Curso::find(1);
+        $r->pauta()->associate($p);
+        $c->pauta()->save($p);
+        $r->save();
+        $r->aluno()->attach($a);
+
+        $r = new Resultado();
+        $r->resultado = "15";
+        $a = Aluno::find(16);
+        $p = Pauta::find(4);
+        $c = Curso::find(1);
+        $r->pauta()->associate($p);
+        $c->pauta()->save($p);
+        $r->save();
+        $r->aluno()->attach($a);
+
+
 
         $r = new ResultadoHandler();
         $r::getMedia(1);

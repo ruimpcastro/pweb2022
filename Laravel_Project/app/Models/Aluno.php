@@ -168,6 +168,58 @@ class Aluno extends Model
         $aa->curso()->associate($ci);
         $aa->plano_estudo()->associate($pi);
         $aa->save();
+
+        $aa = new Aluno();
+        $aa->numero_aluno = 20185552;
+        $aa->nome = "Marta Arruda";
+        $aa->matricula = 3;
+        $aa->desistente = 0;
+        $aa->concluiu_curso = 1;
+        $aa->curso()->associate($ci);
+        $aa->plano_estudo()->associate($pi);
+        $aa->save();
+
+        $aa = new Aluno();
+        $aa->numero_aluno = 20185553;
+        $aa->nome = "Felix";
+        $aa->matricula = 3;
+        $aa->desistente = 1;
+        $aa->concluiu_curso = 0;
+        $aa->curso()->associate($ci);
+        $aa->plano_estudo()->associate($pi);
+        $aa->save();
+
+        $aa = new Aluno();
+        $aa->numero_aluno = 20185554;
+        $aa->nome = "Gonçalo Soares";
+        $aa->matricula = 3;
+        $aa->desistente = 1;
+        $aa->concluiu_curso = 0;
+        $aa->curso()->associate($ci);
+        $aa->plano_estudo()->associate($pi);
+        $aa->save();
+
+        $aa = new Aluno();
+        $aa->numero_aluno = 20185555;
+        $aa->nome = "Beatriz Viveiros";
+        $aa->matricula = 3;
+        $aa->desistente = 0;
+        $aa->concluiu_curso = 1;
+        $aa->curso()->associate($ci);
+        $aa->plano_estudo()->associate($pi);
+        $aa->save();
+
+        $aa = new Aluno();
+        $aa->numero_aluno = 20185556;
+        $aa->nome = "Adolfo Medeiros";
+        $aa->matricula = 3;
+        $aa->desistente = 0;
+        $aa->concluiu_curso = 1;
+        $aa->curso()->associate($ci);
+        $aa->plano_estudo()->associate($pi);
+        $aa->save();
+
+
     }
 
     public static function createMockAssociativeData()
@@ -180,6 +232,11 @@ class Aluno extends Model
         $ae = Aluno::find(5);
         $af = Aluno::find(6);
         $ag = Aluno::find(7);
+        $ah = Aluno::find(12);
+        $ai = Aluno::find(13);
+        $aj = Aluno::find(14);
+        $al = Aluno::find(15);
+        $am = Aluno::find(16);
 
         $da = Disciplina::find(1);
         $db = Disciplina::find(2);
@@ -188,6 +245,11 @@ class Aluno extends Model
         $de = Disciplina::find(5);
         $df = Disciplina::find(6);
         $dg = Disciplina::find(7);
+        $dh = Disciplina::find(7);
+        $di = Disciplina::find(2);
+        $dj = Disciplina::find(6);
+        $dl = Disciplina::find(11);
+        $dm = Disciplina::find(18);
 
         $aa->disciplinas()->attach($da);
         $aa->disciplinas()->attach($db);
@@ -221,6 +283,17 @@ class Aluno extends Model
         $ag->disciplinas()->attach($de);
         $ag->disciplinas()->attach($df);
         $ag->disciplinas()->attach($dg);
+
+        $ah->disciplinas()->attach($dh);
+        $ai->disciplinas()->attach($di);
+        $aj->disciplinas()->attach($dj);
+        $al->disciplinas()->attach($dl);
+        $am->disciplinas()->attach($dm);
+
+
+
+
+
 
     }
 }
