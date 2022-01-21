@@ -92,6 +92,7 @@ Route::get('/pautas', function () {
 });
 */
 
+//PAUTA
 Route::get('/pautas', [PautaController::class, 'index']);
 Route::get('/pautas/create', [PautaController::class, 'create']);
 Route::post('/pautas/create', [PautaController::class, 'store']);
@@ -100,14 +101,13 @@ Route::get('/pauta/{id}', [PautaController::class, 'show']);
 Route::post('/pauta/{id}', [PautaController::class, 'store']);
 Route::delete('/pauta/{id}', [PautaController::class, 'destroy']);
 
-//AVALIAÇÂO------------------------------------------------------------
-
 /*
 Route::get('/avaliacoes', function () {
     return view('avaliacoes');
 });
 */
 
+//AVALIAÇÃO
 Route::get('/avaliacoes', [ResultadoController::class, 'index']);
 Route::get('/avaliacoes/create', [ResultadoController::class, 'create']);
 Route::post('/avaliacoes/create', [ResultadoController::class, 'store']);

@@ -2,6 +2,7 @@
 
 namespace App\Domain;
 
+use App\Models\AnoLetivo;
 use App\Models\Pauta;
 use App\Models\Resultado;
 use Illuminate\Support\Facades\DB;
@@ -142,5 +143,45 @@ class ResultadoHandler
         $pauta->dirty = 1;
         $pauta->save();
         return $pauta->dirty;
+    }
+
+    public static function criarPautas(int $codDisciplina)
+    {
+        $dh = new DisciplinaHandler();
+        $d = $dh::getDisciplina($codDisciplina);
+
+        $p = new Pauta();
+        $chave = $a->ano . $codDisciplina . 0;
+        $p->chave = $chave;
+        $p->designacao = "Época de Frequência";
+        $p->dirty = 0;
+        $chave +=1;
+        $p->save();
+
+        $p = new Pauta();
+        $chave = $a->ano . $codDisciplina . 0;
+        $p->chave = $chave;
+        $p->designacao = "Exame de Época Normal";
+        $p->dirty = 0;
+        $chave +=1;
+        $p->save();
+
+        $p = new Pauta();
+        $chave = $a->ano . $codDisciplina . 0;
+        $p->chave = $chave;
+        $p->designacao = "Exame de Época Recurso";
+        $p->dirty = 0;
+        $chave +=1;
+        $p->save();
+
+        $p = new Pauta();
+        $chave = $a->ano . $codDisciplina . 0;
+        $p->chave = $chave;
+        $p->designacao = "Exame de Época Especial";
+        $p->dirty = 0;
+        $chave +=1;
+        $p->save();
+
+        return "success";
     }
 }

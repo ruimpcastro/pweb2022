@@ -1,18 +1,18 @@
 @extends('master')
 
 @section('titulo')
-    Pauta de {{ $disciplina->designacao }}
+    Pauta de {{ $pauta }}
 @endsection
 @section('conteudo')
-    @foreach($disciplina->pauta as $pauta)
+    @foreach($pauta as $p)
         <p>
-            {{$pauta->chave}}
+            {{$p->chave}}
         </p>
         <p>
-            {{$pauta->designacao}}
+            {{$p->designacao}}
         </p>
         <p>
-            {{$pauta->media}}
+            {{$p->media}}
         </p>
     @endforeach
 @endsection
