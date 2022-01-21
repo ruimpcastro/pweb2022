@@ -14,11 +14,11 @@
             <input
                 type="text"
                 class="form-control"
-                placeholder={{ $disciplina->designacao }}
+                placeholder="Introdução à Programação"
                 aria-label="Username"
                 aria-describedby="basic-addon1"
                 name="des"
-                value={{ $disciplina->designacao }}
+                value="{{ $disciplina->designacao }}"
             >
         </div>
 
@@ -26,7 +26,7 @@
         <div class="d-flex flex-row align-items-center">
             <input name="sem" class="form-control" list="datalistOptions" id="exampleDataList" placeholder="">
             <datalist id="datalistOptions">
-                <option value={{ $disciplina->semestre }}></option>
+                <option value="{{ $disciplina->semestre }}"></option>
                 <option value="1"></option>
                 <option value="2"></option>
             </datalist>
