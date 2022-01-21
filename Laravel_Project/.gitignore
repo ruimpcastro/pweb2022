@@ -12,5 +12,7 @@ Homestead.yaml
 npm-debug.log
 yarn-error.log
 /.idea
+/.idea/pweb202204.iml
+/.idea/php.xml
 /.vscode
 composer.lock
