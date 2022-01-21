@@ -15,7 +15,7 @@
 
     <!--Aceder à lista de alunos-->
         <div class="w-100 ms-1">
-    <form id="get-alunos" method="GET" action="/curso/{{ $curso->codigo }}/alunos" class="me-1">
+    <form id="get-alunos" method="GET" action="/curso/{{ $curso->codigo }}/alunos" class="ms-1">
         <input type="submit" class="btn btn-primary w-100" value="Ver alunos inscritos">
     </form>
         </div>
