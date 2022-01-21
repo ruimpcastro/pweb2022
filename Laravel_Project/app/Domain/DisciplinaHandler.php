@@ -18,6 +18,12 @@ class DisciplinaHandler
         return Disciplina::where('codigo', $codigo)->first();
     }
 
+    public static function editDisciplina(int $codigo, string $newDesignacao, int $newSemestre, int $newAno, string $newPlano)
+    {
+        $cadeira = new Cadeira();
+        return $cadeira::editDisciplina($codigo, $newDesignacao, $newSemestre, $newAno, $newPlano);
+    }
+
     public static function getDisciplina(int $codigo)
     {
         $cadeira = new Cadeira();

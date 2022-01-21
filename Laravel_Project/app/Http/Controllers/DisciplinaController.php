@@ -95,7 +95,6 @@ class DisciplinaController extends Controller
      * Show the form for editing the specified resource.
      *
      * @param  int  $id
-     * @return \Illuminate\Http\Response
      */
     public function edit($id)
     {
@@ -110,20 +109,25 @@ class DisciplinaController extends Controller
      *
      * @param  \Illuminate\Http\Request  $request
      * @param  int  $id
-     * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, $id, DisciplinaHandler $dh)
     {
         $d = $dh::getDisciplina($id);
         $designacaoDisciplina = $request->des;
+        $semestreDisciplina = $request->sem;
+        $anoDisciplina = $request->an;
+        $planoDisciplina = $request->pln;
 
         $request->validate(
             [
                 'des' => 'required',
+                'sem' => 'required',
+                'an' => 'required',
+                'pln' => 'required',
             ]
         );
 
-        $dh::editDisciplina($d->codigo, $designacaoDisciplina);
+        $dh::editDisciplina($d->codigo, $designacaoDisciplina, $semestreDisciplina, $anoDisciplina, $planoDisciplina);
 
         return redirect("disciplina/$d->codigo/edit");
     }

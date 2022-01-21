@@ -24,6 +24,18 @@ class Cadeira
 
     }
 
+    public static function editDisciplina(int $codigo, string $newDesignacao, int $newSemestre, int $newAno, string $newPlano)
+    {
+        $d = Disciplina::where('codigo', $codigo)->first();
+        $d->designacao = $newDesignacao;
+        $d->semestre = $newSemestre;
+        $d->ano = $newAno;
+        $d->plano = $newPlano;
+        $d->save();
+        return $d;
+
+    }
+
     public static function getDisciplina(int $codigo)
     {
         return Disciplina::where('codigo', $codigo)->first();

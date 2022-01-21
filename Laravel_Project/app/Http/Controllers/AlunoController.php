@@ -81,7 +81,7 @@ class AlunoController extends Controller
     {
         $ah = new AlunoHandler();
         $a = $ah::getAluno($id);
-        $ra = new ResultadoHandler();
+
         //TODO ligacao dos resultados do aluno na pauta para a pagina especifica do aluno
 
         //return new AlunoResource($a);
