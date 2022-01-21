@@ -82,6 +82,7 @@ Route::post('/disciplina/{id}/edit', [DisciplinaController::class, 'update']);
 
 Route::get('/disciplina/{id}', [DisciplinaController::class, 'show']);
 Route::get('/disciplina/{id}/pautas', [DisciplinaController::class, 'showPautas']);
+Route::post('/disciplina/{id}/pautas', [DisciplinaController::class, 'createPautas']);
 Route::get('/disciplina/{id}/alunos', [DisciplinaController::class, 'showAlunos']);
 Route::post('/disciplina/{id}', [DisciplinaController::class, 'store']);
 Route::delete('/disciplina/{id}', [DisciplinaController::class, 'destroy']);
