@@ -53,16 +53,10 @@
         >
 
         <p class="mt-4 mb-0"><b>Plano da disciplina</b></p>
-        <input
-            type="text"
-            class="form-control"
-            placeholder="O que é dado na disciplina"
-            aria-label="Username"
-            aria-describedby="basic-addon1"
-            name="pln"
-            value={{ old('pln')}}
-        >
-
+        <div class="form-floating">
+            <textarea class="form-control" placeholder="Insira o plano de estudo" id="floatingTextarea" name="pln">{{ old('pln')}}</textarea>
+            <label for="floatingTextarea">Insira o plano de estuda da disciplina</label>
+        </div>
         <div class="w-100pt-3 d-flex justify-content-center align-items-center mt-2">
             <div class="w-100 me-1">
                 <input type="submit" class="btn btn-primary w-100" value="Criar disciplina">
