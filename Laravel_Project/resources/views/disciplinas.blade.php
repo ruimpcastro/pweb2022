@@ -2,30 +2,12 @@
 @section('titulo')
     Disciplinas
 @endsection
-
 @section('conteudo')
-
-    <!--Adicionar Disciplina-->
-    <form id="edit-form" method="GET" action="/disciplinas/create">
+    <form id="create-form" method="GET" action="/disciplinas/create">
         <div class="w-100 mb-3">
             <input type="submit" class="btn btn-primary w-100" value="Adicionar nova disciplina">
         </div>
     </form>
-
-    <!-- PROCURAR DISCIPLINAS POU PLANO DE ESTUDO
-    <form method="get" action="/disciplinas/view">
-        <p class="mt-4 mb-0"><b>Plano da disciplina</b></p>
-        <input
-            type="text"
-            class="form-control"
-            placeholder="O que é dado na disciplina"
-            aria-label="Username"
-            aria-describedby="basic-addon1"
-            name="pln"
-            value={{ old('pln')}}
-        >
-    </form>
-    -->
 
      @foreach($disciplinas as $disciplina)
          <ul style="list-style: none" class="d-flex justify-content-between align-items-center flex-row ps-0 border-bottom mb-3">
@@ -43,6 +25,11 @@
                  <div class="me-5">
                     <li>{{$disciplina->semestre}}º Semestre do {{$disciplina->ano}}º Ano </li>
                  </div>
+
+                 <!--EDIT-->
+                 <form id="edit-form" method="GET" action="/disciplina/{{$disciplina->codigo}}/edit" class="me-3 mb-1">
+                     <input type="submit" class="btn btn-secondary w-100" value="Editar disciplina">
+                 </form>
 
                  <!--DELETE-->
                 <form
