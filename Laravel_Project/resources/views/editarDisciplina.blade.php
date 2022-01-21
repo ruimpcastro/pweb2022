@@ -14,7 +14,7 @@
             <input
                 type="text"
                 class="form-control"
-                placeholder="Introdução à Programação"
+                placeholder={{ $disciplina->designacao }}
                 aria-label="Username"
                 aria-describedby="basic-addon1"
                 name="des"
@@ -24,13 +24,29 @@
 
         <p class="mt-4 mb-0"><b>Semestre disciplina</b></p>
         <div class="d-flex flex-row align-items-center">
-            <p class="mb-0" style="min-width: 50px">{{ $disciplina->semestre }} -</p>
             <input name="sem" class="form-control" list="datalistOptions" id="exampleDataList" placeholder="">
             <datalist id="datalistOptions">
+                <option value={{ $disciplina->semestre }}></option>
                 <option value="1"></option>
                 <option value="2"></option>
             </datalist>
-                value={{ $disciplina->designacao }}
+        </div>
+
+        <p class="mt-4 mb-0"><b>Ano da disciplina</b></p>
+        <input
+            type="number"
+            class="form-control"
+            placeholder="1º,2º,3º"
+            aria-label="Username"
+            aria-describedby="basic-addon1"
+            name="an"
+            value={{$disciplina->ano}}
+        >
+
+        <p class="mt-4 mb-0"><b>Plano da disciplina</b></p>
+        <div class="form-floating">
+            <textarea class="form-control" placeholder="Insira o plano de estudo" id="floatingTextarea" name="pln">{{$disciplina->plano}}</textarea>
+            <label for="floatingTextarea">Insira o plano de estuda da disciplina</label>
         </div>
 
         <div class="w-100pt-3 d-flex justify-content-center align-items-center mt-2">
