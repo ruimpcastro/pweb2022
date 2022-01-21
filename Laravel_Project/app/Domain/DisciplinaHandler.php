@@ -12,8 +12,10 @@ class DisciplinaHandler
     public static function createDisciplina(int $codigo, string $designacao, int $semestre, int $ano, string $plano): Disciplina
     {
         $cadeira = new Cadeira();
-
-        return $cadeira::createDisciplina($codigo, $designacao, $semestre, $ano, $plano);
+        $ph = new PautaHandler();
+        $cadeira::createDisciplina($codigo, $designacao, $semestre, $ano, $plano);
+        $ph::criarPautas($codigo);
+        return Disciplina::where('codigo', $codigo)->first();
     }
 
     public static function getDisciplina(int $codigo)

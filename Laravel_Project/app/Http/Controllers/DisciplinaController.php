@@ -73,17 +73,8 @@ class DisciplinaController extends Controller
     {
         $dh = new DisciplinaHandler();
         $d = $dh::getDisciplina($id);
-        //return new DisciplinaResource($d);
+        //return new DisciplinaResourxwce($d);
         return view('disciplina', ['disciplina' => $d]);
-    }
-
-    public function createPautas($id)
-    {
-        $dh = new DisciplinaHandler();
-        $d = $dh::getDisciplina($id);
-        $ph = new PautaHandler();
-        $p = $ph::criarPautas($id);
-        return view('disciplinaPauta', ['disciplina' => $d]);
     }
 
     public function showPautas($id)

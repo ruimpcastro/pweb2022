@@ -145,39 +145,27 @@ class ResultadoHandler
         return $pauta->dirty;
     }
 
-    public static function criarPautas(int $codDisciplina): string
+    public static function criarPauta(int $codDisciplina, string $designacao)
     {
         $dh = new DisciplinaHandler();
         $d = $dh::getDisciplina($codDisciplina);
         $a = AnoLetivo::find(1);
         $p = new Pauta();
-        $chave = (int)($a->ano . $d->ano . $d->semestre . $codDisciplina . rand(1000,10000));
+        $chave = ($a->ano . $d->semestre . $codDisciplina . rand(1000, 1000000));
         $p->chave = ($chave + 1);
-        $p->designacao = "Época de Frequência";
+        $p->designacao = $designacao;
         $p->dirty = 0;
         $d->pauta()->save($p);
         $p->save();
 
-        $p = new Pauta();
-        $p->chave = ($chave + 2);
-        $p->designacao = "Exame de Época Normal";
-        $p->dirty = 0;
-        $d->pauta()->save($p);
-        $p->save();
-
-        $p = new Pauta();
-        $p->chave = ($chave + 3);
-        $p->designacao = "Exame de Época Recurso";
-        $p->dirty = 0;
-        $d->pauta()->save($p);
-        $p->save();
-
-        $p = new Pauta();
-        $p->chave = ($chave + 4);
-        $p->designacao = "Exame de Época Especial";
-        $p->dirty = 0;
-        $d->pauta()->save($p);
-        $p->save();
+    }
+    public static function criarPautas(int $codDisciplina): string
+    {
+        $rh = new ResultadoHandler();
+        $rh::criarPauta($codDisciplina, "Época de frequência");
+        $rh::criarPauta($codDisciplina, "Exame de Época Normal");
+        $rh::criarPauta($codDisciplina, "Exame de Época Recurso");
+        $rh::criarPauta($codDisciplina, "Exame de Época Especial");
 
         return "success";
     }
