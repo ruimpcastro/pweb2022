@@ -4,13 +4,6 @@
     Disciplina de {{ $disciplina->designacao }}
 @endsection
 @section('conteudo')
-    <!--TODO CRIAR PARA ESTA PÁGINA:
-        - Botão para ver as pautas da disciplina
-        - Botão para ver os alunos inscritos na disciplina
-        - Botão para voltar atrás
-    -->
-    <!--Para a página de pautas-->
-
     <div class="w-100 d-flex justify-content-center align-items-center mt-2">
         <!--Ver Pautas-->
         <div class="w-100 me-1">

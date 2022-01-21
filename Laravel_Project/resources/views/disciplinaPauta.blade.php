@@ -14,8 +14,18 @@
         <p>
             @if($pauta->dirty == 1)
                 <button type="button" class="btn btn-secondary" disabled>Pauta publicada</button>
+
+                <!--TODO Ligação para se poder visualizar a pauta publicada -->
+
+                <button type="button" method="GET" action="" class="btn btn-primary">Visualizar pauta</button>
             @else
-                <button type="button" class="btn btn-primary">Inserir pauta</button>
+
+                <!--TODO Adicionar ligação entre dar upload do ficheiro e o guardar -->
+
+                <div class="input-group mb-3">
+                    <input type="file" class="form-control" id="inputGroupFile01">
+                    <button type="button" method="POST" action="" class="btn btn-primary">Guardar</button>
+                </div>
             @endif
         </p>
     @endforeach
