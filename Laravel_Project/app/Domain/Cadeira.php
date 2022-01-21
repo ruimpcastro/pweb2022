@@ -24,7 +24,7 @@ class Cadeira
 
     }
 
-    public static function getDisciplina(int $codigo): Disciplina
+    public static function getDisciplina(int $codigo)
     {
         return Disciplina::where('codigo', $codigo)->first();
     }

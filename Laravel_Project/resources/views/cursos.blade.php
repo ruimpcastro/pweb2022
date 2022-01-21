@@ -1,5 +1,4 @@
 @extends('master')
-
 @section('titulo')
     Cursos
 @endsection

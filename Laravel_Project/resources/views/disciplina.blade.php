@@ -4,31 +4,30 @@
     Disciplina de {{ $disciplina->designacao }}
 @endsection
 @section('conteudo')
-    <!--TODO CRIAR PARA ESTA PÁGINA:
-        - Botão para ver as pautas da disciplina
-        - Botão para ver os alunos inscritos na disciplina
-        - Botão para voltar atrás
-    -->
-    <!--Para a página de pautas-->
-    @foreach($disciplina->pauta as $pauta)
-        <p>
-            {{$pauta->chave}}
-        </p>
-        <p>
-        {{$pauta->designacao}}
-        </p>
-        <p>
-            @if($pauta->dirty == 1)
-                Pauta publicada
-            @else
-                Falta publicar pauta
-            @endif
-        </p>
-    @endforeach
+    <div class="w-100 d-flex justify-content-center align-items-center mt-2">
+        <!--Ver Pautas-->
+        <div class="w-100 me-1">
+            <form id="showPautas" method="GET" action="/disciplina/{{$disciplina->codigo}}/pautas" class="me-1">
+                <input type="submit" class="btn btn-primary w-100" value="Ver pautas">
+            </form>
+        </div>
 
-    <!--Para a página de alunos inscritos-->
-    @foreach($disciplina->alunos as $aluno)
-        <p>{{$aluno->numero_aluno}}</p>
-        <p>{{$aluno->nome}}</p>
-    @endforeach
+        <!--gerar avaliações-->
+        <div class="w-100 me-1">
+            <form id="gerar-avaliacoes" method="POST" action="/disciplina/{{$disciplina->codigo}}/pautas" class="me-1">
+                <input type="submit" class="btn btn-primary w-100" value="Gerar pautas">
+            </form>
+        </div>
+
+        <!--Ver Alunos inscritos-->
+        <div class="w-100 ms-1">
+            <form id="showAlunos" method="GET" action="/disciplina/{{$disciplina->codigo}}/alunos" class="ms-1">
+                <input type="submit" class="btn btn-primary w-100" value="Ver alunos inscritos">
+            </form>
+        </div>
+    </div>
+        <!--Voltar atrás para a página das disciplinas-->
+        <div class="w-100 mt-2">
+            <a class="btn btn-secondary w-100" href="/disciplinas">Voltar para a página de disciplinas</a>
+        </div>
 @endsection

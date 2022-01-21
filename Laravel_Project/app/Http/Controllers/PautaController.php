@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Domain\DisciplinaHandler;
 use App\Domain\PautaHandler;
 use App\Http\Resources\PautaCollection;
 use App\Http\Resources\PautaResource;
@@ -53,6 +54,7 @@ class PautaController extends Controller
     public function show($id)
     {
         $ph = new PautaHandler();
+        $dh = new DisciplinaHandler();
         $p = $ph::getPauta($id);
         //return new PautaResource($p);
 
