@@ -14,6 +14,9 @@
         <p>
             @if($pauta->dirty == 1)
                 <button type="button" class="btn btn-secondary" disabled>Pauta publicada</button>
+
+                <!--TODO Ligação para se poder visualizar a pauta publicada -->
+
                 <button type="button" method="GET" action="" class="btn btn-primary">Visualizar pauta</button>
             @else
 
