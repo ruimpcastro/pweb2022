@@ -16,8 +16,8 @@
                 <button type="button" class="btn btn-secondary" disabled>Pauta publicada</button>
             @else
                 <div class="input-group mb-3">
-                    <label class="input-group-text" for="inputGroupFile01">Upload</label>
                     <input type="file" class="form-control" id="inputGroupFile01">
+                    <button type="button" class="btn btn-primary">Guardar</button>
                 </div>
             @endif
         </p>
