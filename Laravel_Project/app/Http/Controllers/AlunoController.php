@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Domain\AlunoHandler;
 use App\Domain\CursoHandler;
+use App\Domain\ResultadoHandler;
 use App\Http\Resources\AlunoCollection;
 use App\Http\Resources\AlunoResource;
 use App\Http\Resources\CursoResource;
@@ -80,6 +81,8 @@ class AlunoController extends Controller
     {
         $ah = new AlunoHandler();
         $a = $ah::getAluno($id);
+        $ra = new ResultadoHandler();
+        //TODO ligacao dos resultados do aluno na pauta para a pagina especifica do aluno
 
         //return new AlunoResource($a);
         return view('aluno', ['aluno' => $a]);
