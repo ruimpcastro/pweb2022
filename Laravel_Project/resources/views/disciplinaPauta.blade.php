@@ -1,7 +1,7 @@
 @extends('master')
 
 @section('titulo')
-    Alunos da disciplina de {{ $disciplina->designacao }}
+    Pautas da disciplina de {{ $disciplina->designacao }}
 @endsection
 @section('conteudo')
     @foreach($disciplina->pauta as $pauta)
