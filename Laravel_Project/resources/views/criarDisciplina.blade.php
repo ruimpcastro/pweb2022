@@ -30,16 +30,12 @@
             value={{ old('des')}}
         >
 
-        <p class="mt-4 mb-0"><b>Semestre da disciplina</b></p>
-        <input
-            type="number"
-            class="form-control"
-            placeholder=" 1º ou 2º semestre"
-            aria-label="Username"
-            aria-describedby="basic-addon1"
-            name="sem"
-            value={{ old('sem')}}
-        >
+        <label for="exampleDataList" class="form-label mt-4 mb-0"><b>Semestre da disciplina</b></label>
+        <input name="sem" class="form-control" list="datalistOptions" id="exampleDataList" placeholder="">
+        <datalist id="datalistOptions">
+            <option data-value="1">1º</option>
+            <option data-value="2">2º</option>
+        </datalist>
 
         <p class="mt-4 mb-0"><b>Ano da disciplina</b></p>
         <input
