@@ -54,11 +54,12 @@ class PautaController extends Controller
     public function show($id)
     {
         $ph = new PautaHandler();
-        $dh = new DisciplinaHandler();
+        $d = $ph::getDisciplinaFromPauta($id);
         $p = $ph::getPauta($id);
+
         //return new PautaResource($p);
 
-        return view('pauta', ['pauta' => $p]);
+        return view('pauta', ['pauta' => $p, 'disciplina' => $d]);
     }
 
     /**

@@ -3,6 +3,7 @@
 namespace App\Domain;
 
 use App\Models\AnoLetivo;
+use App\Models\Disciplina;
 use App\Models\Pauta;
 use App\Models\Resultado;
 use Illuminate\Support\Facades\DB;
@@ -168,5 +169,13 @@ class ResultadoHandler
         $rh::criarPauta($codDisciplina, "Exame de Época Especial");
 
         return "success";
+    }
+
+    public static function getDisciplinaFromPauta(int $chave)
+    {
+        $p = Pauta::where('chave', $chave)->first();
+        $d = Disciplina::where('id', $p->disciplina_id)->first();
+        $dh = new DisciplinaHandler();
+        return $dh::getDisciplina($d->codigo);
     }
 }

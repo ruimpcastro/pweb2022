@@ -4,6 +4,7 @@ namespace App\Domain;
 
 use App\Models\AnoLetivo;
 use App\Models\Disciplina;
+use App\Models\Pauta;
 use Illuminate\Database\Eloquent\Collection;
 
 class Cadeira
@@ -40,6 +41,8 @@ class Cadeira
     {
         return Disciplina::where('codigo', $codigo)->first();
     }
+
+
 
     public static function getDisciplinas(): Collection
     {

@@ -36,6 +36,12 @@ class DisciplinaHandler
         return $cadeira->getDisciplinas();
     }
 
+    public static function getPauta(int $chave)
+    {
+        $c = new Cadeira();
+        return $c::getPauta($chave);
+    }
+
     public static function associarAnoLetivo(int $ano): AnoLetivo
     {
 

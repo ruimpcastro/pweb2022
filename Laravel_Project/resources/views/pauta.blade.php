@@ -1,18 +1,11 @@
 @extends('master')
 
 @section('titulo')
-    Pauta de {{ $pauta }}
+    Pauta de {{ $pauta->designacao }} - {{ $disciplina->designacao }}
 @endsection
 @section('conteudo')
-    @foreach($pauta as $p)
-        <p>
-            {{$p->chave}}
-        </p>
-        <p>
-            {{$p->designacao}}
-        </p>
-        <p>
-            {{$p->media}}
-        </p>
-    @endforeach
+    <!--TODO Daniel-->
+    {{ $pauta }}
+    {{ $pauta->resultado }}
+    {{ $disciplina }}
 @endsection

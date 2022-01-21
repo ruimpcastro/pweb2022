@@ -52,4 +52,10 @@ class PautaHandler
         $rh = new ResultadoHandler();
         return $rh::getMedia();
     }
+
+    public static function getDisciplinaFromPauta(int $chave)
+    {
+        $rh = new ResultadoHandler();
+        return $rh::getDisciplinaFromPauta($chave);
+    }
 }
