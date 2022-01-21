@@ -99,7 +99,10 @@ class DisciplinaController extends Controller
      */
     public function edit($id)
     {
-        //
+        $dh = new DisciplinaHandler();
+        $d = $dh::getDisciplina($id);
+
+        return view('editarDisciplina', ['disciplina' => $d]);
     }
 
     /**
@@ -111,7 +114,18 @@ class DisciplinaController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $d = $dh::getDisciplina($id);
+        $designacaoDisciplina = $request->des;
+
+        $request->validate(
+            [
+                'des' => 'required',
+            ]
+        );
+
+        $dh::editDisciplina($d->codigo, $designacaoDisciplina);
+
+        return redirect("disciplina/$d->codigo/edit");
     }
 
     /**
@@ -123,5 +137,6 @@ class DisciplinaController extends Controller
     public function destroy($id)
     {
         return Disciplina::destroy($id);
+        return redirect('/disciplinas');
     }
 }
