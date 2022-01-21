@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Domain\DisciplinaHandler;
+use App\Domain\PautaHandler;
 use App\Http\Resources\DisciplinaCollection;
 use App\Http\Resources\DisciplinaResource;
 
@@ -74,6 +75,15 @@ class DisciplinaController extends Controller
         $d = $dh::getDisciplina($id);
         //return new DisciplinaResource($d);
         return view('disciplina', ['disciplina' => $d]);
+    }
+
+    public function createPautas($id)
+    {
+        $dh = new DisciplinaHandler();
+        $d = $dh::getDisciplina($id);
+        $ph = new PautaHandler();
+        $p = $ph::criarPautas($id);
+        return view('disciplinaPauta', ['disciplina' => $d]);
     }
 
     public function showPautas($id)

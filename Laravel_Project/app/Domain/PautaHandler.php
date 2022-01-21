@@ -29,12 +29,6 @@ class PautaHandler
         return $resultadoHandler::getPauta($chavePauta);
     }
 
-    public static function getPauta(int $chavePauta): Pauta
-    {
-        $resultadoHandler = new ResultadoHandler();
-        return $resultadoHandler::getPauta($chavePauta);
-    }
-
     public static function getPautas(): Collection
     {
         $resultadoHandler = new ResultadoHandler();

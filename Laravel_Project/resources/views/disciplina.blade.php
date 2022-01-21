@@ -21,8 +21,8 @@
 
         <!--gerar avaliações-->
         <div class="w-100 me-1">
-            <form id="gerar-avaliacoes" method="GET" action="/disciplina/{{$disciplina->codigo}}/avaliacoes" class="me-1">
-                <input type="submit" class="btn btn-primary w-100" value="Gerar avaliações">
+            <form id="gerar-avaliacoes" method="POST" action="/disciplina/{{$disciplina->codigo}}/pautas" class="me-1">
+                <input type="submit" class="btn btn-primary w-100" value="Gerar pautas">
             </form>
         </div>
 
