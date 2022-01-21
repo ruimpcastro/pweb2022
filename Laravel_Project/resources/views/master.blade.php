@@ -82,13 +82,6 @@
                 </ul>
             </div>
         </div>
-        <!-- Search form -->
-        <!--
-        <form class="d-flex">
-            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-            <button class="btn btn-outline-success" type="submit">Search</button>
-        </form>
-        -->
     </nav>
 
     <!--- tinha antes w- 75, depois mudou-se para justify-content-center --->
