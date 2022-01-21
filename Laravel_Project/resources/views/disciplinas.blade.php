@@ -27,6 +27,7 @@
                  </div>
 
                  <!--EDIT-->
+                 <!--TODO ligacao para editar a disciplina -->
                  <form id="edit-form" method="GET" action="/disciplina/{{$disciplina->codigo}}/edit" class="me-3 mb-1">
                      <input type="submit" class="btn btn-secondary w-100" value="Editar disciplina">
                  </form>
