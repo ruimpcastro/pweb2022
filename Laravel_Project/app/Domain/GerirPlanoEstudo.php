@@ -13,7 +13,7 @@ class GerirPlanoEstudo
     {
         return PlanoEstudo::where('id', $id)->first();
     }
-    //TODO Criar página para associar Plano de estudo à Disciplina
+
     public static function associarPlanoEstudoDisciplina(int $id, int $codigoDisciplina)
     {
         $c = Curso::where('id', $id)->first();
