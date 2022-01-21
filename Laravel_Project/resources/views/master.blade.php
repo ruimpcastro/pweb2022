@@ -7,7 +7,6 @@
 
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-
     <title>Gestão de cursos 🔥</title>
 </head>
 
@@ -83,6 +82,13 @@
                 </ul>
             </div>
         </div>
+        <!-- Search form -->
+        <!--
+        <form class="d-flex">
+            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success" type="submit">Search</button>
+        </form>
+        -->
     </nav>
 
     <!--- tinha antes w- 75, depois mudou-se para justify-content-center --->
