@@ -22,12 +22,13 @@ class GerirPlanoEstudo
         return $p->disciplinas()->attach($d);
     }
 
+    //NOT WORKING
     public static function deleteAssociacaoPlanoEstudoDisciplina(int $idPlanoEstudo, int $codigoDisciplina)
     {
         $p = PlanoEstudo::where('id', $idPlanoEstudo)->first();
         $dh = new DisciplinaHandler();
         $d = $dh::getDisciplina($codigoDisciplina);
-        return $d->plano_estudo($p->id)->delete();
+        return $d->plano_estudo()->delete();
     }
 
     public static function getDisciplinasFromCurso(int $id)

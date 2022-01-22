@@ -91,7 +91,7 @@ class PlanoEstudoController extends Controller
     public function deleteDisciplina($id)
     {
         $peh = new PlanoEstudoHandler();
-        $p = $peh::getDisciplinasFromCurso($id);
+        $p = $peh::getPlanoEstudo($id);
         $ch = new CursoHandler();
         $curso = Curso::where('id', $id)->first();
         $c = $ch::getCurso($curso->codigo);
