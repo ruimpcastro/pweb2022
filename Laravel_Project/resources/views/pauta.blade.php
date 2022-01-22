@@ -6,8 +6,20 @@
 @section('conteudo')
     <!--TODO Daniel-->
     {{ $pauta }}
-    {{ $pauta->resultado }}
     {{ $disciplina }}
+
+    @foreach($pauta->resultado as $res)
+        @foreach($aluno as $a)
+            @foreach($a->resultado as $result)
+                @if ($res->id == $result->id)
+                    <p>
+                        {{$a->nome}} => {{$res->resultado}}
+                    </p>
+                @endif
+            @endforeach
+        @endforeach
+    @endforeach
+
 
     @if($pauta->dirty == 1)
 

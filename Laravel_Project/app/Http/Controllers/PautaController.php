@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Domain\AlunoHandler;
 use App\Domain\DisciplinaHandler;
 use App\Domain\PautaHandler;
+use App\Domain\ResultadoHandler;
 use App\Http\Resources\PautaCollection;
 use App\Http\Resources\PautaResource;
 use App\Models\Pauta;
@@ -57,9 +59,13 @@ class PautaController extends Controller
         $d = $ph::getDisciplinaFromPauta($id);
         $p = $ph::getPauta($id);
 
+        $rh = new ResultadoHandler();
+        $ah = new AlunoHandler();
+        $a = $ah::getAlunos();
+
         //return new PautaResource($p);
 
-        return view('pauta', ['pauta' => $p, 'disciplina' => $d]);
+        return view('pauta', ['pauta' => $p, 'disciplina' => $d, 'aluno' => $a]);
     }
 
     /**

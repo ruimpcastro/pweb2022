@@ -113,6 +113,12 @@ class ResultadoHandler
         return Pauta::all();
     }
 
+    public static function getResultado(int $id)
+    {
+        $r = Resultado::where('id', $id)->first();
+        return $r;
+    }
+
     public static function getResultados(int $chavePauta)
     {
         $pauta = Pauta::where('chave', $chavePauta)->first();
@@ -178,4 +184,6 @@ class ResultadoHandler
         $dh = new DisciplinaHandler();
         return $dh::getDisciplina($d->codigo);
     }
+
+
 }
