@@ -18,8 +18,8 @@
     <h3><b>1º ano</b></h3>
     <h5><i>1º semestre</i></h5>
     @foreach($plano as $p)
-        @if($p->ano == 1)
-            @if($p->semestre == 1)
+        @if($p->ano == 1 && $p->ano != 2 && $p->ano != 3 && $p->ano != 4 )
+            @if($p->semestre == 1 && $p->semestre != 2)
                 <ul style="list-style: none" class="d-flex justify-content-between align-items-center flex-row ps-0 border-bottom mb-3">
                     <div class="d-flex flex-row justify-content-center align-items-center">
                         <div class="me-5">
@@ -40,8 +40,8 @@
     @endforeach
     <h4><i>2º semestre</i></h4>
     @foreach($plano as $p)
-        @if($p->ano == 2)
-            @if($p->semestre == 2)
+        @if($p->ano == 1 && $p->ano != 2 && $p->ano != 3 && $p->ano != 4)
+            @if($p->semestre == 2 && $p->semestre != 1)
                 <ul style="list-style: none" class="d-flex justify-content-between align-items-center flex-row ps-0 border-bottom mb-3">
                     <div class="d-flex flex-row justify-content-center align-items-center">
                         <div class="me-5">
@@ -65,8 +65,8 @@
     <h3 class="mt-5"><b>2º ano</b></h3>
     <h5><i>1º semestre</i></h5>
     @foreach($plano as $p)
-        @if($p->ano == 2)
-            @if($p->semestre == 1)
+        @if($p->ano == 2 && $p->ano != 1 && $p->ano != 3 && $p->ano != 4)
+            @if($p->semestre == 1 && $p->semestre != 2)
                 <ul style="list-style: none" class="d-flex justify-content-between align-items-center flex-row ps-0 border-bottom mb-3">
                     <div class="d-flex flex-row justify-content-center align-items-center">
                         <div class="me-5">
@@ -88,8 +88,8 @@
     @endforeach
     <h4><i>2º semestre</i></h4>
     @foreach($plano as $p)
-        @if($p->ano == 2)
-            @if($p->semestre == 2)
+        @if($p->ano == 2 && $p->ano != 1 && $p->ano != 3 && $p->ano != 4)
+            @if($p->semestre == 2  && $p->semestre != 1)
                 <ul style="list-style: none" class="d-flex justify-content-between align-items-center flex-row ps-0 border-bottom mb-3">
                     <div class="d-flex flex-row justify-content-center align-items-center">
                         <div class="me-5">
@@ -112,8 +112,8 @@
     <h3 class="mt-5"><b>3º ano</b></h3>
     <h5><i>1º semestre</i></h5>
     @foreach($plano as $p)
-        @if($p->ano == 3)
-            @if($p->semestre == 1)
+        @if($p->ano == 3 && $p->ano != 1 && $p->ano != 2 && $p->ano != 4)
+            @if($p->semestre == 1 && $p->semestre != 2)
                 <ul style="list-style: none" class="d-flex justify-content-between align-items-center flex-row ps-0 border-bottom mb-3">
                     <div class="d-flex flex-row justify-content-center align-items-center">
                         <div class="me-5">
@@ -135,8 +135,8 @@
     @endforeach
     <h4><i>2º semestre</i></h4>
     @foreach($plano as $p)
-        @if($p->ano == 3)
-            @if($p->semestre == 2)
+        @if($p->ano == 3 && $p->ano != 1 && $p->ano != 2 && $p->ano != 4)
+            @if($p->semestre == 2 && $p->semestre != 1)
                 <ul style="list-style: none" class="d-flex justify-content-between align-items-center flex-row ps-0 border-bottom mb-3">
                     <div class="d-flex flex-row justify-content-center align-items-center">
                         <div class="me-5">
@@ -156,5 +156,6 @@
             @endif
         @endif
     @endforeach
+
     <div style="height: 100px"></div>
 @endsection
