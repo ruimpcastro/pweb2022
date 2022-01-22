@@ -5,15 +5,26 @@
 @endsection
 
 @section('conteudo')
-    <div class="w-100 mt-2 mb-2">
+    <div class="w-100 mt-2 mb-2" >
         <a class="btn btn-secondary w-100" href="/curso/{{ $curso->codigo }}">Voltar para a página do curso de {{ $curso->designacao }}</a>
     </div>
 
     <!--TODO Criar um if a verificar se o plano de estudos já tem a disciplina-->
     <!--TODO Adicionar Data List com os cursos para adicionar-->
-    <form id="add-disciplina-form" method="GET" action="/planoestudo/{{ $curso->id }}/edit">
+
+    <form id="add-disciplina-form" method="POST" action="/planoestudo/{{ $curso->codigo }}/edit">
         <div class="w-100 mb-1">
-            <input type="submit" class="btn btn-primary w-100" value="Adicionar disciplina ao plano">
+            <input type="submit" class="btn btn-primary w-100 me-1" value="Adicionar disciplina ao plano">
+            <div class="ms-1">
+                <label for="exampleDataList" class="form-label"></label>
+                <input class="form-control" list="datalistOptions" id="exampleDataList" placeholder="">
+                <datalist id="datalistOptions">
+                    @foreach($disciplinas as $d)
+                    <option value="{{$d->designacao}}">
+                    @endforeach
+                </datalist>
+            </div>
+
         </div>
     </form>
 

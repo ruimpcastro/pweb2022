@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Domain\CursoHandler;
+use App\Domain\DisciplinaHandler;
 use App\Domain\PlanoEstudoHandler;
 use App\Http\Resources\PlanoEstudoCollection;
 use App\Http\Resources\PlanoEstudoResource;
@@ -72,9 +73,11 @@ class PlanoEstudoController extends Controller
         $peh = new PlanoEstudoHandler();
         $p = $peh::getDisciplinasFromCurso($id);
         $ch = new CursoHandler();
+        $dh = new DisciplinaHandler();
+        $d = $dh::getDisciplinas();
         $curso = Curso::where('id', $id)->first();
         $c = $ch::getCurso($curso->codigo);
-        return view('editarPlanoestudo', ['plano' => $p, 'curso' => $c]);
+        return view('editarPlanoestudo', ['disciplinas' => $d, 'plano' => $p, 'curso' => $c]);
     }
 
     public function addDisciplina($id)
