@@ -27,6 +27,18 @@ class CursoHandler
         return $ofertaLetiva::getCurso($codigo);
     }
 
+    public static function getCursoId(int $id)
+    {
+        $ol = new OfertaLetiva();
+        return $ol::getCursoId($id);
+    }
+
+    public static function getCursoFromPlanoEstudo(int $idPlano)
+    {
+        $ol = new OfertaLetiva();
+        return $ol::getCursoFromPlanoEstudo($idPlano);
+    }
+
     public static function getCursos(): Collection
     {
         $ofertaLetiva = new OfertaLetiva();

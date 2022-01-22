@@ -64,33 +64,6 @@ class PlanoEstudoController extends Controller
         return view('planoestudo', ['plano' => $p, 'curso' => $c]);
     }
 
-    /**
-     * @param int $id
-     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
-     */
-    public function showEdit($id)
-    {
-        $peh = new PlanoEstudoHandler();
-        $p = $peh::getDisciplinasFromCurso($id);
-        $ch = new CursoHandler();
-        $dh = new DisciplinaHandler();
-        $d = $dh::getDisciplinas();
-        $curso = Curso::where('id', $id)->first();
-        $c = $ch::getCurso($curso->codigo);
-        return view('editarPlanoestudo', ['disciplinas' => $d, 'plano' => $p, 'curso' => $c]);
-    }
-
-    public function addDisciplina($id)
-    {
-        $peh = new PlanoEstudoHandler();
-        $p = $peh::getDisciplinasFromCurso($id);
-        $ch = new CursoHandler();
-        $curso = Curso::where('id', $id)->first();
-        $c = $ch::getCurso($curso->codigo);
-        $peh::associarPlanoEstudoDisciplina($id, $c->codigo);
-        return view('editarPlanoestudo', ['plano' => $p, 'curso' => $c]);
-    }
-
     public function deleteDisciplina($id)
     {
         $peh = new PlanoEstudoHandler();
@@ -110,7 +83,14 @@ class PlanoEstudoController extends Controller
      */
     public function edit($id)
     {
-        //
+        $peh = new PlanoEstudoHandler();
+        $p = $peh::getDisciplinasFromCurso($id);
+        $ch = new CursoHandler();
+        $dh = new DisciplinaHandler();
+        $d = $dh::getDisciplinas();
+        $curso = Curso::where('id', $id)->first();
+        $c = $ch::getCurso($curso->codigo);
+        return view('editarPlanoestudo', ['disciplinas' => $d, 'plano' => $p, 'curso' => $c]);
     }
 
     /**
@@ -120,9 +100,18 @@ class PlanoEstudoController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, $id, PlanoEstudoHandler $peh, DisciplinaHandler $dh, CursoHandler $ch)
     {
-        //
+        $p = $peh::getPlanoEstudo($id);
+        $c = $ch::getCursoId($id);
+        $disciplina = $request->disciplina;
+        $d = $dh::getDisciplina($disciplina);
+
+        $request->validate(
+            ['disciplina' => 'required']
+        );
+        $peh::associarPlanoEstudoDisciplina($p->id, $disciplina);
+        return redirect("/planoestudo/$c->id/edit");
     }
 
     /**

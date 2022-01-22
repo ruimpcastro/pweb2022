@@ -37,6 +37,18 @@ class OfertaLetiva
         return Curso::where('codigo', $codigo)->first();
     }
 
+    public static function getCursoId(int $id)
+    {
+        return Curso::where('id', $id)->first();
+    }
+
+    public static function getCursoFromPlanoEstudo(int $idPlano)
+    {
+        $peh = new PlanoEstudoHandler;
+        $p = $peh::getPlanoEstudo($idPlano);
+        $c = Curso::where('id',$p->curso_id)->first();
+    }
+
     public static function getCursos(): Collection
     {
         return Curso::all();

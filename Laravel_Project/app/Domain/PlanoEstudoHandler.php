@@ -13,6 +13,13 @@ class PlanoEstudoHandler
         $gerir = new GerirPlanoEstudo();
         return $gerir::getPlanoEstudo($id);
     }
+
+    public static function getPlanoEstudoFromCurso(int $codigoCurso)
+    {
+        $gerir = new GerirPlanoEstudo();
+        return $gerir::getPlanoEstudoFromCurso($codigoCurso);
+    }
+
     public static function associarPlanoEstudoDisciplina(int $idPlanoEstudo, int $codigoDisciplina)
     {
         $gpe = new GerirPlanoEstudo();

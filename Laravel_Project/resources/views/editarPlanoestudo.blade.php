@@ -12,19 +12,19 @@
     <!--TODO Criar um if a verificar se o plano de estudos já tem a disciplina-->
     <!--TODO Adicionar Data List com os cursos para adicionar-->
 
-    <form id="add-disciplina-form" method="POST" action="/planoestudo/{{ $curso->codigo }}/edit">
+    <form id="add-disciplina-form" method="POST" action="/planoestudo/{{$curso->id}}/edit">
+        @csrf
+        <div class="ms-1">
+            <label for="exampleDataList" class="form-label"></label>
+            <input name="disciplina" class="form-control" list="datalistOptions" id="exampleDataList" placeholder="">
+            <datalist id="datalistOptions">
+                @foreach($disciplinas as $d)
+                    <option value={{$d->codigo}}>{{$d->codigo}} {{$d->designacao}}</option>
+                @endforeach
+            </datalist>
+        </div>
         <div class="w-100 mb-1">
             <input type="submit" class="btn btn-primary w-100 me-1" value="Adicionar disciplina ao plano">
-            <div class="ms-1">
-                <label for="exampleDataList" class="form-label"></label>
-                <input class="form-control" list="datalistOptions" id="exampleDataList" placeholder="">
-                <datalist id="datalistOptions">
-                    @foreach($disciplinas as $d)
-                    <option value="{{$d->designacao}}">
-                    @endforeach
-                </datalist>
-            </div>
-
         </div>
     </form>
 
