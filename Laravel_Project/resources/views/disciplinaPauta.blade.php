@@ -17,7 +17,7 @@
 
                 <!--TODO Ligação para se poder visualizar a pauta publicada -->
 
-                <button type="button" method="GET" action="" class="btn btn-primary">Visualizar pauta</button>
+                <a href="/pauta/{{ $pauta->chave }}" class="btn btn-primary">Visualizar pauta</a>
             @else
 
                 <!--TODO Adicionar ligação entre dar upload do ficheiro e o guardar -->

@@ -26,7 +26,9 @@
                             <li>{{ $p->codigo }}</li>
                         </div>
                         <div class="ms-5">
-                            <li>{{ $p->designacao }}</li>
+                            <a href="/disciplina/{{$p->codigo}}">
+                                <li>{{ $p->designacao }}</li>
+                            </a>
                         </div>
                     </div>
                     <div class="ms-5 me-5 text-nowrap text-truncate" style="max-width: 60%; display: inline-block">
@@ -46,7 +48,9 @@
                             <li>{{ $p->codigo }}</li>
                         </div>
                         <div class="ms-5">
-                            <li>{{ $p->designacao }}</li>
+                            <a href="/disciplina/{{$p->codigo}}">
+                                <li>{{ $p->designacao }}</li>
+                            </a>
                         </div>
                     </div>
                     <div class="ms-5 me-5 text-nowrap text-truncate" style="max-width: 60%; display: inline-block">
@@ -69,7 +73,9 @@
                             <li>{{ $p->codigo }}</li>
                         </div>
                         <div class="ms-5">
-                            <li>{{ $p->designacao }}</li>
+                            <a href="/disciplina/{{$p->codigo}}">
+                                <li>{{ $p->designacao }}</li>
+                            </a>
                         </div>
                     </div>
                     <div class="ms-5 me-5 text-nowrap text-truncate" style="max-width: 60%; display: inline-block">
@@ -90,7 +96,9 @@
                             <li>{{ $p->codigo }}</li>
                         </div>
                         <div class="ms-5">
-                            <li>{{ $p->designacao }}</li>
+                            <a href="/disciplina/{{$p->codigo}}">
+                                <li>{{ $p->designacao }}</li>
+                            </a>
                         </div>
                     </div>
                     <div class="ms-5 me-5 text-nowrap text-truncate" style="max-width: 60%; display: inline-block">
@@ -112,7 +120,9 @@
                             <li>{{ $p->codigo }}</li>
                         </div>
                         <div class="ms-5">
-                            <li>{{ $p->designacao }}</li>
+                            <a href="/disciplina/{{$p->codigo}}">
+                                <li>{{ $p->designacao }}</li>
+                            </a>
                         </div>
                     </div>
                     <div class="ms-5 me-5 text-nowrap text-truncate" style="max-width: 60%; display: inline-block">
@@ -133,15 +143,18 @@
                             <li>{{ $p->codigo }}</li>
                         </div>
                         <div class="ms-5">
-                            <li>{{ $p->designacao }}</li>
+                            <a href="/disciplina/{{$p->codigo}}">
+                                <li>{{ $p->designacao }}</li>
+                            </a>
                         </div>
                     </div>
                     <div class="ms-5 me-5 text-nowrap text-truncate" style="max-width: 60%; display: inline-block">
                         <p>{{ $p->plano }}</p>
                     </div>
-
                 </ul>
+
             @endif
         @endif
     @endforeach
+    <div style="height: 100px"></div>
 @endsection

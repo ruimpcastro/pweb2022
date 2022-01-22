@@ -60,16 +60,6 @@
                             </li>
                         @endif
 
-                    @if(\Illuminate\Support\Facades\URL::current() == "http://127.0.0.1:8000/avaliacoes")
-                        <li class="nav-item">
-                            <a class="nav-link active" href="/avaliacoes">Avaliações</a>
-                        </li>
-                        @else
-                            <li class="nav-item">
-                                <a class="nav-link" href="/avaliacoes">Avaliações</a>
-                            </li>
-                        @endif
-
                     @if(\Illuminate\Support\Facades\URL::current() == "http://127.0.0.1:8000/pautas")
                             <li class="nav-item">
                                 <a class="nav-link active" href="/pautas">Pautas</a>
