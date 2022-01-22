@@ -67,12 +67,10 @@ class PlanoEstudoController extends Controller
     public function deleteDisciplina($id)
     {
         $peh = new PlanoEstudoHandler();
-        $p = $peh::getPlanoEstudo($id);
+        $p = $peh::getPlanoEstudoFromCurso($id);
         $ch = new CursoHandler();
-        $curso = Curso::where('id', $id)->first();
-        $c = $ch::getCurso($curso->codigo);
-        $peh::deleteAssociacaoPlanoEstudoDisciplina($id, $c->codigo);
-        return view('editarPlanoestudo', ['plano' => $p, 'curso' => $c, 'delAss' => $del]);
+        $peh::deleteAssociacaoPlanoEstudoDisciplina($idPlano, $id);
+        return view('editarPlanoestudo', ['plano' => $p, 'curso' => $c]);
     }
 
     /**

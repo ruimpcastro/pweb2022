@@ -38,7 +38,7 @@ class GerirPlanoEstudo
         $p = PlanoEstudo::where('id', $idPlanoEstudo)->first();
         $dh = new DisciplinaHandler();
         $d = $dh::getDisciplina($codigoDisciplina);
-        return $d->plano_estudo()->delete();
+        return $d->plano_estudo()->detach($p);
     }
 
     public static function getDisciplinasFromCurso(int $id)

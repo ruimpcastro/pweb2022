@@ -20,6 +20,7 @@ class PlanoEstudoHandler
         return $gerir::getPlanoEstudoFromCurso($codigoCurso);
     }
 
+
     public static function associarPlanoEstudoDisciplina(int $idPlanoEstudo, int $codigoDisciplina)
     {
         $gpe = new GerirPlanoEstudo();
