@@ -18,7 +18,7 @@
                 aria-label="Username"
                 aria-describedby="basic-addon1"
                 name="des"
-                value={{ $curso->designacao }}
+                value="{{ $curso->designacao }}"
             >
         </div>
         <div class="w-100pt-3 d-flex justify-content-center align-items-center mt-2">
