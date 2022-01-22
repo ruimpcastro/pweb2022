@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Domain\ResultadoHandler;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
@@ -25,61 +26,14 @@ class Pauta extends Model
         $dg = Disciplina::find(7);
         $dh = Disciplina::find(8);
 
-        $pf = new Pauta();
-        $pf->chave = 1111;
-        $pf->designacao = "Época de frequência";
-        $pf->dirty = 1;
-
-        $pn = new Pauta();
-        $pn->chave = 1112;
-        $pn->designacao = "Exame de Época Normal";
-        $pn->dirty = 0;
-
-        $pr = new Pauta();
-        $pr->chave = 1113;
-        $pr->designacao = "Exame de Época de Recurso";
-        $pr->dirty = 0;
-
-        $pe = new Pauta();
-        $pe->chave = 1114;
-        $pe->designacao = "Exame de Época de Especial";
-        $pe->dirty = 0;
-
-        $da->pauta()->save($pf);
-        $da->pauta()->save($pn);
-        $da->pauta()->save($pr);
-        $da->pauta()->save($pe);
-
-        $pf = new Pauta();
-        $pf->chave = 1121;
-        $pf->designacao = "Época de frequência";
-        $pf->dirty = 1;
-
-        $pn = new Pauta();
-        $pn->chave = 1122;
-        $pn->designacao = "Exame de Época Normal";
-        $pn->dirty = 0;
-
-        $pr = new Pauta();
-        $pr->chave = 1123;
-        $pr->designacao = "Exame de Época de Recurso";
-        $pr->dirty = 0;
-
-        $pe = new Pauta();
-        $pe->chave = 1124;
-        $pe->designacao = "Exame de Época de Especial";
-        $pe->dirty = 0;
-
-        $db->pauta()->save($pf);
-        $db->pauta()->save($pn);
-        $db->pauta()->save($pr);
-        $db->pauta()->save($pe);
-
-        $pf = new Pauta();
-        $pf->chave = 1125;
-        $pf->designacao = "Pauta de Época Especial";
-        $pf->dirty = 0;
-
-        $dg->pauta()->save($pe);
+        $rh = new ResultadoHandler();
+        $rh::criarPautas($da->codigo);
+        $rh::criarPautas($db->codigo);
+        $rh::criarPautas($dc->codigo);
+        $rh::criarPautas($dd->codigo);
+        $rh::criarPautas($de->codigo);
+        $rh::criarPautas($df->codigo);
+        $rh::criarPautas($dg->codigo);
+        $rh::criarPautas($dh->codigo);
     }
 }
