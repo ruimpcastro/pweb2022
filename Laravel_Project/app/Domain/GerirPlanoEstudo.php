@@ -14,12 +14,20 @@ class GerirPlanoEstudo
         return PlanoEstudo::where('id', $id)->first();
     }
 
-    public static function associarPlanoEstudoDisciplina(int $id, int $codigoDisciplina)
+    public static function associarPlanoEstudoDisciplina(int $idPlanoEstudo, int $codigoDisciplina)
     {
-        $c = Curso::where('id', $id)->first();
-        $p = $c->plano_estudo;
+        $plano = PlanoEstudo::where('id', $idPlanoEstudo)->first();
+        $p = $plano->plano_estudo;
         $d = Disciplina::where('codigo', $codigoDisciplina)->first();
         return $p->disciplinas()->attach($d);
+    }
+
+    public static function deleteAssociacaoPlanoEstudoDisciplina(int $idPlanoEstudo, int $codigoDisciplina)
+    {
+        $p = PlanoEstudo::where('id', $idPlanoEstudo)->first();
+        $dh = new DisciplinaHandler();
+        $d = $dh::getDisciplina($codigoDisciplina);
+        return $d->plano_estudo($p->id)->delete();
     }
 
     public static function getDisciplinasFromCurso(int $id)

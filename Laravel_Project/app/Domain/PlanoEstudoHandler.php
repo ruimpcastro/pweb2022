@@ -13,9 +13,16 @@ class PlanoEstudoHandler
         $gerir = new GerirPlanoEstudo();
         return $gerir::getPlanoEstudo($id);
     }
-    public static function associarPlanoEstudoDisciplina(int $codigoCurso, int $codigoDisciplina, gerirPlanoEstudo $gerirPlanoEstudo)
+    public static function associarPlanoEstudoDisciplina(int $idPlanoEstudo, int $codigoDisciplina)
     {
-        return $gerirPlanoEstudo::associarPlanoEstudoDisciplina($codigoCurso, $codigoDisciplina);
+        $gpe = new GerirPlanoEstudo();
+        return $gpe::associarPlanoEstudoDisciplina($idPlanoEstudo, $codigoDisciplina);
+    }
+
+    public static function deleteAssociacaoPlanoEstudoDisciplina(int $idPlanoEstudo, int $codigoDisciplina)
+    {
+        $gpe = new GerirPlanoEstudo();
+        return $gpe::deleteAssociacaoPlanoEstudoDisciplina($idPlanoEstudo, $codigoDisciplina);
     }
 
     public static function getDisciplinasFromCurso(int $id)

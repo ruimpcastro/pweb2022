@@ -52,7 +52,6 @@ class PlanoEstudoController extends Controller
      * Display the specified resource.
      *
      * @param  int  $id
-     * @return PlanoEstudoResource
      */
     public function show($id)
     {
@@ -76,6 +75,28 @@ class PlanoEstudoController extends Controller
         $curso = Curso::where('id', $id)->first();
         $c = $ch::getCurso($curso->codigo);
         return view('editarPlanoestudo', ['plano' => $p, 'curso' => $c]);
+    }
+
+    public function addDisciplina($id)
+    {
+        $peh = new PlanoEstudoHandler();
+        $p = $peh::getDisciplinasFromCurso($id);
+        $ch = new CursoHandler();
+        $curso = Curso::where('id', $id)->first();
+        $c = $ch::getCurso($curso->codigo);
+        $peh::associarPlanoEstudoDisciplina($id, $c->codigo);
+        return view('editarPlanoestudo', ['plano' => $p, 'curso' => $c]);
+    }
+
+    public function deleteDisciplina($id)
+    {
+        $peh = new PlanoEstudoHandler();
+        $p = $peh::getDisciplinasFromCurso($id);
+        $ch = new CursoHandler();
+        $curso = Curso::where('id', $id)->first();
+        $c = $ch::getCurso($curso->codigo);
+        $peh::deleteAssociacaoPlanoEstudoDisciplina($id, $c->codigo);
+        return view('editarPlanoestudo', ['plano' => $p, 'curso' => $c, 'delAss' => $del]);
     }
 
     /**
@@ -105,7 +126,6 @@ class PlanoEstudoController extends Controller
      * Remove the specified resource from storage.
      *
      * @param  int  $id
-     * @return \Illuminate\Http\Response
      */
     public function destroy($id)
     {

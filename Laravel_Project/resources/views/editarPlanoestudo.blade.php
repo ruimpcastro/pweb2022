@@ -35,8 +35,9 @@
                         <div class="ms-5 me-5 text-nowrap text-truncate" style="max-width: 300px; display: inline-block">
                             <p>{{ $p->plano }}</p>
                         </div>
-                        <form id="remove-form" method="POST" action="/planoestudo/disciplina/{{$p->id}}" class="mb-1">
+                        <form id="remove-form" method="POST" action="/planoestudo/{{$curso->codigo}}/edit" class="mb-1">
                             @csrf
+                            {{ method_field('DELETE') }}
                             <input type="submit" class="btn btn-danger" value="Remover do plano">
                         </form>
                     </div>
@@ -61,8 +62,9 @@
                         <div class="ms-5 me-5 text-nowrap text-truncate" style="max-width: 300px; display: inline-block">
                             <p>{{ $p->plano }}</p>
                         </div>
-                        <form id="remove-form" method="POST" action="/planoestudo/disciplina/{{$p->id}}" class="mb-1">
+                        <form id="remove-form" method="POST" action="/planoestudo/{{$p->id}}/edit" class="mb-1">
                             @csrf
+                            {{ method_field('DELETE') }}
                             <input type="submit" class="btn btn-danger" value="Remover do plano">
                         </form>
                     </div>
@@ -89,8 +91,9 @@
                         <div class="ms-5 me-5 text-nowrap text-truncate" style="max-width: 300px; display: inline-block">
                             <p>{{ $p->plano }}</p>
                         </div>
-                        <form id="remove-form" method="POST" action="/planoestudo/disciplina/{{$p->id}}" class="mb-1">
+                        <form id="remove-form" method="POST" action="/planoestudo/{{$p->id}}/edit" class="mb-1">
                             @csrf
+                            {{ method_field('DELETE') }}
                             <input type="submit" class="btn btn-danger" value="Remover do plano">
                         </form>
                     </div>
@@ -115,8 +118,9 @@
                         <div class="ms-5 me-5 text-nowrap text-truncate" style="max-width: 300px; display: inline-block">
                             <p>{{ $p->plano }}</p>
                         </div>
-                        <form id="remove-form" method="POST" action="/planoestudo/disciplina/{{$p->id}}" class="mb-1">
+                        <form id="remove-form" method="POST" action="/planoestudo/{{$p->id}}/edit" class="mb-1">
                             @csrf
+                            {{ method_field('DELETE') }}
                             <input type="submit" class="btn btn-danger" value="Remover do plano">
                         </form>
                     </div>
@@ -142,8 +146,9 @@
                         <div class="ms-5 me-5 text-nowrap text-truncate" style="max-width: 300px; display: inline-block">
                             <p>{{ $p->plano }}</p>
                         </div>
-                        <form id="remove-form" method="POST" action="/planoestudo/disciplina/{{$p->id}}" class="mb-1">
+                        <form id="remove-form" method="POST" action="/planoestudo/{{$p->id}}/edit" class="mb-1">
                             @csrf
+                            {{ method_field('DELETE') }}
                             <input type="submit" class="btn btn-danger" value="Remover do plano">
                         </form>
                     </div>
@@ -168,8 +173,9 @@
                         <div class="ms-5 me-5 text-nowrap text-truncate" style="max-width: 300px; display: inline-block">
                             <p>{{ $p->plano }}</p>
                         </div>
-                        <form id="remove-form" method="POST" action="/planoestudo/disciplina/{{$p->id}}" class="mb-1">
+                        <form id="remove-form" method="POST" action="/planoestudo/{{$p->id}}/edit" class="mb-1">
                             @csrf
+                            {{ method_field('DELETE') }}
                             <input type="submit" class="btn btn-danger" value="Remover do plano">
                         </form>
                     </div>

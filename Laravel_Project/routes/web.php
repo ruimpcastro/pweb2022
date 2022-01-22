@@ -45,6 +45,8 @@ Route::delete('/curso/{id}', [CursoController::class, 'destroy']);
 
 //PLANO ESTUDO
 Route::get('/planoestudo/{id}/edit', [PlanoEstudoController::class, 'showEdit']);
+Route::post('/planoestudo/{id}/edit', [PlanoEstudoController::class, 'addDisciplina']);
+Route::delete('/planoestudo/{id}/edit', [PlanoEstudoController::class, 'deleteDisciplina']);
 Route::get('/planoestudo/{id}', [CursoController::class, 'show']);
 Route::get('/planoestudo/{id}', [PlanoEstudoController::class, 'show']);
 
