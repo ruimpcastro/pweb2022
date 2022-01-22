@@ -13,22 +13,13 @@
 <body style="height: 100vh; width: 100vw">
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container-fluid">
-            <a class="navbar-brand" href="/login">Sign in</a>
+            <a class="navbar-brand" href="/cursos">Gestão de cursos 🔥</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <!--Falta criar lógica para o Heroku da barra de navegações-->
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav">
-                    @if(\Illuminate\Support\Facades\URL::current() == "http://127.0.0.1:8000")
-                        <li class="nav-item">
-                            <a class="nav-link active" href="http://127.0.0.1:8000/">Home</a>
-                        </li>
-                    @else
-                        <li class="nav-item">
-                            <a class="nav-link" href="http://127.0.0.1:8000/">Home</a>
-                        </li>
-                    @endif
 
                     @if(\Illuminate\Support\Facades\URL::current() == "http://127.0.0.1:8000/cursos")
                         <li class="nav-item">
@@ -57,16 +48,6 @@
                         @else
                             <li class="nav-item">
                                 <a class="nav-link" href="/alunos">Alunos</a>
-                            </li>
-                        @endif
-
-                    @if(\Illuminate\Support\Facades\URL::current() == "http://127.0.0.1:8000/pautas")
-                            <li class="nav-item">
-                                <a class="nav-link active" href="/pautas">Pautas</a>
-                            </li>
-                        @else
-                            <li class="nav-item">
-                                <a class="nav-link" href="/pautas">Pautas</a>
                             </li>
                         @endif
                 </ul>

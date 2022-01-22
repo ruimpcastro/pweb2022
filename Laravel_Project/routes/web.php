@@ -20,8 +20,12 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('home');
+    return redirect('/login');
 });
+
+Route::get('/dashboard', function () {
+    return view('dashboard');
+})->middleware(['auth'])->name('dashboard');
 
 Route::get('/login', function () {
     return view('login');
@@ -32,23 +36,23 @@ Route::get('/register', function () {
 });
 
 //CURSO
-Route::get('/cursos', [CursoController::class, 'index']);
-Route::get('/cursos/create', [CursoController::class, 'create']);
-Route::post('/cursos/create', [CursoController::class, 'store']);
-Route::get('/curso/{id}/edit', [CursoController::class, 'edit']);
-Route::post('/curso/{id}/edit', [CursoController::class, 'update']);
+Route::get('/cursos', [CursoController::class, 'index'])->middleware(['auth']);
+Route::get('/cursos/create', [CursoController::class, 'create'])->middleware(['auth']);
+Route::post('/cursos/create', [CursoController::class, 'store'])->middleware(['auth']);
+Route::get('/curso/{id}/edit', [CursoController::class, 'edit'])->middleware(['auth']);
+Route::post('/curso/{id}/edit', [CursoController::class, 'update'])->middleware(['auth']);
 
-Route::get('/curso/{id}/alunos', [AlunoController::class, 'indexWithCurso']);
-Route::get('/curso/{id}', [CursoController::class, 'show']);
-Route::post('/curso/{id}', [CursoController::class, 'store']);
-Route::delete('/curso/{id}', [CursoController::class, 'destroy']);
+Route::get('/curso/{id}/alunos', [AlunoController::class, 'indexWithCurso'])->middleware(['auth']);
+Route::get('/curso/{id}', [CursoController::class, 'show'])->middleware(['auth']);
+Route::post('/curso/{id}', [CursoController::class, 'store'])->middleware(['auth']);
+Route::delete('/curso/{id}', [CursoController::class, 'destroy'])->middleware(['auth']);
 
 //PLANO ESTUDO
-Route::get('/planoestudo/{id}/edit', [PlanoEstudoController::class, 'edit']);
-Route::post('/planoestudo/{id}/edit', [PlanoEstudoController::class, 'update']);
-Route::delete('/planoestudo/{id}/edit', [PlanoEstudoController::class, 'deleteDisciplina']);
-Route::get('/planoestudo/{id}', [CursoController::class, 'show']);
-Route::get('/planoestudo/{id}', [PlanoEstudoController::class, 'show']);
+Route::get('/planoestudo/{id}/edit', [PlanoEstudoController::class, 'edit'])->middleware(['auth']);
+Route::post('/planoestudo/{id}/edit', [PlanoEstudoController::class, 'update'])->middleware(['auth']);
+Route::delete('/planoestudo/{id}/edit', [PlanoEstudoController::class, 'deleteDisciplina'])->middleware(['auth']);
+Route::get('/planoestudo/{id}', [CursoController::class, 'show'])->middleware(['auth']);
+Route::get('/planoestudo/{id}', [PlanoEstudoController::class, 'show'])->middleware(['auth']);
 
 //ALUNO------------------------------------------------------------
 
@@ -58,13 +62,13 @@ Route::get('/alunos', function () {
 });
 */
 
-Route::get('/alunos', [AlunoController::class, 'index']);
-Route::get('/alunos/create', [AlunoController::class, 'create']);
-Route::post('/alunos/create', [AlunoController::class, 'store']);
+Route::get('/alunos', [AlunoController::class, 'index'])->middleware(['auth']);
+Route::get('/alunos/create', [AlunoController::class, 'create'])->middleware(['auth']);
+Route::post('/alunos/create', [AlunoController::class, 'store'])->middleware(['auth']);
 
-Route::get('/aluno/{id}', [AlunoController::class, 'show']);
-Route::post('/aluno/{id}', [AlunoController::class, 'store']);
-Route::delete('/aluno/{id}', [AlunoController::class, 'destroy']);
+Route::get('/aluno/{id}', [AlunoController::class, 'show'])->middleware(['auth']);
+Route::post('/aluno/{id}', [AlunoController::class, 'store'])->middleware(['auth']);
+Route::delete('/aluno/{id}', [AlunoController::class, 'destroy'])->middleware(['auth']);
 
 //DISCIPLINAS------------------------------------------------------------
 
@@ -75,17 +79,17 @@ Route::get('/disciplinas', function () {
 */
 
 //DISCIPLINA
-Route::get('/disciplinas', [DisciplinaController::class, 'index']);
-Route::get('/disciplinas/create', [DisciplinaController::class, 'create']);
-Route::post('/disciplinas/create', [DisciplinaController::class, 'store']);
-Route::get('/disciplina/{id}/edit', [DisciplinaController::class, 'edit']);
-Route::post('/disciplina/{id}/edit', [DisciplinaController::class, 'update']);
+Route::get('/disciplinas', [DisciplinaController::class, 'index'])->middleware(['auth']);
+Route::get('/disciplinas/create', [DisciplinaController::class, 'create'])->middleware(['auth']);
+Route::post('/disciplinas/create', [DisciplinaController::class, 'store'])->middleware(['auth']);
+Route::get('/disciplina/{id}/edit', [DisciplinaController::class, 'edit'])->middleware(['auth']);
+Route::post('/disciplina/{id}/edit', [DisciplinaController::class, 'update'])->middleware(['auth']);
 
-Route::get('/disciplina/{id}', [DisciplinaController::class, 'show']);
-Route::get('/disciplina/{id}/pautas', [DisciplinaController::class, 'showPautas']);
-Route::get('/disciplina/{id}/alunos', [DisciplinaController::class, 'showAlunos']);
-Route::post('/disciplina/{id}', [DisciplinaController::class, 'store']);
-Route::delete('/disciplina/{id}', [DisciplinaController::class, 'destroy']);
+Route::get('/disciplina/{id}', [DisciplinaController::class, 'show'])->middleware(['auth']);
+Route::get('/disciplina/{id}/pautas', [DisciplinaController::class, 'showPautas'])->middleware(['auth']);
+Route::get('/disciplina/{id}/alunos', [DisciplinaController::class, 'showAlunos'])->middleware(['auth']);
+Route::post('/disciplina/{id}', [DisciplinaController::class, 'store'])->middleware(['auth']);
+Route::delete('/disciplina/{id}', [DisciplinaController::class, 'destroy'])->middleware(['auth']);
 
 //PAUTA------------------------------------------------------------
 
@@ -96,13 +100,13 @@ Route::get('/pautas', function () {
 */
 
 //PAUTA
-Route::get('/pautas', [PautaController::class, 'index']);
-Route::get('/pautas/create', [PautaController::class, 'create']);
-Route::post('/pautas/create', [PautaController::class, 'store']);
+Route::get('/pautas', [PautaController::class, 'index'])->middleware(['auth']);
+Route::get('/pautas/create', [PautaController::class, 'create'])->middleware(['auth']);
+Route::post('/pautas/create', [PautaController::class, 'store'])->middleware(['auth']);
 
-Route::get('/pauta/{id}', [PautaController::class, 'show']);
-Route::post('/pauta/{id}', [PautaController::class, 'store']);
-Route::delete('/pauta/{id}', [PautaController::class, 'destroy']);
+Route::get('/pauta/{id}', [PautaController::class, 'show'])->middleware(['auth']);
+Route::post('/pauta/{id}', [PautaController::class, 'store'])->middleware(['auth']);
+Route::delete('/pauta/{id}', [PautaController::class, 'destroy'])->middleware(['auth']);
 
 /*
 Route::get('/avaliacoes', function () {
@@ -111,12 +115,13 @@ Route::get('/avaliacoes', function () {
 */
 
 //AVALIAÇÃO
-Route::get('/avaliacoes', [ResultadoController::class, 'index']);
-Route::get('/avaliacoes/create', [ResultadoController::class, 'create']);
-Route::post('/avaliacoes/create', [ResultadoController::class, 'store']);
+Route::get('/avaliacoes', [ResultadoController::class, 'index'])->middleware(['auth']);
+Route::get('/avaliacoes/create', [ResultadoController::class, 'create'])->middleware(['auth']);
+Route::post('/avaliacoes/create', [ResultadoController::class, 'store'])->middleware(['auth']);
 
-Route::get('/avaliacao/{id}', [ResultadoController::class, 'show']);
-Route::post('/avaliacao/{id}', [ResultadoController::class, 'store']);
-Route::delete('/avaliacao/{id}', [ResultadoController::class, 'destroy']);
+Route::get('/avaliacao/{id}', [ResultadoController::class, 'show'])->middleware(['auth']);
+Route::post('/avaliacao/{id}', [ResultadoController::class, 'store'])->middleware(['auth']);
+Route::delete('/avaliacao/{id}', [ResultadoController::class, 'destroy'])->middleware(['auth']);
 
 
+require __DIR__.'/auth.php';
