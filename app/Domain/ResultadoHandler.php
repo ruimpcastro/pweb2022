@@ -11,9 +11,16 @@ use Illuminate\Support\Facades\DB;
 class ResultadoHandler
 {
     //TODO Criar página para pegar na pauta e gerar valores da pauta
-    public static function gerarPauta()
+    public static function gerarPauta(string $dir)
     {
-        $json_csv_linhas = self::csvLinhasToJson("Docs/resultados.csv",5);
+        $linecount = 0;
+        $handle = fopen($dir, "r");
+        while(!feof($handle)){
+            $line = fgets($handle);
+            $linecount++;
+        }
+        fclose($handle);
+        $json_csv_linhas = self::csvLinhasToJson($dir,$linecount);
         $d = DB::table('disciplinas')->where('codigo',$json_csv_linhas["Código"] )->first();
         print_r($json_csv_linhas);
         $p = DB::table('pautas')->where('chave',$json_csv_linhas["Chave"] )->first();

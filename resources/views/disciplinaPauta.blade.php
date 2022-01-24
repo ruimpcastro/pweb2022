@@ -19,13 +19,13 @@
 
                 <a href="/pauta/{{ $pauta->chave }}" class="btn btn-primary">Visualizar pauta</a>
             @else
-
-                <!--TODO Adicionar ligação entre dar uploads do ficheiro e o guardar -->
-
-                <div class="input-group mb-3">
-                    <input type="file" class="form-control" id="inputGroupFile01">
-                    <button type="button" method="POST" action="" class="btn btn-primary">Guardar</button>
-                </div>
+                <form method="POST" enctype="multipart/form-data">
+                    @csrf
+                    <div class="input-group mb-3">
+                        <input type="file" class="form-control" name="file" id="inputGroupFile01">
+                        <input type="submit" name class="btn btn-primary" value="Publicar pauta">
+                    </div>
+                </form>
             @endif
         </p>
     @endforeach

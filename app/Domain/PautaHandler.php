@@ -11,10 +11,10 @@ class PautaHandler
      * CRIAR PARTE DE GERAR PAUTA ATRAVÉS DO CSV
      */
 
-    public static function gerarPauta()
+    public static function gerarPauta($dir)
     {
         $rh = new ResultadoHandler();
-        return $rh::gerarPauta();
+        return $rh::gerarPauta($dir);
     }
 
     public static function criarPautas(int $codDisciplina)

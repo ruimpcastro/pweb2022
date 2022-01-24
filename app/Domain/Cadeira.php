@@ -41,7 +41,10 @@ class Cadeira
     {
         return Disciplina::where('codigo', $codigo)->first();
     }
-
+    public static function getDisciplinaId(int $id)
+    {
+        return Disciplina::where('id', $id)->first();
+    }
 
 
     public static function getDisciplinas(): Collection

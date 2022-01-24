@@ -84,11 +84,21 @@ class PautaController extends Controller
      *
      * @param  \Illuminate\Http\Request  $request
      * @param  int  $id
-     * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, $id, PautaHandler $ph, DisciplinaHandler $dh)
     {
-        //
+        $p = $ph::getPauta($id);
+        $d = $dh::getDisciplinaId($p->disciplina_id);
+        $resultados = $request->file;
+
+        $request->validate(
+            [
+                'file' => 'required'
+            ]
+        );
+
+        $ph::gerarPauta($resultados);
+        return redirect("disciplina/$d->codigo/pautas");
     }
 
     /**
