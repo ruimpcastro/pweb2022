@@ -39,7 +39,8 @@ class ResultadoHandler
         }
             $pauta->dirty = 1;
             $pauta->save();
-            $this::getMedia($pauta->id);
+            $rh = new ResultadoHandler();
+            $rh::getMedia($pauta->id);
             return $p;
         }
 
