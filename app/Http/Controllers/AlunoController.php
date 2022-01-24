@@ -81,9 +81,6 @@ class AlunoController extends Controller
     {
         $ah = new AlunoHandler();
         $a = $ah::getAluno($id);
-
-        //TODO ligacao dos resultados do aluno na pauta para a pagina especifica do aluno
-
         //return new AlunoResource($a);
         return view('aluno', ['aluno' => $a]);
     }
@@ -118,6 +115,7 @@ class AlunoController extends Controller
      */
     public function destroy($id)
     {
-        return Aluno::destroy($id);
+        Aluno::destroy($id);
+        return redirect("/alunos");
     }
 }

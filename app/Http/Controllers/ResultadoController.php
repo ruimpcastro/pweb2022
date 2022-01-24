@@ -50,7 +50,8 @@ class ResultadoController extends Controller
      */
     public function show($id)
     {
-        return Resultado::find($id);
+        $rh = new ResultadoHandler();
+        return $rh::getResultado($id);
     }
 
     /**

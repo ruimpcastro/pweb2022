@@ -25,7 +25,7 @@
             <div class="d-flex flex-row justify-content-center align-items-center">
 
                 <!--DELETE-->
-                <form id="delete-form" method="POST" action="/alunos" class="mb-1">
+                <form id="delete-form" method="POST" action="/aluno/{{$aluno->id}}" class="mb-1">
                     @csrf
                     {{ method_field('DELETE') }}
                     <input type="submit" class="btn btn-danger" value="X">
