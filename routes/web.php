@@ -68,7 +68,7 @@ Route::post('/alunos/create', [AlunoController::class, 'store'])->middleware(['a
 
 Route::get('/aluno/{id}', [AlunoController::class, 'show'])->middleware(['auth']);
 Route::post('/aluno/{id}', [AlunoController::class, 'store'])->middleware(['auth']);
-Route::delete('/aluno/{id}', [AlunoController::class, 'destroy'])->middleware(['auth']);
+Route::delete('/alunos', [AlunoController::class, 'destroy'])->middleware(['auth']);
 
 //DISCIPLINAS------------------------------------------------------------
 

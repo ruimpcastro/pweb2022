@@ -24,13 +24,8 @@
             </div>
             <div class="d-flex flex-row justify-content-center align-items-center">
 
-                <!--EDIT-->
-                <form id="edit-form" method="GET" action="/curso/{{$aluno->id}}" class="me-3 mb-1">
-                    <input type="submit" class="btn btn-secondary w-100" value="Editar aluno">
-                </form>
-
                 <!--DELETE-->
-                <form id="delete-form" method="POST" action="/aluno/{{$aluno->id}}" class="mb-1">
+                <form id="delete-form" method="POST" action="/alunos" class="mb-1">
                     @csrf
                     {{ method_field('DELETE') }}
                     <input type="submit" class="btn btn-danger" value="X">
