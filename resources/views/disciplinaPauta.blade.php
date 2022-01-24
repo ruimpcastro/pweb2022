@@ -20,7 +20,7 @@
                 <a href="/pauta/{{ $pauta->chave }}" class="btn btn-primary">Visualizar pauta</a>
             @else
 
-                <!--TODO Adicionar ligação entre dar upload do ficheiro e o guardar -->
+                <!--TODO Adicionar ligação entre dar uploads do ficheiro e o guardar -->
 
                 <div class="input-group mb-3">
                     <input type="file" class="form-control" id="inputGroupFile01">
