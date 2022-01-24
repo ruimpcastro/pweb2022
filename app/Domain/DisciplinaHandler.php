@@ -33,7 +33,7 @@ class DisciplinaHandler
     public static function getDisciplinaId(int $id)
     {
         $cadeira = new Cadeira();
-        return $cadeira->getDisciplina($codigo);
+        return $cadeira->getDisciplinaId($id);
     }
 
     public static function getDisciplinas(): Collection
