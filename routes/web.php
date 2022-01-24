@@ -104,6 +104,8 @@ Route::get('/pautas', [PautaController::class, 'index'])->middleware(['auth']);
 Route::get('/pautas/create', [PautaController::class, 'create'])->middleware(['auth']);
 Route::post('/pautas/create', [PautaController::class, 'store'])->middleware(['auth']);
 
+Route::post('/disciplina/{id}/pautas', [PautaController::class, 'update'])->middleware(['auth']);
+
 Route::get('/pauta/{id}', [PautaController::class, 'show'])->middleware(['auth']);
 Route::post('/pauta/{id}', [PautaController::class, 'store'])->middleware(['auth']);
 Route::delete('/pauta/{id}', [PautaController::class, 'destroy'])->middleware(['auth']);
