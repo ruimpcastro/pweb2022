@@ -20,22 +20,26 @@ class ResultadoHandler
             $linecount++;
         }
         fclose($handle);
-        $json_csv_linhas = self::csvLinhasToJson($dir,$linecount);
-        $d = DB::table('disciplinas')->where('codigo',$json_csv_linhas["Código"] )->first();
+        $json_csv_linhas = self::csvLinhasToJson($dir, 5);
+        $d = DB::table('disciplinas')->where('codigo', $json_csv_linhas["Codigo"] )->first();
         print_r($json_csv_linhas);
         $p = DB::table('pautas')->where('chave',$json_csv_linhas["Chave"] )->first();
-        if ( $p != null or $p->dirty != 0) {
+        $pauta = Pauta::where('id', $p->id)->first();
+        if ( $p == null or $p->dirty != 0) {
             return "Não consegue efetuar alterações, porque já submeteu o ficheiro no sistema";
         } else {
-            $pauta = self::createPauta($json_csv_linhas["Chave"], $json_csv_linhas["Pauta"], 1, $d->id);
+            //$pauta = self::createPauta($json_csv_linhas["Chave"], $json_csv_linhas["Pauta"], 1, $d->id);
+            $p = DB::table('pautas')->where('chave',$json_csv_linhas["Chave"] )->first();
+            //Criar Resultados
+            $json_csv_colunas = self::csvColunasToJson($dir,8,5);
+            foreach ($json_csv_colunas as $col) {
+                print_r($col);
+                $a = DB::table('alunos')->where('numero_aluno',$col["Número"] )->first();
+                self::createResultado($col["Resultado"],  $p->id, $d->id, $a->id);
         }
-        $p = DB::table('pautas')->where('chave',$json_csv_linhas["Chave"] )->first();
-        //Criar Resultados
-        $json_csv_colunas = self::csvColunasToJson("Docs/resultados.csv",8,5);
-        foreach ($json_csv_colunas as $col) {
-            print_r($col);
-            $a = DB::table('alunos')->where('numero_aluno',$col["Número"] )->first();
-            self::createResultado($col["Resultado"],  $p->id, $d->id, $a->id);
+            $pauta->dirty = 1;
+            $pauta->save();
+            return $p;
         }
 
     }
