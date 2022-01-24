@@ -21,7 +21,7 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav">
 
-                    @if(\Illuminate\Support\Facades\URL::current() == "http://127.0.0.1:8000/cursos")
+                    @if(\Illuminate\Support\Facades\URL::current() == "http://127.0.0.1:8000/cursos" || \Illuminate\Support\Facades\URL::current() == "http://pweb202204.herokuapp.com/cursos")
                         <li class="nav-item">
                                 <a class="nav-link active" href="/cursos">Cursos</a>
                             </li>
@@ -31,7 +31,7 @@
                             </li>
                     @endif
 
-                        @if(\Illuminate\Support\Facades\URL::current() == "http://127.0.0.1:8000/disciplinas")
+                        @if(\Illuminate\Support\Facades\URL::current() == "http://127.0.0.1:8000/disciplinas" || \Illuminate\Support\Facades\URL::current() == "http://pweb202204.herokuapp.com/disciplinas")
                         <li class="nav-item">
                             <a class="nav-link active" aria-current="page" href="/disciplinas">Disciplinas</a>
                         </li>
@@ -41,7 +41,7 @@
                         </li>
                     @endif
 
-                    @if(\Illuminate\Support\Facades\URL::current() == "http://127.0.0.1:8000/alunos")
+                    @if(\Illuminate\Support\Facades\URL::current() == "http://127.0.0.1:8000/alunos" || \Illuminate\Support\Facades\URL::current() == "http://pweb202204.herokuapp.com/alunos")
                             <li class="nav-item">
                                 <a class="nav-link active" href="/alunos">Alunos</a>
                             </li>
