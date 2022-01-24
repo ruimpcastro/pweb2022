@@ -88,7 +88,7 @@ class PautaController extends Controller
     public function update(Request $request, $id, PautaHandler $ph, DisciplinaHandler $dh)
     {
         $p = $ph::getPauta($id);
-        $d = $dh::getDisciplinaId($id);
+        $d = $ph::getDisciplinaFromPauta($id);
         $resultados = $request->file;
 
         $request->validate(

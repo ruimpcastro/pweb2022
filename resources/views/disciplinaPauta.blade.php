@@ -19,7 +19,7 @@
 
                 <a href="/pauta/{{ $pauta->chave }}" class="btn btn-primary">Visualizar pauta</a>
             @else
-                <form method="POST" enctype="multipart/form-data">
+                <form method="POST" action="/pauta/{{ $pauta->chave }}/edit" enctype="multipart/form-data">
                     @csrf
                     <div class="input-group mb-3">
                         <input type="file" class="form-control" name="file" id="inputGroupFile01">
