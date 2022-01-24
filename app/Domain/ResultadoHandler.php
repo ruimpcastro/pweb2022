@@ -110,7 +110,7 @@ class ResultadoHandler
         return $json;
     }
 
-    public static function getPauta(int $chavePauta): Pauta
+    public static function getPauta(int $chavePauta)
     {
         return Pauta::where('chave', $chavePauta)->first();
     }

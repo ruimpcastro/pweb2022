@@ -23,7 +23,7 @@ class PautaHandler
         return $rh::criarPautas($codDisciplina);
     }
 
-    public static function getPauta(int $chavePauta): Pauta
+    public static function getPauta(int $chavePauta)
     {
         $resultadoHandler = new ResultadoHandler();
         return $resultadoHandler::getPauta($chavePauta);
